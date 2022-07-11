@@ -42,7 +42,7 @@ if ! shopt -oq posix; then
 fi
 
 
-### Custom Stuff by me ###
+### Custom Stuff by me, though it's mostly aliases ###
 ## PS1 ##
         PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
@@ -60,7 +60,7 @@ fi
 
     # Clear
         # alias cls='clear && neofetch --source /home/andrew/stuff/misc/ascii_art/rick-astley.txt --colors 4 7 7 4 7 7'
-        alias cls='clear && fortune | cowsay'
+        alias cls='clear'
 
     # Grep
         alias grep='grep --color=auto'
@@ -68,7 +68,7 @@ fi
         alias egrep='egrep --color=auto'
 
     # Ls
-        alias ls='ls --color=auto'
+        alias ls='ls --color=auto -A'
         alias ll='ls -alF'
         alias la='ls -A'
         alias l='ls -CF'
@@ -84,7 +84,3 @@ fi
 
         # Download as mp4
         alias ytmp4='yt-dlp -f mp4'
-
-## Fun Startup ##
-    # neofetch --source /home/andrew/stuff/misc/ascii_art/rick-astley.txt --colors 4 7 7 4 7 7
-    fortune | cowsay
