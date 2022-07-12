@@ -44,7 +44,7 @@ fi
 
 ### Custom Stuff by me, though it's mostly aliases ###
 ## PS1 ##
-        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
 ## XDG Stuff by xdg-ninja ##
 if [[ -n $XDG_STATE_HOME ]]; then
@@ -60,7 +60,7 @@ if [[ -n $XDG_CACHE_HOME ]]; then
 fi
 
 ## Aliases ##
-    # Advance Package Tool
+    # APT
         alias apts='apt search'
         alias aptup='sudo apt update && sudo apt upgrade'
         alias aptupd='sudo apt update'

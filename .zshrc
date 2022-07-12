@@ -14,21 +14,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-## XDG Stuff by xdg-ninja ##
-if [[ -n $XDG_STATE_HOME ]]; then
-    export HISTFILE="${XDG_STATE_HOME}"/bash/history
-fi
-
-if [[ -n $XDG_DATA_HOME ]]; then
-    export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-fi
-
-if [[ -n $XDG_CACHE_HOME ]]; then
-    alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-fi
-
 ## Aliases ##
-    # Advance Package Tool
+    # APT
         alias apts='apt search'
         alias aptup='sudo apt update && sudo apt upgrade'
         alias aptupd='sudo apt update'
@@ -68,11 +55,6 @@ fi
 
 ## ZSH Theme ##
 	source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-	# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-	[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+	[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
