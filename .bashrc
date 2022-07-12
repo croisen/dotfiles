@@ -46,6 +46,19 @@ fi
 ## PS1 ##
         PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
+## XDG Stuff by xdg-ninja ##
+if [[ -n $XDG_STATE_HOME ]]; then
+    export HISTFILE="${XDG_STATE_HOME}"/bash/history
+fi
+
+if [[ -n $XDG_DATA_HOME ]]; then
+    export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+fi
+
+if [[ -n $XDG_CACHE_HOME ]]; then
+    alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+fi
+
 ## Aliases ##
     # Advance Package Tool
         alias apts='apt search'
