@@ -119,7 +119,7 @@ fi
         if [[ $1 =~ [^0-9] ]]; then
             echo "Please use a whole number"
             return 1
-        elif [[ $1 == "" ]]; then
+        elif [[ -z $1 ]]; then
             cd ../
         else
             for i in $(seq $1); do
