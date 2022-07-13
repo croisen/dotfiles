@@ -48,7 +48,12 @@ fi
 
 ## XDG Stuff by xdg-ninja ##
 if [[ -n $XDG_STATE_HOME ]]; then
-    export HISTFILE="${XDG_STATE_HOME}"/bash/history
+    if [[ ! -d "$XDG_STATE_HOME/bash" ]]; then
+        mkdir -p "$XDG_STATE_HOME/bash"
+    elif [[ -d "$XDG_STATE_HOME" ]]; then
+        HISTFILE="$XDG_STATE_HOME/bash/history"
+    fi
+ 
 fi
 
 if [[ -n $XDG_DATA_HOME ]]; then
@@ -93,3 +98,18 @@ fi
     # yt-dlp
         alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
         alias ytmp4='yt-dlp -f mp4'
+
+## Functions ##
+    # Up - go up by specified amount of directories
+    up() {
+        if [[ $1 =~ [^0-9] ]]; then
+            echo "Please use a whole number"
+            return 1
+        elif [[ $1 == "" ]]; then
+            cd ../
+        else
+            for i in $(seq $1); do
+                cd ../
+            done
+        fi
+    }
