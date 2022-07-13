@@ -47,60 +47,74 @@ fi
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
 ## XDG Stuff by xdg-ninja ##
-if [[ -n $XDG_STATE_HOME ]]; then
-    if [[ ! -d "$XDG_STATE_HOME/bash" ]]; then
-        mkdir -p "$XDG_STATE_HOME/bash"
-    elif [[ -d "$XDG_STATE_HOME" ]]; then
-        HISTFILE="$XDG_STATE_HOME/bash/history"
+    if [[ -n $XDG_STATE_HOME ]]; then
+        if [[ ! -d "$XDG_STATE_HOME/bash" ]]; then
+            mkdir -p "$XDG_STATE_HOME/bash"
+        elif [[ -d "$XDG_STATE_HOME" ]]; then
+            HISTFILE="$XDG_STATE_HOME/bash/history"
+        fi
+    else
+        HISTFILE="~/.bash_history"
     fi
- 
-fi
 
-if [[ -n $XDG_DATA_HOME ]]; then
-    export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-fi
+    if [[ -n $XDG_DATA_HOME ]]; then
+        export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+    fi
 
-if [[ -n $XDG_CACHE_HOME ]]; then
-    alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-fi
+    if [[ -n $XDG_CACHE_HOME ]]; then
+        alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+    fi
 
 ## Aliases ##
-    # APT
-        alias apts='apt search'
-        alias aptup='sudo apt update && sudo apt upgrade'
-        alias aptupd='sudo apt update'
-        alias aptupg='sudo apt upgrade'
-        alias aptfix='sudo apt --fix-broken install'
-        alias aptin='sudo apt install'
-        alias aptrm='sudo apt remove'
-        alias aptarm='sudo apt autoremove'
-        alias aptppa='sudo add-apt-repository'
+# APT
+    alias apts='apt search'
+    alias aptup='sudo apt update && sudo apt upgrade'
+    alias aptupd='sudo apt update'
+    alias aptupg='sudo apt upgrade'
+    alias aptfix='sudo apt --fix-broken install'
+    alias aptin='sudo apt install'
+    alias aptrm='sudo apt remove'
+    alias aptarm='sudo apt autoremove'
+    alias aptppa='sudo add-apt-repository'
 
-    # Clear
-        alias cls='clear'
+# Clear
+    alias cls='clear'
 
-    # Grep
-        alias grep='grep --color=auto'
-        alias fgrep='fgrep --color=auto'
-        alias egrep='egrep --color=auto'
+# Grep
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 
-    # Ls
-        alias ls='ls --color=auto -A'
-        alias ll='ls -alF'
-        alias la='ls -A'
-        alias l='ls -CF'
-        alias dir='dir --color=auto'
-        #alias vdir='vdir --color=auto'
+# Ls
+    alias ls='ls --color=auto -A'
+    alias ll='ls -alF'
+    alias la='ls -A'
+    alias l='ls -CF'
+    alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
 
-    # Weather cURL
-        alias weather='curl wttr.in/cavite'
+# Weather cURL
+    alias weather='curl wttr.in/cavite'
 
-    # yt-dlp
-        alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
-        alias ytmp4='yt-dlp -f mp4'
+# yt-dlp
+    alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
+    alias ytmp4='yt-dlp -f mp4'
 
 ## Functions ##
-    # Up - go up by specified amount of directories
+# Gitall - git add, commit, and push
+    gitall() {
+        git add .
+
+        if [[ -n $1 ]]; then
+            git commit -m "$1"
+        else
+            git commit -m "Updated"
+        fi
+
+        git push
+    }
+
+# Up - go up by specified amount of directories
     up() {
         if [[ $1 =~ [^0-9] ]]; then
             echo "Please use a whole number"
