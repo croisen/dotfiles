@@ -72,7 +72,6 @@ fi
         alias aptppa='sudo add-apt-repository'
 
     # Clear
-        # alias cls='clear && neofetch --source /home/andrew/stuff/misc/ascii_art/rick-astley.txt --colors 4 7 7 4 7 7'
         alias cls='clear'
 
     # Grep
@@ -92,8 +91,5 @@ fi
         alias weather='curl wttr.in/cavite'
 
     # yt-dlp
-        # Download as mp3
         alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
-
-        # Download as mp4
         alias ytmp4='yt-dlp -f mp4'
