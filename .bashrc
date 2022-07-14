@@ -50,19 +50,39 @@ fi
     if [[ -n $XDG_STATE_HOME ]]; then
         if [[ ! -d "$XDG_STATE_HOME/bash" ]]; then
             mkdir -p "$XDG_STATE_HOME/bash"
-        elif [[ -d "$XDG_STATE_HOME" ]]; then
+        elif [[ -d "$XDG_STATE_HOME/bash" ]]; then
             HISTFILE="$XDG_STATE_HOME/bash/history"
         fi
+
+        if [[ -f "$HOME/.bash_history" ]]; then
+            rm $HOME/.bash_history
+        fi
+
+        export WINEPREFIX="$XDG_DATA_HOME"/wine
     else
+        export XDG_STATE_HOME=$HOME/.local/state
         HISTFILE="~/.bash_history"
     fi
 
     if [[ -n $XDG_DATA_HOME ]]; then
         export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+    else
+        export XDG_DATA_HOME=$HOME/.local/share
     fi
 
     if [[ -n $XDG_CACHE_HOME ]]; then
         alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+        export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+        export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+    else
+        export XDG_CACHE_HOME=$HOME/.cache        
+    fi
+
+    if [[ -n $XDG_CONFIG_HOME ]]; then
+        export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
+        export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+    else
+        export XDG_CONFIG_HOME=$HOME/.config        
     fi
 
 ## Aliases ##
