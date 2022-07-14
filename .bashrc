@@ -44,8 +44,11 @@ fi
 
 ### Custom Stuff by me, though it's mostly aliases ###
 ## PS1 ##
-    PS1='\[\e[1;33m\]${debian_chroot:+($debian_chroot)}\[\e[1;36m\]\u\[\e[1;37m\]@\[\e[1;32m\]\h\[\e[0m\]:\w$(__git_ps1 "\[\e[1;32m\][%s]\[\e[0m\]")\$ '
-
+    if command -v git &>/dev/null; then
+        PS1='\[\e[1;33m\]${debian_chroot:+($debian_chroot)}\[\e[1;36m\]\u\[\e[1;37m\]@\[\e[1;32m\]\h\[\e[0m\]:\w$(__git_ps1 "\[\e[1;32m\][%s]\[\e[0m\]")\$ '
+    else
+        PS1='\[\e[1;33m\]${debian_chroot:+($debian_chroot)}\[\e[1;36m\]\u\[\e[1;37m\]@\[\e[1;32m\]\h\[\e[0m\]:\w\$ '
+    fi
 
 ## XDG Stuff by xdg-ninja ##
     # export XDG_STATE_HOME=$HOME/.local/state
