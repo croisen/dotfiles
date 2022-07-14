@@ -47,43 +47,53 @@ fi
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 
 ## XDG Stuff by xdg-ninja ##
-    if [[ -n $XDG_STATE_HOME ]]; then
-        if [[ ! -d "$XDG_STATE_HOME/bash" ]]; then
-            mkdir -p "$XDG_STATE_HOME/bash"
-        elif [[ -d "$XDG_STATE_HOME/bash" ]]; then
-            HISTFILE="$XDG_STATE_HOME/bash/history"
-        fi
+    # export XDG_STATE_HOME=$HOME/.local/state
+    # export XDG_DATA_HOME=$HOME/.local/share
+    # export XDG_CACHE_HOME=$HOME/.cache
+    # export XDG_CONFIG_HOME=$HOME/.config
 
-        if [[ -f "$HOME/.bash_history" ]]; then
-            rm $HOME/.bash_history
-        fi
-
-        export WINEPREFIX="$XDG_DATA_HOME"/wine
-    else
-        export XDG_STATE_HOME=$HOME/.local/state
-        HISTFILE="~/.bash_history"
+if [[ -n $XDG_STATE_HOME ]]; then
+    if [[ ! -d "$XDG_STATE_HOME/bash" ]]; then
+        mkdir -p "$XDG_STATE_HOME/bash"
+    elif [[ -d "$XDG_STATE_HOME/bash" ]]; then
+        HISTFILE="$XDG_STATE_HOME/bash/history"
     fi
 
-    if [[ -n $XDG_DATA_HOME ]]; then
-        export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-    else
-        export XDG_DATA_HOME=$HOME/.local/share
+    if [[ -f "$HOME/.bash_history" ]]; then
+        rm $HOME/.bash_history
     fi
 
-    if [[ -n $XDG_CACHE_HOME ]]; then
-        alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-        export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
-        export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
-    else
-        export XDG_CACHE_HOME=$HOME/.cache        
-    fi
+    export WINEPREFIX="$XDG_DATA_HOME"/wine
+else
+    HISTFILE="~/.bash_history"
+fi
 
-    if [[ -n $XDG_CONFIG_HOME ]]; then
+if [[ -n $XDG_DATA_HOME ]]; then
+    export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+fi
+
+if [[ -n $XDG_CACHE_HOME ]]; then
+    alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
+    export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+    export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+fi
+
+if [[ -n $XDG_CONFIG_HOME ]]; then
+    export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+    
+    if [[ -f $XDG_CONFIG_HOME/python/pythonrc ]]; then
+        export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
+    else
+        mkdir $XDG_CONFIG_HOME/python
+        curl -s https://raw.githubusercontent.com/croisen/dotfiles/main/pythonrc >> $HOME/pythonrc
+        mv $HOME/pythonrc $XDG_CONFIG_HOME/python
+        rm $HOME/.python_history 2>/dev/null
         export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
-        export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-    else
-        export XDG_CONFIG_HOME=$HOME/.config        
     fi
+fi
+
+
+
 
 ## Aliases ##
 # APT
@@ -117,8 +127,10 @@ fi
     alias weather='curl wttr.in/cavite'
 
 # yt-dlp
-    alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
-    alias ytmp4='yt-dlp -f mp4'
+    if command -v yt-dlp &>/dev/null; then
+        alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
+        alias ytmp4='yt-dlp -f mp4'
+    fi
 
 ## Functions ##
 # Gitall - git add, commit, and push
