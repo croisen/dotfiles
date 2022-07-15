@@ -41,7 +41,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 ### Custom Stuff by me, though it's mostly aliases ###
 ## PS1 ##
     if command -v git &>/dev/null; then
@@ -50,7 +49,7 @@ fi
         PS1='\[\e[1;33m\]${debian_chroot:+($debian_chroot)}\[\e[1;36m\]\u\[\e[1;37m\]@\[\e[1;32m\]\h\[\e[0m\]:\w\$ '
     fi
 
-## XDG Stuff by xdg-ninja ##
+## XDG Directories Config##
     # export XDG_STATE_HOME=$HOME/.local/state
     # export XDG_DATA_HOME=$HOME/.local/share
     # export XDG_CACHE_HOME=$HOME/.cache
@@ -66,38 +65,13 @@ if [[ -n $XDG_STATE_HOME ]]; then
     if [[ -f "$HOME/.bash_history" ]]; then
         rm $HOME/.bash_history
     fi
-
-    export WINEPREFIX="$XDG_DATA_HOME"/wine
 else
-    HISTFILE="~/.bash_history"
-fi
-
-if [[ -n $XDG_DATA_HOME ]]; then
-    export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+    HISTFILE=$HOME/.bash_history
 fi
 
 if [[ -n $XDG_CACHE_HOME ]]; then
     alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
-    export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
-    export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 fi
-
-if [[ -n $XDG_CONFIG_HOME ]]; then
-    export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-    
-    if [[ -f $XDG_CONFIG_HOME/python/pythonrc ]]; then
-        export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
-    else
-        mkdir $XDG_CONFIG_HOME/python
-        curl -s https://raw.githubusercontent.com/croisen/dotfiles/main/pythonrc >> $HOME/pythonrc
-        mv $HOME/pythonrc $XDG_CONFIG_HOME/python
-        rm $HOME/.python_history 2>/dev/null
-        export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
-    fi
-fi
-
-
-
 
 ## Aliases ##
 # APT
@@ -138,28 +112,28 @@ fi
 
 ## Functions ##
 # Gitall - git add, commit, and push
-    gitall() {
-        git add .
+gitall() {
+    git add .
 
-        if [[ -n $1 ]]; then
-            git commit -m "$1"
-        else
-            git commit -m "Updated"
-        fi
+    if [[ -n $1 ]]; then
+        git commit -m "$1"
+    else
+        git commit -m "Updated"
+    fi
 
-        git push
-    }
+    git push
+}
 
 # Up - go up by specified amount of directories
-    up() {
-        if [[ $1 =~ [^0-9] ]]; then
-            echo "Please use a whole number"
-            return 1
-        elif [[ -z $1 ]]; then
+up() {
+    if [[ $1 =~ [^0-9] ]]; then
+        echo "Please use a whole number"
+        return 1
+    elif [[ -z $1 ]]; then
+        cd ../
+    else
+        for i in $(seq $1); do
             cd ../
-        else
-            for i in $(seq $1); do
-                cd ../
-            done
-        fi
-    }
+        done
+    fi
+}
