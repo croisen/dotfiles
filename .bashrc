@@ -104,6 +104,9 @@ fi
 # Weather cURL
     alias weather='curl wttr.in/cavite'
 
+# Steam Games
+    alias toram_online='steam steam://rungameid/1827180'
+
 # yt-dlp
     if command -v yt-dlp &>/dev/null; then
         alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
