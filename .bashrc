@@ -50,11 +50,6 @@ fi
     fi
 
 ## XDG Directories Config##
-    # export XDG_STATE_HOME=$HOME/.local/state
-    # export XDG_DATA_HOME=$HOME/.local/share
-    # export XDG_CACHE_HOME=$HOME/.cache
-    # export XDG_CONFIG_HOME=$HOME/.config
-
 if [[ -n $XDG_STATE_HOME ]]; then
     if [[ ! -d "$XDG_STATE_HOME/bash" ]]; then
         mkdir -p "$XDG_STATE_HOME/bash"
