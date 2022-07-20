@@ -96,11 +96,18 @@ fi
     alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
+# Neofetch
+    if command -v neofetch &>/dev/null || command -v kitty &>/dev/null || [[ -f "$HOME/Pictures/misc/pfp.png" ]]; then
+        alias neofetch='neofetch --backend kitty --source ~/Pictures/misc/pfp.png --size 28% --colors 2 7 6 6 7 4'
+    fi
+
 # Weather cURL
     alias weather='curl wttr.in/cavite'
 
 # Steam Games
-    alias toram_online='steam steam://rungameid/1827180'
+    if command -v steam &>/dev/null; then
+        alias toram_online='steam steam://rungameid/1827180'
+    fi
 
 # yt-dlp
     if command -v yt-dlp &>/dev/null; then
