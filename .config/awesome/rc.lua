@@ -122,7 +122,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+-- mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
@@ -222,16 +222,17 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            -- mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            -- mykeyboardlayout,
             wibox.widget.systray(),
-            mytextclock,
+            -- Trying to get slstatus in here :)
+            awful.widget.watch("bash -c 'slstatus -1'", 1),
             s.mylayoutbox,
         },
     }
@@ -668,9 +669,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostarts :)
+    -- awful.spawn "blueman-applet"
     awful.spawn "compton"
     awful.spawn "indicator-keylock"
-    awful.spawn "blueman-applet"
+    -- awful.spawn "nm-applet"
+    awful.spawn "nitrogen --restore"
     awful.spawn "xfce4-power-manager"
-    awful.spawn "nm-applet"
-    -- awful.spawn "nitrogen --restore"
+
