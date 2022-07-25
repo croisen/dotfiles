@@ -231,7 +231,8 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
-            mytextclock,
+            awful.widget.watch("bash -c 'slstatus -1'", 1),
+            -- mytextclock,
             s.mylayoutbox,
         },
     }
