@@ -116,12 +116,6 @@ fi
 # Weather cURL
     alias weather='curl wttr.in/cavite'
 
-# yt-dlp
-    if command -v yt-dlp &>/dev/null; then
-        alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0'
-        alias ytmp4='yt-dlp -f mp4'
-    fi
-
 ## Functions ##
 # C Compile - Lazy to type gcc file.c -o file.out
 ccompile() {
@@ -139,7 +133,7 @@ gitall() {
         git commit -m "Updated"
     fi
 
-    git push
+    git push origin HEAD
 }
 
 # Up - go up by specified amount of directories
@@ -154,4 +148,26 @@ up() {
             cd ../
         done
     fi
+}
+
+ytmp3() {
+    if ! command -v &>/dev/null; then
+        echo "yt-dlp cannot be found, please get it"
+        exit 1
+    fi
+
+    yt-dlp -x --audio-format mp3 --audio-quality 0 $1
+    rename -v 's/ \[[\w-]+\]//g' *.mp3
+    exit 0
+}
+
+ytmp3() {
+    if ! command -v &>/dev/null; then
+        echo "yt-dlp cannot be found, please get it"
+        exit 1
+    fi
+
+    yt-dlp --format mp4 $1
+    rename -v 's/ \[[\w-]+\]//g' *.mp4
+    exit 0
 }
