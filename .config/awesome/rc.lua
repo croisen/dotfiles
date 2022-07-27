@@ -22,6 +22,14 @@ require("awful.hotkeys_popup.keys")
 local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
+-- Street turtle widgets :) https://github.com/streetturtle/awesome-wm-widgets
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local ram_widget = require('awesome-wm-widgets.ram-widget.ram-widget')
+local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -231,8 +239,12 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
-            awful.widget.watch("bash -c 'slstatus -1'", 1),
-            -- mytextclock,
+            net_speed_widget(),
+            cpu_widget(),
+            ram_widget(),
+            battery_widget(),
+            volume_widget(),
+            mytextclock,
             s.mylayoutbox,
         },
     }
