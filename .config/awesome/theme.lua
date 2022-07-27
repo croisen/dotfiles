@@ -98,7 +98,7 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 -- Wallpapers
-theme.wallpaper = "~/Desktop/git/croi-wallpapers/old-memory.png"
+theme.wallpaper = "~/git/croi-wallpapers/old-memory.png"
 
 
 -- You can use your own layout icons like this:

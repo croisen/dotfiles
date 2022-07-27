@@ -97,8 +97,8 @@ fi
     #alias vdir='vdir --color=auto'
 
 # Neofetch
-    if [[ "$TERM" == "xterm-kitty" ]] && [[ -f "$HOME/Desktop/git/croi-wallpapers/profile-pics/0000001.png" ]]; then
-        alias neofetch='neofetch --backend kitty --source ~/Desktop/git/croi-wallpapers/profile-pics/0000001.png --size 28% --colors 2 7 6 6 7 4'
+    if [[ "$TERM" == "xterm-kitty" ]] && [[ -f "$HOME/git/croi-wallpapers/profile-pics/0000001.png" ]]; then
+        alias neofetch='neofetch --backend kitty --source ~/git/croi-wallpapers/profile-pics/0000001.png --size 28% --colors 2 7 6 6 7 4'
     else
         alias neofetch='neofetch --colors 2 7 6 6 7 4'
     fi
@@ -169,3 +169,7 @@ ytmp4() {
     rename -v 's/ \([\w ]+\)| \[[\w-]+\]//g' *.mp4
     return 0
 }
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
