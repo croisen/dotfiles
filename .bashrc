@@ -149,7 +149,7 @@ up() {
 }
 
 ytmp3() {
-    if ! command -v &>/dev/null; then
+    if ! command -v yt-dlp &>/dev/null; then
         echo "yt-dlp cannot be found, please get it"
         exit 1
     fi
@@ -160,7 +160,7 @@ ytmp3() {
 }
 
 ytmp4() {
-    if ! command -v &>/dev/null; then
+    if ! command -v yt-dlp &>/dev/null; then
         echo "yt-dlp cannot be found, please get it"
         exit 1
     fi
