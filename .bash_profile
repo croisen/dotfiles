@@ -1,12 +1,13 @@
 if [[ -f $HOME/.profile ]]; then
     . $HOME/.profile
 else
+    export PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+
     export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
     export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
     export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
     export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
-    ## Other Stuff based on the XDG Base Directories to clean up the home directories ##
     export ERRFILE=$XDG_CACHE_HOME/X11/xsession-errors
     export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
     export GNUPGHOME=$XDG_DATA_HOME/gnupg
