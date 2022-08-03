@@ -312,7 +312,7 @@ __git_prompt() {
                 fi
             ;;
         esac
-        branch="${YELLOW}${branch}${RESET}"
+        branch="${GREEN}${branch}${RESET}"
 
         # update PS1
         PS1="${PS1} ${branch}${extras}"
