@@ -18,6 +18,8 @@ set ttyfast
 set shiftwidth=4
 set showmatch
 set spell
+set splitright
+set splitbelow
 set wildmode=longest,list
 syntax on
 tab all
@@ -36,24 +38,34 @@ call plug#end()
 
 " Keybinds - Mostly from the site below
 " https://medium.com/geekculture/neovim-configuration-for-beginners-b2116dbbde84
-" But since I was used to sublime text, it's gonna be changed a bit
+" Ez swap lines
 inoremap <C-Up> <Esc>:m .-2<CR>==gi
 inoremap <C-Down> <Esc>:m .+1<CR>==gi
 vnoremap <C-Up> :m '<-2<CR>gv=gv
-vnoremap <C-Down> :m '>+1<CR>gv=gv
+vnoremap <C-Down> :m '>+1<CR>gv=gr
 
 " Ez escape
 inoremap ii <Esc>
 
-" Panel stuff, but I don't know what that is yet
+" Move the placements of the panels
 nnoremap <A-h> <C-W>H
 nnoremap <A-j> <C-W>J
 nnoremap <A-k> <C-W>K
 nnoremap <A-l> <C-W>L
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+
+" Move through tabs
+" Got from: https://www.techrepublic.com/article/use-tabs-to-open-multiple-files-in-vim/
+map <C-t><Up> :tabr<CR>
+map <C-t><Down> :tabl<CR>
+map <C-t><Left> :tabp<CR>
+map <C-t><Right> :tabn<CR>
+
+" Switching to other panels
+" From stackoverflow: https://stackoverflow.com/questions/6053301/easier-way-to-navigate-between-vim-split-panes#6053341
+nmap <silent> <C-Up> :wincmd k<CR>
+nmap <silent> <C-Down> :wincmd j<CR>
+nmap <silent> <C-Left> :wincmd h<CR>
+nmap <silent> <C-Right> :wincmd l<CR>
 
 " Colors
 if (has("termguicolors"))
