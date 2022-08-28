@@ -1,5 +1,5 @@
 ## Path (Dunno why $HOME/.local/bin is not normally included tho) ##
-export PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
 ## XDG Base Directories ##
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
