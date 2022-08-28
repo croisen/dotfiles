@@ -100,6 +100,11 @@ fi
 		alias neofetch='neofetch --colors 2 7 6 6 7 4'
 	fi
 
+# Neovim
+    if command -v nvim &>/dev/null; then
+        alias nv="nvim"
+    fi
+
 # Steam Games
 	if command -v steam &>/dev/null; then
 		alias toram_online='steam steam://rungameid/1827180'
@@ -148,21 +153,19 @@ up() {
 ytmp3() {
 	if ! command -v yt-dlp &>/dev/null; then
 		echo "yt-dlp cannot be found, please get it"
-		exit 1
+		return 1
 	fi
 
-	yt-dlp -x --audio-format mp3 --audio-quality 0 $1
-	rename -v 's/ \([\w ]+\)| \[[\w-]+\]//g' *.mp3
+    yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail -o %\(title\)s.%\(ext\)s $1
 	return 0
 }
 
 ytmp4() {
 	if ! command -v yt-dlp &>/dev/null; then
 		echo "yt-dlp cannot be found, please get it"
-		exit 1
+		return 1
 	fi
 
-	yt-dlp --format mp4 $1
-	rename -v 's/ \([\w ]+\)| \[[\w-]+\]//g' *.mp4
+    yt-dlp --format mp4 --embed-thumbnail -o %\(title\)s.%\(ext\)s $1
 	return 0
 }
