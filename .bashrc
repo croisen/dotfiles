@@ -156,7 +156,10 @@ ytmp3() {
 		return 1
 	fi
 
-    yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail -o %\(title\)s.%\(ext\)s $1
+    yt-dlp -x --audio-format mp3 \
+        --audio-quality 0 \
+        --embed-thumbnail \
+        -o %\(title\)s.%\(ext\)s $1
 	return 0
 }
 
@@ -166,6 +169,8 @@ ytmp4() {
 		return 1
 	fi
 
-    yt-dlp --format mp4 --embed-thumbnail -o %\(title\)s.%\(ext\)s $1
+    yt-dlp --format mp4 \
+        --embed-thumbnail \
+        -o %\(title\)s.%\(ext\)s $1
 	return 0
 }

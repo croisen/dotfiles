@@ -44,24 +44,15 @@ inoremap <C-Down> <Esc>:m .+1<CR>==gi
 vnoremap <C-Up> :m '<-2<CR>gv=gv
 vnoremap <C-Down> :m '>+1<CR>gv=gr
 
-" Ez escape
-inoremap ii <Esc>
-
 " Move the placements of the panels
 nnoremap <A-h> <C-W>H
 nnoremap <A-j> <C-W>J
 nnoremap <A-k> <C-W>K
 nnoremap <A-l> <C-W>L
 
-" Move through tabs
-" Got from: https://www.techrepublic.com/article/use-tabs-to-open-multiple-files-in-vim/
-map <C-t><Up> :tabr<CR>
-map <C-t><Down> :tabl<CR>
-map <C-t><Left> :tabp<CR>
-map <C-t><Right> :tabn<CR>
-
 " Switching to other panels
-" From stackoverflow: https://stackoverflow.com/questions/6053301/easier-way-to-navigate-between-vim-split-panes#6053341
+" From stackoverflow: https://stackoverflow.com/questions/6053301/...
+" ...easier-way-to-navigate-between-vim-split-panes#6053341
 nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
