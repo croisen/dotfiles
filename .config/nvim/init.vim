@@ -7,6 +7,7 @@ set clipboard=unnamedplus
 set cursorline
 set expandtab
 set ignorecase
+set inccommand=nosplit
 set nocompatible
 set nu rnu
 set hlsearch
