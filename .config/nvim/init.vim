@@ -1,5 +1,7 @@
 filetype plugin indent on
 let g:coc_disable_startup_warning = 1
+let g:rehash256 = 1
+let mapleader="\\"
 set autoindent
 set backupdir=~/.cache/nvim
 set cc=80
@@ -27,6 +29,8 @@ tab all
 
 " Plugins
 call plug#begin()
+    "Plug 'andweeb/presence.nvim'
+    "Plug 'dracula/vim'
     Plug 'honza/vim-snippets'
     Plug 'mhinz/vim-startify'
     Plug 'preservim/nerdcommenter'
@@ -58,6 +62,12 @@ nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
+
+" Escape terminal mode
+tnoremap <Esc> <C-\><C-n>
+
+" Remove highlight after searching
+nnoremap <m-m> :nohlsearch<CR>
 
 " Colors
 if (has("termguicolors"))
