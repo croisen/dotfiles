@@ -116,6 +116,11 @@ fi
 # Weather cURL
 	alias weather='curl wttr.in/cavite'
 
+#Yarn
+    if [[ -n $XDG_CONFIG_HOME ]]; then
+        alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+    fi
+
 ## Functions ##
 # C Compile - Lazy to type gcc file.c -o file.out
 ccompile() {

@@ -353,15 +353,13 @@ globalkeys = gears.table.join(
     -- Sound :)
         awful.key({ }, "XF86AudioRaiseVolume",
             function () 
-                awful.util.spawn('amixer set Master 5%+', false)
-                awful.util.spawn('amixer -c 1 set Speaker 5%+', false)
+                awful.util.spawn('amixer -D pulse sset Master 5%+', false)
             end,
             {description = "raise volume", group = "sound"}),
 
         awful.key({ }, "XF86AudioLowerVolume",
             function () 
-                awful.util.spawn('amixer set Master 5%-', false)
-                awful.util.spawn('amixer -c 1 set Speaker 5%-', false)
+                awful.util.spawn('amixer -D pulse sset Master 5%-', false)
             end,
             {description = "decrease volume", group = "sound"}),
 
@@ -682,10 +680,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostarts :)
-    -- awful.spawn "blueman-applet"
+    awful.spawn "blueman-applet"
     awful.spawn "compton"
     awful.spawn "indicator-keylock"
-    -- awful.spawn "nm-applet"
-    awful.spawn "nitrogen --restore"
+    awful.spawn "nm-applet"
+    -- awful.spawn "nitrogen --restore"
     awful.spawn "xfce4-power-manager"
 
