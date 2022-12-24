@@ -124,7 +124,7 @@ fi
 ## Functions ##
 # C Compile - Lazy to type gcc file.c -o file.out
 ccompile() {
-	filename=$(echo $1 | sed -sE 's/\.[a-zA-Z]+$//')
+	local filename=$(echo $1 | sed -sE 's/\.[a-zA-Z]+$//')
 	gcc $1 -o $filename.out -lm
 }
 
