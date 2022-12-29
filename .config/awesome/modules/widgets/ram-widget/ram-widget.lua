@@ -14,7 +14,7 @@ local function worker(user_args)
     local color_used = args.color_used or beautiful.bg_urgent
     local color_free = args.color_free or beautiful.fg_normal
     local color_buf  = args.color_buf  or beautiful.border_color_active
-    local widget_show_buf = args.widget_show_buf or false
+    local widget_show_buf = args.widget_show_buf or true
     local widget_height = args.widget_height or 25
     local widget_width = args.widget_width or 25
 

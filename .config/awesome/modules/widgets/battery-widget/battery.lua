@@ -29,7 +29,7 @@ local function worker(user_args)
 
     local font = args.font or 'Play 8'
     local path_to_icons = args.path_to_icons or "/usr/share/icons/Arc/status/symbolic/"
-    local show_current_level = args.show_current_level or false
+    local show_current_level = args.show_current_level or true
     local margin_left = args.margin_left or 0
     local margin_right = args.margin_right or 0
 
@@ -155,7 +155,7 @@ local function worker(user_args)
         charge = charge / capacity
 
         if show_current_level then
-            level_widget.text = string.format('%d%%', charge)
+            level_widget.text = string.format('%d%% ', charge)
         end
 
         if (charge >= 1 and charge < 15) then
@@ -190,7 +190,7 @@ local function worker(user_args)
         battery_widget:connect_signal("mouse::leave", function() naughty.destroy(notification) end)
     elseif display_notification_onClick then
         battery_widget:connect_signal("button::press", function(_,_,_,button)
-            if (button == 3) then show_battery_status(batteryType) end
+            if (button == 1) then show_battery_status(batteryType) end
         end)
         battery_widget:connect_signal("mouse::leave", function() naughty.destroy(notification) end)
     end

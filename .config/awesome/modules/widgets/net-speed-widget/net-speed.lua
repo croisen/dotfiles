@@ -24,19 +24,19 @@ local function convert_to_h(bytes)
     local bits = bytes * 8
     if bits < 1000 then
         speed = bits
-        dim = 'b/s'
+        dim = 'b/s '
     elseif bits < 1000000 then
         speed = bits/1000
-        dim = 'kb/s'
+        dim = 'kb/s '
     elseif bits < 1000000000 then
         speed = bits/1000000
-        dim = 'mb/s'
+        dim = 'mb/s '
     elseif bits < 1000000000000 then
         speed = bits/1000000000
-        dim = 'gb/s'
+        dim = 'gb/s '
     else
         speed = tonumber(bits)
-        dim = 'b/s'
+        dim = 'b/s '
     end
     return math.floor(speed + 0.5) .. dim
 end

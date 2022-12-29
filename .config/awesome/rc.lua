@@ -18,7 +18,9 @@ require("awful.hotkeys_popup.keys")
 -- }
 
 -- Put the error handler in another file
+-- TODO: Test if other parts of rc lua can be slapped into a seperate file
 require("modules/error_handler")
+local executer = require("modules/executer")
 
 -- Variable definitions
 local config_path = gears.filesystem.get_configuration_dir()
@@ -28,13 +30,15 @@ local terminal = "kitty"
 local editor = os.getenv("EDITOR") or "editor"
 local editor_cmd = terminal .. " -e " .. editor
 
--- Theme setup and widgets
+-- Theme setup and widgets (the widgets are made by streetturtle)
 beautiful.init(config_path .. "themes/theme.lua")
 local battery_widget = require("modules/widgets/battery-widget/battery")
 local cpu_widget = require("modules/widgets/cpu-widget/cpu-widget")
 local net_speed_widget = require("modules/widgets/net-speed-widget/net-speed")
 local ram_widget = require("modules/widgets/ram-widget/ram-widget")
 local volume_widget = require("modules/widgets/volume-widget/volume")
+-- local weather_widget = require("modules/widgets/weather-widget/weather")
+-- WIP (Since this is made by me and I've no idea how to do this)
 local mykeyboardlayout = awful.widget.keyboardlayout()
 local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
 local mytextclock = wibox.widget.textclock()
@@ -172,11 +176,12 @@ awful.screen.connect_for_each_screen(function(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			mykeyboardlayout,
-			net_speed_widget(),
-			cpu_widget(),
-			ram_widget(),
-			battery_widget(),
-			volume_widget(),
+            net_speed_widget(),
+            cpu_widget(),
+            ram_widget(),
+            -- weather_widget(),
+            battery_widget(),
+            volume_widget(),
 			wibox.widget.systray(),
 			mytextclock,
 			s.mylayoutbox,
@@ -405,63 +410,63 @@ clientkeys = gears.table.join(
 
 -- Bind all key numbers to tags.
 for i = 1, 9 do
-	globalkeys = gears.table.join(globalkeys,
-		awful.key({ modkey }, "#" .. i + 9,
-			function ()
-				  local screen = awful.screen.focused()
-				  local tag = screen.tags[i]
-				  if tag then
-					 tag:view_only()
-				  end
-			end,
-			{description = "view tag #"..i, group = "tag"}),
-		-- Toggle tag display.
-		awful.key({ modkey, "Control" }, "#" .. i + 9,
-			function ()
-				local screen = awful.screen.focused()
-				local tag = screen.tags[i]
-				if tag then
-				   awful.tag.viewtoggle(tag)
-				end
-			end,
-			{description = "toggle tag #" .. i, group = "tag"}),
-	-- Move client to tag.
-		awful.key({ modkey, "Shift" }, "#" .. i + 9,
-			function ()
-				if client.focus then
-					local tag = client.focus.screen.tags[i]
-					if tag then
-						client.focus:move_to_tag(tag)
-					end
-			   end
-			end,
-			{description = "move focused client to tag #"..i, group = "tag"}),
-		-- Toggle tag on focused client.
-		awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-			function ()
-				if client.focus then
-					local tag = client.focus.screen.tags[i]
-					if tag then
-						client.focus:toggle_tag(tag)
-					end
-				end
-			end,
-			{description = "toggle focused client on tag #" .. i, group = "tag"})
-	)
+    globalkeys = gears.table.join(globalkeys,
+        awful.key({ modkey }, "#" .. i + 9,
+            function ()
+                  local screen = awful.screen.focused()
+                  local tag = screen.tags[i]
+                  if tag then
+                     tag:view_only()
+                  end
+            end,
+            {description = "view tag #"..i, group = "tag"}),
+        -- Toggle tag display.
+        awful.key({ modkey, "Control" }, "#" .. i + 9,
+            function ()
+                local screen = awful.screen.focused()
+                local tag = screen.tags[i]
+                if tag then
+                   awful.tag.viewtoggle(tag)
+                end
+            end,
+            {description = "toggle tag #" .. i, group = "tag"}),
+    -- Move client to tag.
+        awful.key({ modkey, "Shift" }, "#" .. i + 9,
+            function ()
+                if client.focus then
+                    local tag = client.focus.screen.tags[i]
+                    if tag then
+                        client.focus:move_to_tag(tag)
+                    end
+               end
+            end,
+            {description = "move focused client to tag #"..i, group = "tag"}),
+        -- Toggle tag on focused client.
+        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+            function ()
+                if client.focus then
+                    local tag = client.focus.screen.tags[i]
+                    if tag then
+                        client.focus:toggle_tag(tag)
+                    end
+                end
+            end,
+            {description = "toggle focused client on tag #" .. i, group = "tag"})
+    )
 end
 
 clientbuttons = gears.table.join(
-	awful.button({ }, 1, function (c)
-		c:emit_signal("request::activate", "mouse_click", {raise = true})
-	end),
-	awful.button({ modkey }, 1, function (c)
-		c:emit_signal("request::activate", "mouse_click", {raise = true})
-		awful.mouse.client.move(c)
-	end),
-	awful.button({ modkey }, 3, function (c)
-		c:emit_signal("request::activate", "mouse_click", {raise = true})
-		awful.mouse.client.resize(c)
-	end)
+    awful.button({ }, 1, function (c)
+        c:emit_signal("request::activate", "mouse_click", {raise = true})
+    end),
+    awful.button({ modkey }, 1, function (c)
+        c:emit_signal("request::activate", "mouse_click", {raise = true})
+        awful.mouse.client.move(c)
+    end),
+    awful.button({ modkey }, 3, function (c)
+        c:emit_signal("request::activate", "mouse_click", {raise = true})
+        awful.mouse.client.resize(c)
+    end)
 )
 
 -- Set keys
@@ -469,115 +474,119 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 awful.rules.rules = {
-	{ rule = { },
-	  properties = {
-		border_width = beautiful.border_width,
-		border_color = beautiful.border_normal,
-		focus = awful.client.focus.filter,
-		raise = true,
-		keys = clientkeys,
-		buttons = clientbuttons,
-		screen = awful.screen.preferred,
-		placement = awful.placement.no_overlap+awful.placement.no_offscreen}
-	},
+    { rule = { },
+      properties = {
+      	border_width = beautiful.border_width,
+        border_color = beautiful.border_normal,
+        focus = awful.client.focus.filter,
+        raise = true,
+        keys = clientkeys,
+        buttons = clientbuttons,
+        screen = awful.screen.preferred,
+        placement = awful.placement.no_overlap+awful.placement.no_offscreen}
+    },
 
-	-- Floating clients.
-	{ rule_any = {
-		instance = {
-			"DTA",  -- Firefox addon DownThemAll.
-			"copyq",  -- Includes session name in class.
-			"pinentry",
-		},
-		class = {
-			"Arandr",
-			"Blueman-manager",
-			"Gpick",
-			"Kruler",
-			"MessageWin",  -- kalarm.
-			"nitrogen",
-			"Sxiv",
-			"Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-			"Wpa_gui",
-			"veromix",
-			"xtightvncviewer"},
+    -- Floating clients.
+    { rule_any = {
+        instance = {
+        	"DTA",  -- Firefox addon DownThemAll.
+        	"copyq",  -- Includes session name in class.
+        	"pinentry",
+        },
+        class = {
+        	"Arandr",
+        	"Blueman-manager",
+        	"Gpick",
+        	"Kruler",
+        	"MessageWin",  -- kalarm.
+        	"nitrogen",
+        	"Sxiv",
+        	"Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+        	"Wpa_gui",
+        	"veromix",
+        	"xtightvncviewer"},
 
-		-- Note that the name property shown in xprop might be set slightly after creation of the client
-		-- and the name shown there might not match defined rules here.
-		name = {
-			"Event Tester",  -- xev.
-		},
-		role = {
-			"AlarmWindow",  -- Thunderbird's calendar.
-			"ConfigManager",  -- Thunderbird's about:config.
-			"pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
-		}
-	  }, properties = { floating = true }},
+        -- Note that the name property shown in xprop might be set slightly after creation of the client
+        -- and the name shown there might not match defined rules here.
+        name = {
+        	"Event Tester",  -- xev.
+        },
+        role = {
+        	"AlarmWindow",  -- Thunderbird's calendar.
+        	"ConfigManager",  -- Thunderbird's about:config.
+        	"pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+        }
+      }, properties = { floating = true }},
 
-	-- Add titlebars to normal clients and dialogs
-	{ rule_any = {type = { "normal", "dialog" }
-	  }, properties = { titlebars_enabled = false }
-	},
+    -- Add titlebars to normal clients and dialogs
+    { rule_any = {type = { "normal", "dialog" }
+      }, properties = { titlebars_enabled = false }
+    },
 }
 
 -- Signals
 client.connect_signal("manage", function (c)
-	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
-		awful.placement.no_offscreen(c)
-	end
+    if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
+        awful.placement.no_offscreen(c)
+    end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
-	-- buttons for the titlebar
-	local buttons = gears.table.join(
-		awful.button({ }, 1, function()
-			c:emit_signal("request::activate", "titlebar", {raise = true})
-			awful.mouse.client.move(c)
-		end),
-		awful.button({ }, 3, function()
-			c:emit_signal("request::activate", "titlebar", {raise = true})
-			awful.mouse.client.resize(c)
-		end)
-	)
+    -- buttons for the titlebar
+    local buttons = gears.table.join(
+        awful.button({ }, 1, function()
+            c:emit_signal("request::activate", "titlebar", {raise = true})
+            awful.mouse.client.move(c)
+        end),
+        awful.button({ }, 3, function()
+            c:emit_signal("request::activate", "titlebar", {raise = true})
+            awful.mouse.client.resize(c)
+        end)
+    )
 
-	awful.titlebar(c) : setup {
-		{ -- Left
-			awful.titlebar.widget.iconwidget(c),
-			buttons = buttons,
-			layout  = wibox.layout.fixed.horizontal
-		},
-		{ -- Middle
-			{ -- Title
-				align  = "center",
-				widget = awful.titlebar.widget.titlewidget(c)
-			},
-			buttons = buttons,
-			layout  = wibox.layout.flex.horizontal
-		},
-		{ -- Right
-			awful.titlebar.widget.floatingbutton (c),
-			awful.titlebar.widget.maximizedbutton(c),
-			awful.titlebar.widget.stickybutton   (c),
-			awful.titlebar.widget.ontopbutton    (c),
-			awful.titlebar.widget.closebutton    (c),
-			layout = wibox.layout.fixed.horizontal()
-		},
-		layout = wibox.layout.align.horizontal
-	}
+    awful.titlebar(c) : setup {
+        { -- Left
+            awful.titlebar.widget.iconwidget(c),
+            buttons = buttons,
+            layout  = wibox.layout.fixed.horizontal
+        },
+        { -- Middle
+            { -- Title
+                align  = "center",
+                widget = awful.titlebar.widget.titlewidget(c)
+            },
+            buttons = buttons,
+            layout  = wibox.layout.flex.horizontal
+        },
+        { -- Right
+            awful.titlebar.widget.floatingbutton (c),
+            awful.titlebar.widget.maximizedbutton(c),
+            awful.titlebar.widget.stickybutton   (c),
+            awful.titlebar.widget.ontopbutton    (c),
+            awful.titlebar.widget.closebutton    (c),
+            layout = wibox.layout.fixed.horizontal()
+        },
+        layout = wibox.layout.align.horizontal
+    }
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
-	c:emit_signal("request::activate", "mouse_enter", {raise = false})
+    c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
+-- }
+
 -- Autostarts
-awful.spawn "blueman-applet"
-awful.spawn "compton"
-awful.spawn "indicator-keylock"
-awful.spawn "nm-applet"
--- awful.spawn "nitrogen --restore"
-awful.spawn "xfce4-power-manager"
+executer.execute_commands({
+	"blueman-applet",
+	"compton",
+	"indicator-keylock",
+	-- "nitrogen -- restore",
+	"nm-applet",
+	"xfce4-power-manager"
+})
