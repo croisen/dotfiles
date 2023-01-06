@@ -11,15 +11,15 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "MesloLGS NF Bold 7"
+theme.font          = "MesloLGS NF Bold 7.5"
 
-theme.bg_normal     = "#111111"
+theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
+theme.fg_normal     = "#ffffff"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
@@ -44,7 +44,7 @@ theme.border_marked = "#91231c"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
+local taglist_square_size = dpi(6)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
 )
@@ -99,7 +99,7 @@ theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/m
 
 -- Wallpapers
 wallpaper_dir = gfs.get_configuration_dir()
-theme.wallpaper = wallpaper_dir .. "themes/wallpaper.png"
+theme.wallpaper = wallpaper_dir .. "themes/wallpaper_1.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
