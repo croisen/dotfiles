@@ -11,7 +11,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "MesloLGS NF Bold 7.5"
+theme.font          = "MesloLGS NF Bold 7"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -99,7 +99,7 @@ theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/m
 
 -- Wallpapers
 wallpaper_dir = gfs.get_configuration_dir()
-theme.wallpaper = wallpaper_dir .. "themes/wallpaper_1.png"
+theme.wallpaper = wallpaper_dir .. "themes/wallpaper_6.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

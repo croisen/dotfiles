@@ -50,17 +50,17 @@ vnoremap <C-Up> :m '<-2<CR>gv=gv
 vnoremap <C-Down> :m '>+1<CR>gv=gr
 
 " Move the placements of the panels
-nnoremap <A-h> <C-W>H
-nnoremap <A-j> <C-W>J
-nnoremap <A-k> <C-W>K
-nnoremap <A-l> <C-W>L
+nnoremap <A-Up> <C-W>K
+nnoremap <A-Left> <C-W>H
+nnoremap <A-Down> <C-W>J
+nnoremap <A-Right> <C-W>L
 
 " Switching to other panels
 " From stackoverflow: https://stackoverflow.com/questions/6053301/...
 " ...easier-way-to-navigate-between-vim-split-panes#6053341
 nmap <silent> <C-Up> :wincmd k<CR>
-nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
+nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 
 " Escape terminal mode
