@@ -63,6 +63,12 @@ nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 
+" Resizing panels
+nmap <silent> <C-A-Up> :2wincmd +<CR>
+nmap <silent> <C-A-Left> :2wincmd <<CR>
+nmap <silent> <C-A-Down> :2wincmd -<CR>
+nmap <silent> <C-A-Right> :2wincmd ><CR>
+
 " Escape terminal mode
 tnoremap <Esc> <C-\><C-n>
 
