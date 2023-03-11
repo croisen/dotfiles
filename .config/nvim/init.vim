@@ -4,7 +4,7 @@ let g:rehash256 = 1
 let mapleader="\\"
 set autoindent
 set backupdir=~/.cache/nvim
-set cc=80
+set cc=100
 set clipboard=unnamedplus
 set cursorline
 set expandtab
