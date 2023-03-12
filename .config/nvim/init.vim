@@ -46,8 +46,8 @@ call plug#end()
 " Ez swap lines
 inoremap <C-Up> <Esc>:m .-2<CR>==gi
 inoremap <C-Down> <Esc>:m .+1<CR>==gi
-vnoremap <C-Up> :m '<-2<CR>gv=gv
-vnoremap <C-Down> :m '>+1<CR>gv=gr
+vnoremap <silent> <C-Up> :m '<-2<CR>gv=gv
+vnoremap <silent> <C-Down> :m '>+1<CR>gv=gv
 
 " Move the placements of the panels
 nnoremap <A-Up> <C-W>K
@@ -72,8 +72,8 @@ nmap <silent> <C-A-Right> :2wincmd ><CR>
 " Escape terminal mode
 tnoremap <Esc> <C-\><C-n>
 
-" Remove highlight after searching
-nnoremap <m-m> :nohlsearch<CR>
+" Get rid of search highlight
+nnoremap <silent> <leader>n :noh<CR>
 
 " Colors
 if (has("termguicolors"))
