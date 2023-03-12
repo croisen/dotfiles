@@ -93,18 +93,6 @@ fi
 	alias dir='dir --color=auto'
 	#alias vdir='vdir --color=auto'
 
-# Neofetch
-	if [[ "$TERM" == "xterm-kitty" ]] && [[ -f "$HOME/git/croi-wallpapers/profile-pics/0000001.png" ]]; then
-		alias neofetch='neofetch --backend kitty --source ~/git/croi-wallpapers/profile-pics/0000001.png --size 28% --colors 2 7 6 6 7 4'
-	else
-		alias neofetch='neofetch --colors 2 7 6 6 7 4'
-	fi
-
-# Neovim
-    if command -v nvim &>/dev/null; then
-        alias nv="nvim"
-    fi
-
 # Steam Games
 	if command -v steam &>/dev/null; then
 		alias toram_online='steam steam://rungameid/1827180'
@@ -122,12 +110,6 @@ fi
     fi
 
 ## Functions ##
-# C Compile - Lazy to type gcc file.c -o file.out
-ccompile() {
-	local filename=$(echo $1 | sed -sE 's/\.[a-zA-Z]+$//')
-	gcc $1 -o $filename.out -lm
-}
-
 # Gitall - git add, commit, and push
 gitall() {
 	git add .
