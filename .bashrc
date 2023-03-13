@@ -93,6 +93,9 @@ fi
 	alias dir='dir --color=auto'
 	#alias vdir='vdir --color=auto'
 
+# Python :)
+    alias py='python3'
+
 # Steam Games
 	if command -v steam &>/dev/null; then
 		alias toram_online='steam steam://rungameid/1827180'

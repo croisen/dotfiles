@@ -332,12 +332,6 @@ globalkeys = gears.table.join(
 		end,
 		{description = "open rhythmbox", group = "frequently used"}),
 
-	awful.key ({ alt_key }, "s",
-		function ()
-			awful.util.spawn('subl', false)
-		end,
-		{description = "open sublime text", group = "frequently used"}),
-
 	awful.key ({ alt_key }, "b",
 		function ()
 			awful.util.spawn('blueman-manager',{
