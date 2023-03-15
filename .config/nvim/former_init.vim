@@ -23,20 +23,6 @@ set splitright
 set splitbelow
 set wildmode=longest,list
 
-" Plugins
-call plug#begin("~/.config/nvim/plugged")
-    "Plug 'andweeb/presence.nvim'
-    "Plug 'dracula/vim'
-    Plug 'honza/vim-snippets'
-    Plug 'mhinz/vim-startify'
-    Plug 'preservim/nerdcommenter'
-    Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'npm install' }
-    Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-    Plug 'SirVer/ultisnips'
-    Plug 'tomasr/molokai'
-call plug#end()
 
 " Keybinds - Mostly from the site below
 inoremap <C-Up> <Esc>:m .-2<CR>==gi

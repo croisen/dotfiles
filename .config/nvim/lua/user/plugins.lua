@@ -1,0 +1,15 @@
+local Plug = vim.fn['plug#']
+
+vim.call('plug#begin', '~/.config/nvim/plugged')
+    Plug('andweeb/presence.nvim')
+    Plug('dracula/vim')
+    Plug('honza/vim-snippets')
+    Plug('mhinz/vim-startify')
+    Plug('preservim/nerdcommenter')
+    Plug('neoclide/coc.nvim', { branch = 'master', ['do'] = 'npm install' })
+    Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+    Plug('ryanoasis/vim-devicons')
+    Plug('scrooloose/nerdtree', { on = 'NERDTreeToggle' })
+    Plug('SirVer/ultisnips')
+    Plug('tomasr/molokai')
+vim.call('plug#end')
