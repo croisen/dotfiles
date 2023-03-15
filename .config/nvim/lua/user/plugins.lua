@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug('andweeb/presence.nvim')
     Plug('dracula/vim')
+    Plug('HiPhish/nvim-ts-rainbow2')
     Plug('honza/vim-snippets')
     Plug('mhinz/vim-startify')
     Plug('preservim/nerdcommenter')
