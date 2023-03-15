@@ -1,10 +1,5 @@
-local cache_dir = os.getenv("XDG_CACHE_HOME") .. "/nvim"
+local cache_dir = os.getenv("HOME") .. "/.cache/nvim"
 
-if not cache_dir then
-    local cache_dir = os.getenv("HOME") .. "/.cache/nvim"
-end
-
-vim.cmd("set nocompatible")
 vim.g.rehash256 = 1
 vim.opt.autoindent = true
 vim.opt.backupdir = cache_dir
@@ -28,3 +23,5 @@ vim.opt.spell = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.wildmode = {'longest', 'list'}
+vim.cmd("set nocompatible")
+vim.cmd("tab all")
