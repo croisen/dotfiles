@@ -29,3 +29,8 @@ key_set('t', '<esc>', "<c-\\><c-n>")
 
 -- Remove highlight search
 key_set('n', '<Leader>n', ":noh<cr>")
+
+-- Snippets
+vim.g.UltiSnipsExpandTrigger = "<tab>"
+vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
