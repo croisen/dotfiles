@@ -1,7 +1,7 @@
 local cache_dir = os.getenv("HOME") .. "/.cache/nvim"
 
 vim.g.rehash256 = 1
-vim.g.UltiSnipsSnippetDirectories = os.getenv("HOME") .. "/.config/nvim/plugged/vim-snippets/UltiSnips"
+-- vim.g.UltiSnipsSnippetDirectories = os.getenv("HOME") .. "/.config/nvim/plugged/vim-snippets/UltiSnips"
 vim.opt.autoindent = true
 vim.opt.backupdir = cache_dir
 vim.opt.cc = "100"
