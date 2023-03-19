@@ -65,6 +65,8 @@ if [[ -n $XDG_CACHE_HOME ]]; then
 	alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 fi
 
+PROMPT_COMMAND='echo -ne "\e]0;${USER}@${HOSTNAME}:${PWD}\007"'
+
 ## Aliases ##
 # APT
 	alias apts='apt search'
