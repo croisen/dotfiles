@@ -1,14 +1,13 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
-    -- Plug('dracula/vim')
-    -- Plug('honza/vim-snippets')
-    -- Plug('SirVer/ultisnips')
     Plug('andweeb/presence.nvim')
     Plug('HiPhish/nvim-ts-rainbow2')
+    Plug('honza/vim-snippets')
     Plug('mhinz/vim-startify')
     Plug('preservim/nerdcommenter')
-    Plug('neoclide/coc.nvim', { branch = 'master', ['do'] = 'yarn install --frozen-lockfile' })
+    --Plug('neoclide/coc.nvim', { branch = 'master', ['do'] = 'yarn install --frozen-lockfile' })
+    Plug('neoclide/coc.nvim', { branch = 'release' })
     Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
     Plug('ryanoasis/vim-devicons')
     Plug('scrooloose/nerdtree', { on = 'NERDTreeToggle' })
