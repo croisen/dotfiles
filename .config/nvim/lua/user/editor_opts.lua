@@ -16,13 +16,14 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.mouse=a
 vim.opt.mouse=v
-vim.opt.tabstop=4
-vim.opt.ttyfast = true
 vim.opt.shiftwidth = 4
 vim.opt.showmatch = true
 vim.opt.spell = false
-vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.tabstop=4
+vim.opt.termguicolors = true
+vim.opt.ttyfast = true
 vim.opt.wildmode = {'longest', 'list'}
 vim.cmd("set nocompatible")
 vim.cmd("tab all")

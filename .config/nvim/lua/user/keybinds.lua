@@ -1,8 +1,8 @@
 local key_set = vim.keymap.set
 
 -- Move the lines around, whether in normal or visual mode
-key_set('i', '<c-up>', '<esc>:m .-2<cr>==gi')
-key_set('i', '<c-down>', '<esc>:m .+1<cr>==gi')
+key_set('i', '<c-up>', ':m .-2<cr>==gi')
+key_set('i', '<c-down>', ':m .+1<cr>==gi')
 key_set('v', '<c-up>', ":m '<-2<cr>gv==gv")
 key_set('v', '<c-down>', ":m '>+2<cr>gv==gv")
 
