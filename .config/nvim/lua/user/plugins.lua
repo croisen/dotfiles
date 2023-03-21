@@ -1,22 +1,3 @@
---local function file_exists(file)
-    --local isok, errstr, errcode = os.rename(file, file)
-    --if isok == nil then
-        --if errcode == 13 then
-		--return true
-        --end
-	--return false
-    --end
-    --return true
---end
-
---local check = file_exists(os.getenv("HOME") .. "/.config/nvim/autoload/plug.vim")
-
---if not check then
-    --local cmd = "\"curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    --\'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\'\""
-    --os.execute("sh -c " .. cmd)
---end
-
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
