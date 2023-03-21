@@ -13,21 +13,21 @@ local theme = {}
 
 theme.font          = "MesloLGS NF Bold 7"
 
-theme.bg_normal     = "#1e1e2e"
-theme.bg_focus      = "#45475a"
-theme.bg_urgent     = "#f38ba8"
-theme.bg_minimize   = "#7f849c"
+theme.bg_normal     = "#282828"
+theme.bg_focus      = "#597820"
+theme.bg_urgent     = "#cc241d"
+theme.bg_minimize   = "#a89984"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#cdd6f4"
-theme.fg_focus      = "#cdd6f4"
-theme.fg_urgent     = "#cdd6f4"
-theme.fg_minimize   = "#cdd6f4"
+theme.fg_normal     = "#ebdbb2"
+theme.fg_focus      = theme.fg_normal
+theme.fg_urgent     = theme.fg_normal
+theme.fg_minimize   = "#ebdbb2"
 
 theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(1)
 theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
+theme.border_focus  = theme.bg_focus
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
@@ -99,7 +99,7 @@ theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/m
 
 -- Wallpapers
 wallpaper_dir = gfs.get_configuration_dir()
-theme.wallpaper = wallpaper_dir .. "themes/wallpaper_6.png"
+theme.wallpaper = wallpaper_dir .. "themes/wallpaper_0.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
