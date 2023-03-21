@@ -8,7 +8,7 @@ The widgets I use are made by [streetturtle](https://github.com/streetturtle)
 His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets)
 
 ## GTK
-The theme used is from [Grubbox-GTK-Theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
+The theme used is from [grubbox-material-gtk](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
 
 ## Kitty
 The config is the default one though what I thought I didn't need, I just removed them from the config file
