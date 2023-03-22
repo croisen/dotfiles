@@ -8,10 +8,8 @@ The widgets I use are made by [streetturtle](https://github.com/streetturtle)
 His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets)
 
 ## GTK
-*   The theme used is from [grubbox-material-gtk](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
-*   Another one I'm currently trying is [Gruvbox-GTK-theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
-*   Though both has the problem of making the title bar being white with gtk 4 apps
-*   Slapped the themes on with gnome-tweaks and lxappearance
+*   The theme is Linux Mint Y Dark Orange
+*   Slapped the themes on with lxappearance
 
 ## Kitty
 *   The config is the default one though what I thought I didn't need, I just removed them from the config file
