@@ -23,12 +23,12 @@ His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtl
 ## Neovim
 * It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package manager for neovim extensions
 * The extensions I use are currently these:
-*   [conqueror-of-completion](https://github.com/)
-*   [discord-presence](https://github.com/andweeb/presence.nvim)
-*   [gruvbox](https://github.com/morhetz/gruvbox)
-*   [nerdcommenter](https://github.com/preservim/nerdcommenter)
-*   [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
-*   [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-*   [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)
-*   [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-*   [vim-startify](https://github.com/mhinz/vim-startify)
+  - [conqueror-of-completion](https://github.com/)
+  - [discord-presence](https://github.com/andweeb/presence.nvim)
+  - [gruvbox](https://github.com/morhetz/gruvbox)
+  - [nerdcommenter](https://github.com/preservim/nerdcommenter)
+  - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+  - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+  - [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)
+  - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+  - [vim-startify](https://github.com/mhinz/vim-startify)
