@@ -8,20 +8,21 @@ The widgets I use are made by [streetturtle](https://github.com/streetturtle)
 His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets)
 
 ## GTK
-The theme used is from [grubbox-material-gtk](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
-Another one I'm currently trying is [Gruvbox-GTK-theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
-Though both has the problem of making the title bar being white with gtk 4 apps
+*   The theme used is from [grubbox-material-gtk](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
+*   Another one I'm currently trying is [Gruvbox-GTK-theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
+*   Though both has the problem of making the title bar being white with gtk 4 apps
+*   Slapped the themes on with gnome-tweaks and lxappearance
 
 ## Kitty
-The config is the default one though what I thought I didn't need, I just removed them from the config file
-The colorscheme I use is [gruvbox-palette](https://github.com/morhetz/gruvbox-contrib)
+*   The config is the default one though what I thought I didn't need, I just removed them from the config file
+*   The colorscheme I use is [gruvbox-palette](https://github.com/morhetz/gruvbox-contrib)
 
 ## Kvantum
-The colorscheme of Kvantum is from [Gruvbox I3-GAPS Setup](https://github.com/thefallnn/dotfiles)
+*   The colorscheme of Kvantum is from [Gruvbox I3-GAPS Setup](https://github.com/thefallnn/dotfiles)
 
 ## Neovim
-It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package manager for neovim extensions
-The extensions I use are currently these:
+* It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package manager for neovim extensions
+* The extensions I use are currently these:
 *   [conqueror-of-completion](https://github.com/)
 *   [discord-presence](https://github.com/andweeb/presence.nvim)
 *   [gruvbox](https://github.com/morhetz/gruvbox)
