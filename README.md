@@ -3,6 +3,10 @@ My own config files
 
 Though these are just made from the modules that other people made:
 
+## Screenshots
+![Window Manager](/assets/WM.png)
+![Apps](/assets/Apps.png)
+
 ## AwesomeWM
 The widgets I use are made by [streetturtle](https://github.com/streetturtle)
 His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets)
