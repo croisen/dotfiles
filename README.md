@@ -23,7 +23,7 @@ His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtl
 ## Neovim
 * It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package manager for neovim extensions
 * The extensions I use are currently these:
-  - [conqueror-of-completion](https://github.com/)
+  - [conqueror-of-completion](https://github.com/neoclide/coc.nvim)
   - [discord-presence](https://github.com/andweeb/presence.nvim)
   - [gruvbox](https://github.com/morhetz/gruvbox)
   - [nerdcommenter](https://github.com/preservim/nerdcommenter)
