@@ -9,6 +9,8 @@ His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtl
 
 ## GTK
 The theme used is from [grubbox-material-gtk](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
+Another one I'm currently trying is [Gruvbox-GTK-theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
+Though both has the problem of making the title bar being white with gtk 4 apps
 
 ## Kitty
 The config is the default one though what I thought I didn't need, I just removed them from the config file
