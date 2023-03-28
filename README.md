@@ -12,7 +12,7 @@ The widgets I use are made by [streetturtle](https://github.com/streetturtle)
 His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets)
 
 ## GTK
-*   The theme is Linux Mint Y Dark Orange
+*   The theme is [oomox-gruvbox](https://github.com/croisen/oomox-gruvbox)
 *   Slapped the themes on with lxappearance
 
 ## Kitty

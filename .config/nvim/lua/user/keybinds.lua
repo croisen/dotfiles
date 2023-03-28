@@ -7,10 +7,10 @@ key_set('v', '<c-up>', ":m '<-2<cr>gv=gv")
 key_set('v', '<c-down>', ":m '>+1<cr>gv=gv")
 
 -- Move the placement of the split
-key_set('n', '<a-up>', "<c-w>k")
-key_set('n', '<a-left>', "<c-w>h")
-key_set('n', '<a-down>', "<c-w>j")
-key_set('n', '<a-right>', "<c-w>l")
+key_set('n', '<a-up>', "<c-w>K")
+key_set('n', '<a-left>', "<c-w>H")
+key_set('n', '<a-down>', "<c-w>J")
+key_set('n', '<a-right>', "<c-w>L")
 
 -- Move to other splits
 key_set('n', '<c-up>', ":wincmd k<cr>")

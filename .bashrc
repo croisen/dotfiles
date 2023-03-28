@@ -147,11 +147,12 @@ ytmp3() {
 		echo "yt-dlp cannot be found, please get it"
 		return 1
 	fi
-
-    yt-dlp -x --audio-format mp3 \
-        --audio-quality 0 \
-        --embed-thumbnail \
-        -o %\(title\)s.%\(ext\)s $1
+    for arg in $@; do
+        yt-dlp -x --audio-format mp3 \
+            --audio-quality 0 \
+            --embed-thumbnail \
+            -o %\(title\)s.%\(ext\)s "$arg"
+    done
 	return 0
 }
 
@@ -161,8 +162,10 @@ ytmp4() {
 		return 1
 	fi
 
-    yt-dlp --format mp4 \
-        --embed-thumbnail \
-        -o %\(title\)s.%\(ext\)s $1
+    for arg in $@; do
+        yt-dlp --format mp4 \
+            --embed-thumbnail \
+            -o %\(title\)s.%\(ext\)s "$arg"
+    done
 	return 0
 }
