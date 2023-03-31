@@ -309,7 +309,7 @@ globalkeys = gears.table.join(
 		{description = "decrease volume", group = "sound"}),
 
 	awful.key({ modkey }, "b",
-		function () 
+		function ()
 			awful.util.spawn('firefox', false)
 		end,
 		{description = "run firefox", group = "frequently used"}),
@@ -328,9 +328,9 @@ globalkeys = gears.table.join(
 
 	awful.key ({ alt_key }, "m",
 		function ()
-			awful.util.spawn('rhythmbox', false)
+			awful.util.spawn('audacious', false)
 		end,
-		{description = "open rhythmbox", group = "frequently used"}),
+		{description = "open audacious my music player", group = "frequently used"}),
 
 	awful.key ({ alt_key }, "b",
 		function ()
@@ -579,7 +579,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 executer.execute_commands({
 	"blueman-applet",
 	"compton",
-	"indicator-keylock",
+	-- "indicator-keylock",
 	-- "nitrogen -- restore",
 	"nm-applet",
 	"xfce4-power-manager"
