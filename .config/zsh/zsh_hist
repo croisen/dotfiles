@@ -1,0 +1,316 @@
+cd git
+cd random-utils
+ls
+subl landscape-wallpaper portrait-wallpaper
+ls
+git status
+git add *
+ls
+git ls-files
+git commit -m "Fixed typos"
+git push
+exit
+cd git/dotfiles
+ls
+subl .bashrc
+aptup
+ping pornhub.com
+ping goog;e.com
+ping google.com
+networkctl
+cd .config/zsh
+ls
+locate zshenv
+subl /etc/zsh/zshenv
+apts mega
+aptin megatools
+man megatools
+if command -v exiftool; then echo "You hab exiftool"; else echo "You dun hab exiftool"; fi
+if command -v exiftool &>/dev/null ; then echo "You hab exiftool"; else echo "You dun hab exiftool"; fi
+if ! command -v exiftool &>/dev/null ; then echo "You hab exiftool"; else echo "You dun hab exiftool"; fi
+exit
+xrandr
+xrandr
+aptup
+ls
+cd git
+cd ..
+ls | wc -l
+aptrm tor
+aptarm
+ls
+cls
+ls
+apt purge tor
+ls
+cd .tor
+ls
+cd ..
+rm -rf .tor
+ls
+cls
+ls | wc -l
+ls
+cat .emulator_console_auth_token
+rm .emulator_console_auth_token
+cls
+ls
+apt purge snapd
+cls
+ls 
+cd snap
+ls
+cd ..
+rm snap
+rm -rf snap
+ls
+cls
+cd '$HOME'
+ls
+cd .cache
+ls
+cd awesome
+ls
+cd ..
+cd ..
+cd ..
+rm '$HOME'
+rm -rf '$HOME'
+ls
+subl .gitconfig
+cls
+ls
+ls | wc -l
+exit
+cd Pictures
+ls
+~/git/random-utils/image-convert
+ls
+cd ..
+ls
+subl .config/zsh/.zshrc
+cd git
+ls
+git clone https://github.com/b3nj5m1n/xdg-ninja.git
+cd xdg-ninja
+cls
+./xdg-ninja.sh
+cd git/xdg-ninja
+./xdg-ninja.sh
+cd git/xdg-ninja
+./xdg-ninja.sh
+subl /etc/zsh/zshenv
+cd ~
+mv .zshenv .config/zsh
+git/xdg-ninja/xdg-ninja.sh
+subl /etc/profile
+printenv
+printenv | grep XDG
+sudo printenv
+sudo subl /etc/profile
+subl .config/zsh/.zshenv
+git/xdg-ninja/xdg-ninja.sh
+subl .bashrc
+subl git/dotfiles/.bashrc
+rm .bash_history
+cls
+subl git/dotfiles/.bashrc
+git/xdg-ninja/xdg-ninja.sh
+echo $XDG_DATA_HOME
+mv .gitconfig $XDG_CONFIG_HOME/git/
+mkdir .config/git
+mv .gitconfig $XDG_CONFIG_HOME/git/
+ls
+mkdir $XDG_DATA_HOME/gnupg; mv .gnupg $XDG_DATA_HOME/gnupg
+cls
+git/xdg-ninja/xdg-ninja.sh
+sudo subl
+ls
+cat .xsession-errors
+printenv | grep xdg
+printenv | grep -i xdg
+rm .xsession-errors*
+cls
+ls
+git/xdg-ninja/xdg-ninja.sh
+ls
+ls | wc -l
+rm .wget-hsts
+aptrm gradle
+rm -rf .gradle
+subl .config/python/pythonrc
+cat .python_history
+rm .python_history
+git/xdg-ninja/xdg-ninja.sh
+java -jar /opt/TLauncher/TLauncher-2.841.jar
+python3
+ls
+ls | wc -l
+cat .profile
+bash
+git/xdg-ninja/xdg-ninja.sh
+rm -rf /opt/TLauncher
+sudo rm -rf /opt/TLauncher
+ls /opt
+sudo rm -rf /opt/ani-cli
+sudo rm -rf /opt/tor-browser
+sudo rm -rf /opt/zoom
+ls
+aptrm minecraft
+apts minecraft
+aptrm minecraft-launcher
+ls
+rm -rf .tlauncher
+rm -rf .minecraft
+cls
+ls
+cd .xpaint
+ls
+cd tmp
+ls
+cd ..
+cd ..
+rm .Genymobile
+rm -rf .Genymobile
+ls | wc -l
+cp .config/zsh/.zsh* git/dotfiles
+cd git/dotfiles
+ls
+git status
+subl .zshenv
+subl .zshrc
+ln .zshrc ~/.config/zsh/.zshrc
+ln -f .zshrc ~/.config/zsh/.zshrc
+ln -f .zshenv ~/.config/zsh/.zshenv
+git add .zsh*
+git commit -m "Added configs for xdg stuff"
+mv ~/.config/git/.gitconfig ~/.config/git/gitconfig
+git commit -m "Added configs for xdg stuff"
+mv ~/.config/git/gitconfig ~/.gitconfig
+git commit -m "Added configs for xdg stuff"
+git push
+git add .bashrc
+git commit -m "Added configs for xdg stuff"
+git push
+cd 
+ls
+cls
+cat .profile
+rm .profile
+cls
+ls
+cat .python_history
+rm .python_history
+python3
+ls
+ls
+echo $GNUPGHOME
+cd $GNUPGHOME
+ls
+ls -r .gnupg
+cd ~/.config/gtk-2.0
+ls
+ls
+ls | wc -l
+git/xdg-ninja/xdg-ninja.sh
+mv .gitconfig $XDG_CONFIG_HOME/git/config
+cd git/dotfiles
+cls
+ls
+git status
+git add .bashrc .zshenv .zshrc
+git commit -m "Added XDG stuff, by xdg-ninja"
+git push
+cd 
+ls
+~/git/xdg-ninja/xdg-ninja.sh
+ls
+ls -r .gnupg
+rm -rf .gnupg
+cls
+ls
+ls | wc -l
+cls
+cd Downloads
+ls
+cls
+ytmp3 https://www.youtube.com/watch?v=S2ujotDMluo
+ytmp3 www.youtube.com/watch?v=S2ujotDMluo
+ytmp3 youtube.com/watch?v=S2ujotDMluo
+ytmp3 youtu.be/watch?v=S2ujotDMluo
+cls
+subl ~/git/dotfiles/.zshrc
+cd Downloads
+ytmp3 https://www.youtube.com/watch?v=S2ujotDMluo
+yt-dlp -x --audio-format mp3 --audio-quality 0 https://www.youtube.com/watch?v=S2ujotDMluo
+subl ~/git/dotfiles/.zshrc
+ytmp3 'https://www.youtube.com/watch?v=S2ujotDMluo'
+ls
+ls
+rm 'A Man Without Love LYRICS Video Engelbert Humperdinck 1968 ðƒ¿ƒ¬ƒ¹ Moon Knight Episode 1 [S2ujotDMluo].webm'
+yt-dlp -x --audio-format mp3 --audio-quality 0 'https://www.youtube.com/watch?v=S2ujotDMluo'
+ls
+mv 'A Man Without Love LYRICS Video Engelbert Humperdinck 1968 ðƒ¿ƒ¬ƒ¹ Moon Knight Episode 1 [S2ujotDMluo].mp3' 'Engelbert Humperdinck - A Man Without Love.mp3'
+cls
+cd Down
+cd Downloads
+cls
+ls
+mv Engelbert\ Humperdinck\ -\ A\ Man\ Without\ Love.mp3 ~/Music
+cls
+subl ~/git/dotfiles/.zshrc
+cd Downloads
+ytmp3 https://www.youtube.com/watch?v=2aUBaSLfFbc
+man alias
+alias --help
+alias -help
+cls
+if [[ -n $hello ]]; then echo "not blank"; else echo "blank"; fi
+hello="hey"
+if [[ -n $hello ]]; then echo "not blank"; else echo "blank"; fi
+cd Downloads
+ls
+ytmp3 https://www.youtube.com/watch?v=2aUBaSLfFbc
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+cd Downloads
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+cd Downloads
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+cd Downloads
+ls
+ytmp3 https://www.youtube.com/watch?v=2aUBaSLfFbc
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+cd Downloads
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+subl git/dotfiles/.bashrc
+cd Downloads
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+cd Downloads
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+ls
+rm Michael\ Buble\ -\ Sway\ \(Lyrics\)\ \'When\ marimba\ rhythms\ start\ to\ play\'\ \[2aUBaSLfFbc\].webm
+cd Downloads
+ytmp3 'https://www.youtube.com/watch?v=2aUBaSLfFbc'
+cd Downloads
+ls
+ytmp3 'https://www.youtube.com/watch?v=BIORiY9JC6k'
+ls
+mv 'Cynthia - Change On Me [BIORiY9JC6k].mp3' 'Cynthia - Change On Me.mp3'
+mv 'Michael Buble - Sway (Lyrics) '\''When marimba rhythms start to play'\'' [2aUBaSLfFbc].mp3' 'Michael Buble - Sway.mp3\
+'
+ls
+mv 'Michael Buble - Sway.mp3\
+' 'Michael Buble - Sway.mp3'
+ls
+cls
+cd git/dotfiles
+ls
+chsh -s bash
+chsh -s /bin/bash
+bash
+ls
+exit
