@@ -3,6 +3,7 @@
 require("user.plugins")
 require("user.colorscheme")
 require("user.editor_opts")
+require("user.lualine")
 require("user.keybinds")
 require("user.nvim-tree")
 require("user.treesitter")
