@@ -1,9 +1,17 @@
 vim.opt.backup = false
 vim.opt.writebackup = false
-
 vim.opt.updatetime = 300
-
 vim.opt.signcolumn = "yes"
+vim.g.coc_global_extensions = { 'coc-clangd',
+    'coc-css',
+    'coc-git',
+    'coc-html-css-support',
+    'coc-jedi',
+    'coc-json',
+    'coc-lua',
+    'coc-prettier',
+    'coc-python',
+    'coc-rust-analyzer'}
 
 local key_set = vim.keymap.set
 local opts = {

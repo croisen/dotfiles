@@ -2,16 +2,6 @@ local cache_dir = os.getenv("HOME") .. "/.cache/nvim"
 
 vim.g.rehash256 = 1
 -- vim.g.UltiSnipsSnippetDirectories = os.getenv("HOME") .. "/.config/nvim/plugged/vim-snippets/UltiSnips"
-vim.g.coc_global_extensions = { 'coc-clangd',
-    'coc-css',
-    'coc-git',
-    'coc-html-css-support',
-    'coc-jedi',
-    'coc-json',
-    'coc-kotlin',
-    'coc-lua',
-    'coc-prettier',
-    'coc-python' }
 vim.opt.autoindent = true
 vim.opt.backupdir = cache_dir
 vim.opt.cc = "100"
