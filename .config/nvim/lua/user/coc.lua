@@ -11,7 +11,6 @@ vim.g.coc_global_extensions = { 'coc-clangd',
     'coc-json',
     'coc-lua',
     'coc-prettier',
-    'coc-python',
     'coc-rust-analyzer'}
 
 local key_set = vim.keymap.set

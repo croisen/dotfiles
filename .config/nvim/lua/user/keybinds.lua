@@ -29,3 +29,13 @@ key_set('t', '<esc>', "<c-\\><c-n>")
 
 -- Remove highlight search
 key_set('n', '<Leader>n', ":noh<cr>")
+
+-- Open nvim-tree
+key_set('n', '<Leader>f', ":NvimTreeToggle<cr>")
+
+-- Telescope
+local tele_builtin = require('telescope.builtin')
+key_set('n', '<leader>ff', tele_builtin.find_files, {})
+key_set('n', '<leader>fg', tele_builtin.live_grep, {})
+key_set('n', '<leader>fb', tele_builtin.buffers, {})
+key_set('n', '<leader>fh', tele_builtin.help_tags, {})
