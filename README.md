@@ -23,7 +23,7 @@ Though these are just made from the modules that other people made:
     - xfce4 Power Manager
 
 ## GTK
-*   The theme is [oomox-gruvbox](https://github.com/croisen/oomox-gruvbox)
+*   The theme is [Mint-Y-Dark-Blue] from the themes that came in with linux mint
 *   Slapped the themes on with lxappearance
 
 ## Kitty
@@ -32,13 +32,4 @@ Though these are just made from the modules that other people made:
 
 ## Neovim
 * It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package manager for neovim extensions
-* The extensions I use are currently these:
-  - [conquer-of-completion](https://github.com/neoclide/coc.nvim)
-  - [discord-presence](https://github.com/andweeb/presence.nvim)
-  - [gruvbox](https://github.com/morhetz/gruvbox)
-  - [nerdcommenter](https://github.com/preservim/nerdcommenter)
-  - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
-  - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  - [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)
-  - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-  - [vim-startify](https://github.com/mhinz/vim-startify)
+* With an increasing amount of extensions because the Lord knows I need more extensions
