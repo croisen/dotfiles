@@ -17,17 +17,17 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = theme.confdir .. "/wall.png"
-theme.font                                      = "Terminus 8"
-theme.menu_bg_normal                            = "#000000"
-theme.menu_bg_focus                             = "#000000"
-theme.bg_normal                                 = "#000000"
-theme.bg_focus                                  = "#000000"
-theme.bg_urgent                                 = "#000000"
-theme.fg_normal                                 = "#aaaaaa"
-theme.fg_focus                                  = "#ff8c00"
-theme.fg_urgent                                 = "#af1d18"
-theme.fg_minimize                               = "#ffffff"
-theme.border_width                              = dpi(1)
+theme.font                                      = "MesloLGS NF Bold 7"
+theme.menu_bg_normal                            = "#282828"
+theme.menu_bg_focus                             = theme.menu_bg_normal
+theme.bg_normal                                 = theme.menu_bg_normal
+theme.bg_focus                                  = "#535d6c"
+theme.bg_urgent                                 = "#ff0000"
+theme.fg_normal                                 = "#ffffff"
+theme.fg_focus                                  = theme.fg_normal
+theme.fg_urgent                                 = theme.fg_normal
+theme.fg_minimize                               = theme.fg_normal
+theme.border_width                              = dpi(3)
 theme.border_normal                             = "#1c2022"
 theme.border_focus                              = "#606060"
 theme.border_marked                             = "#3ca4d8"
@@ -110,19 +110,19 @@ theme.cal = lain.widget.cal({
 })
 
 -- Weather
---[[ to be set before use
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
-    city_id = 2643743, -- placeholder (London)
-    notification_preset = { font = "Terminus 10", fg = theme.fg_normal },
+    APPID = "get_a_free_api_key_by_registering_at_openweathermaps",
+    city_id = 1709007, -- placeholder
+    notification_preset = { font = theme.font, fg = theme.fg_normal },
     weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
+    timeout = 3600,
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
         widget:set_markup(markup.fontfg(theme.font, "#eca4c4", descr .. " @ " .. units .. "°C "))
     end
 })
---]]
 
 -- / fs
 --[[ commented because it needs Gio/Glib >= 2.54
@@ -181,7 +181,7 @@ local bat = lain.widget.bat({
         local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
 
         if bat_now.ac_status == 1 then
-            perc = perc .. " plug"
+            perc = perc .. "+ "
         end
 
         widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, perc .. " "))
@@ -206,14 +206,11 @@ local netdowninfo = wibox.widget.textbox()
 local netupicon = wibox.widget.imagebox(theme.widget_netup)
 local netupinfo = lain.widget.net({
     settings = function()
-        --[[ uncomment if using the weather widget
         if iface ~= "network off" and
            string.match(theme.weather.widget.text, "N/A")
         then
             theme.weather.update()
         end
-        --]]
-
         widget:set_markup(markup.fontfg(theme.font, "#e54c62", net_now.sent .. " "))
         netdowninfo:set_markup(markup.fontfg(theme.font, "#87af5f", net_now.received .. " "))
     end
@@ -230,12 +227,12 @@ local memory = lain.widget.mem({
 -- MPD
 local mpdicon = wibox.widget.imagebox()
 theme.mpd = lain.widget.mpd({
+    music_dir = "~/le_hdd/music/Gan",
     settings = function()
         mpd_notification_preset = {
             text = string.format("%s [%s] - %s\n%s", mpd_now.artist,
                    mpd_now.album, mpd_now.date, mpd_now.title)
         }
-
         if mpd_now.state == "play" then
             artist = mpd_now.artist .. " > "
             title  = mpd_now.title .. " "
@@ -300,8 +297,7 @@ function theme.at_screen_connect(s)
             mpdicon,
             theme.mpd.widget,
         },
-        --s.mytasklist, -- Middle widget
-        nil,
+        s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
@@ -319,32 +315,33 @@ function theme.at_screen_connect(s)
             cpu.widget,
             --fsicon,
             --theme.fs.widget,
-            --weathericon,
-            --theme.weather.widget,
+            weathericon,
+            theme.weather.widget,
             tempicon,
             temp.widget,
             baticon,
             bat.widget,
             clockicon,
             mytextclock,
+            s.mylayoutbox
         },
     }
 
-    -- Create the bottom wibox
-    s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, height = dpi(20), bg = theme.bg_normal, fg = theme.fg_normal })
+     --Create the bottom wibox
+    --s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, height = dpi(20), bg = theme.bg_normal, fg = theme.fg_normal })
 
-    -- Add widgets to the bottom wibox
-    s.mybottomwibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            s.mylayoutbox,
-        },
-    }
+     --Add widgets to the bottom wibox
+    --s.mybottomwibox:setup {
+        --layout = wibox.layout.align.horizontal,
+        --{  Left widgets
+            --layout = wibox.layout.fixed.horizontal,
+        --},
+        --s.mytasklist,  Middle widget
+        --{  Right widgets
+            --layout = wibox.layout.fixed.horizontal,
+            --s.mylayoutbox,
+        --},
+    --}
 end
 
 return theme

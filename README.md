@@ -16,7 +16,6 @@ Though these are just made from the modules that other people made:
     - Xbacklight
     - Xsel
 *   The apps that have a shortcut key I assigned are:
-    - Audacious
     - Blueman
     - Firefox
     - Thunar
@@ -26,6 +25,10 @@ Though these are just made from the modules that other people made:
     - Compton or Picom
     - Network Manager
     - xfce4 Power Manager
+
+    ```
+    amixer blueman compton dmenu firefox mpc mpd network-manager slock thunar xbacklight xfce4-power-manager xfce4-screenshooter xsel
+    ```
 
 ## GTK
 *   The theme is [Mint-Y-Dark-Orange] from the themes that came in with linux mint
