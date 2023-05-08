@@ -8,22 +8,27 @@ Though these are just made from the modules that other people made:
 ![Apps](/photos/Apps.png)
 
 ## AwesomeWM
-*   The widgets I use are made by [streetturtle](https://github.com/streetturtle)
-*   His widget repo is this one: [awesome-wm-widgets](https://github.com/streetturtle/awesome-wm-widgets)
+*   I used a prebuilt theme from [awesome-copycats](https://github.com/lcpz/awesome-copycats/)
+*   The dependencies on the theme I use in awesome-copycats are:
+    - Amixer
+    - Dmenu
+    - Slock
+    - Xbacklight
+    - Xsel
 *   The apps that have a shortcut key I assigned are:
-    - Audacious (A music player)
-    - Blueman (Bluetooth manager)
-    - Firefox (A web browser)
-    - Thunar (A file manager)
-    - xfce4 Screenshooter (Screenshot tool)
+    - Audacious
+    - Blueman
+    - Firefox
+    - Thunar
+    - xfce4 Screenshooter
 *   The apps that are auto started are:
     - Blueman
-    - Compton or picom
+    - Compton or Picom
     - Network Manager
     - xfce4 Power Manager
 
 ## GTK
-*   The theme is [Mint-Y-Dark-Blue] from the themes that came in with linux mint
+*   The theme is [Mint-Y-Dark-Orange] from the themes that came in with linux mint
 *   Slapped the themes on with lxappearance
 
 ## Kitty
