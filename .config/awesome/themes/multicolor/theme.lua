@@ -31,7 +31,7 @@ theme.border_width                              = dpi(3)
 theme.border_normal                             = "#1c2022"
 theme.border_focus                              = "#606060"
 theme.border_marked                             = "#3ca4d8"
-theme.menu_border_width                         = 0
+theme.menu_border_width                         = 3
 theme.menu_width                                = dpi(130)
 theme.menu_submenu_icon                         = theme.confdir .. "/icons/submenu.png"
 theme.menu_fg_normal                            = "#aaaaaa"
@@ -54,8 +54,8 @@ theme.widget_clock                              = theme.confdir .. "/icons/clock
 theme.widget_vol                                = theme.confdir .. "/icons/spkr.png"
 theme.taglist_squares_sel                       = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel                     = theme.confdir .. "/icons/square_b.png"
-theme.tasklist_plain_task_name                  = true
-theme.tasklist_disable_icon                     = true
+theme.tasklist_plain_task_name                  = false
+theme.tasklist_disable_icon                     = false
 theme.useless_gap                               = 5
 theme.layout_tile                               = theme.confdir .. "/icons/tile.png"
 theme.layout_tilegaps                           = theme.confdir .. "/icons/tilegaps.png"
@@ -112,7 +112,7 @@ theme.cal = lain.widget.cal({
 -- Weather
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
-    APPID = "get_a_free_api_key_by_registering_at_openweathermaps",
+    APPID = "i_hab_no_api",
     city_id = 1709007, -- placeholder
     notification_preset = { font = theme.font, fg = theme.fg_normal },
     weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
@@ -205,14 +205,15 @@ local netdownicon = wibox.widget.imagebox(theme.widget_netdown)
 local netdowninfo = wibox.widget.textbox()
 local netupicon = wibox.widget.imagebox(theme.widget_netup)
 local netupinfo = lain.widget.net({
+    units = 1024^2,
     settings = function()
         if iface ~= "network off" and
            string.match(theme.weather.widget.text, "N/A")
         then
             theme.weather.update()
         end
-        widget:set_markup(markup.fontfg(theme.font, "#e54c62", net_now.sent .. " "))
-        netdowninfo:set_markup(markup.fontfg(theme.font, "#87af5f", net_now.received .. " "))
+        widget:set_markup(markup.fontfg(theme.font, "#e54c62", net_now.sent .. "MB "))
+        netdowninfo:set_markup(markup.fontfg(theme.font, "#87af5f", net_now.received .. "MB "))
     end
 })
 
@@ -225,32 +226,32 @@ local memory = lain.widget.mem({
 })
 
 -- MPD
-local mpdicon = wibox.widget.imagebox()
-theme.mpd = lain.widget.mpd({
-    music_dir = "~/le_hdd/music/Gan",
-    settings = function()
-        mpd_notification_preset = {
-            text = string.format("%s [%s] - %s\n%s", mpd_now.artist,
-                   mpd_now.album, mpd_now.date, mpd_now.title)
-        }
-        if mpd_now.state == "play" then
-            artist = mpd_now.artist .. " > "
-            title  = mpd_now.title .. " "
-            mpdicon:set_image(theme.widget_note_on)
-        elseif mpd_now.state == "pause" then
-            artist = "mpd "
-            title  = "paused "
-        else
-            artist = ""
-            title  = ""
-            --mpdicon:set_image() -- not working in 4.0
-            mpdicon._private.image = nil
-            mpdicon:emit_signal("widget::redraw_needed")
-            mpdicon:emit_signal("widget::layout_changed")
-        end
-        widget:set_markup(markup.fontfg(theme.font, "#e54c62", artist) .. markup.fontfg(theme.font, "#b2b2b2", title))
-    end
-})
+--local mpdicon = wibox.widget.imagebox()
+--theme.mpd = lain.widget.mpd({
+    --music_dir = "~/le_hdd/music/Gan",
+    --settings = function()
+        --mpd_notification_preset = {
+            --text = string.format("%s [%s] - %s\n%s", mpd_now.artist,
+                   --mpd_now.album, mpd_now.date, mpd_now.title)
+        --}
+        --if mpd_now.state == "play" then
+            --artist = mpd_now.artist .. " > "
+            --title  = mpd_now.title .. " "
+            --mpdicon:set_image(theme.widget_note_on)
+        --elseif mpd_now.state == "pause" then
+            --artist = "mpd "
+            --title  = "paused "
+        --else
+            --artist = ""
+            --title  = ""
+            ----mpdicon:set_image() -- not working in 4.0
+            --mpdicon._private.image = nil
+            --mpdicon:emit_signal("widget::redraw_needed")
+            --mpdicon:emit_signal("widget::layout_changed")
+        --end
+        --widget:set_markup(markup.fontfg(theme.font, "#e54c62", artist) .. markup.fontfg(theme.font, "#b2b2b2", title))
+    --end
+--})
 
 function theme.at_screen_connect(s)
     -- Quake application
@@ -294,8 +295,8 @@ function theme.at_screen_connect(s)
             --s.mylayoutbox,
             s.mytaglist,
             s.mypromptbox,
-            mpdicon,
-            theme.mpd.widget,
+            --mpdicon,
+            --theme.mpd.widget,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets

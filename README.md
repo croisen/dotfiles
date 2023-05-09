@@ -16,8 +16,11 @@ Though these are just made from the modules that other people made:
     - Xbacklight
     - Xsel
 *   The apps that have a shortcut key I assigned are:
+    - Audacious
     - Blueman
     - Firefox
+    - Gnome Calculator
+    - Simple Screen Recorder
     - Thunar
     - xfce4 Screenshooter
 *   The apps that are auto started are:
@@ -27,7 +30,9 @@ Though these are just made from the modules that other people made:
     - xfce4 Power Manager
 
     ```
-    amixer blueman compton dmenu firefox mpc mpd network-manager slock thunar xbacklight xfce4-power-manager xfce4-screenshooter xsel
+    audacious amixer blueman compton dmenu firefox gnome-calculator
+    mpc mpd network-manager simplescreenrecorder slock thunar 
+    xbacklight xfce4-power-manager xfce4-screenshooter xsel
     ```
 
 ## GTK

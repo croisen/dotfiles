@@ -234,16 +234,16 @@ screen.connect_signal("property::geometry", function(s)
 end)
 
 -- No borders when rearranging only 1 non-floating or maximized client
-screen.connect_signal("arrange", function (s)
-    local only_one = #s.tiled_clients == 1
-    for _, c in pairs(s.clients) do
-        if only_one and not c.floating or c.maximized or c.fullscreen then
-            c.border_width = 0
-        else
-            c.border_width = beautiful.border_width
-        end
-    end
-end)
+--screen.connect_signal("arrange", function (s)
+    --local only_one = #s.tiled_clients == 1
+    --for _, c in pairs(s.clients) do
+        --if only_one and not c.floating or c.maximized or c.fullscreen then
+            --c.border_width = 0
+        --else
+            --c.border_width = beautiful.border_width
+        --end
+    --end
+--end)
 
 -- Create a wibox for each screen and add it
 awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
@@ -416,56 +416,31 @@ globalkeys = mytable.join(
 
     -- User programs
     awful.key({ modkey }, "b", function () awful.spawn(browser) end,
-              {description = "run firefox browser", group = "launcher"}),
+              {description = "Run Firefox Browser", group = "Frequently Used"}),
     awful.key({ modkey }, "e", function () awful.spawn("thunar") end,
-              {description = "run thunar file manager", group = "launcher"}),
+              {description = "Run Thunar File Manager", group = "Frequently Used"}),
     awful.key({ altkey }, "m", function () awful.spawn("audacious") end,
-              {description = "run audacious music player", group = "launcher"}),
+              {description = "Run Audacious Music Player", group = "Frequently Used"}),
     awful.key({ altkey }, "b", function () awful.spawn("blueman-manager") end,
-              {description = "run bluetooth manager", group = "launcher"}),
+              {description = "Run Bluetooth Manager", group = "Frequently Used"}),
     awful.key({ altkey }, "c", function () awful.spawn("gnome-calculator") end,
-              {description = "run calculator", group = "launcher"}),
+              {description = "Run Calculator", group = "Frequently Used"}),
     awful.key({ altkey }, "r", function () awful.spawn("simplescreenrecorder") end,
-              {description = "run screen recorder", group = "launcher"}),
+              {description = "Run Screen Recorder", group = "Frequently Used"}),
 
-    -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
-        function ()
-            os.execute("mpc toggle")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc toggle", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Down",
-        function ()
-            os.execute("mpc stop")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc stop", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Left",
-        function ()
-            os.execute("mpc prev")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc prev", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Right",
-        function ()
-            os.execute("mpc next")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc next", group = "widgets"}),
-    awful.key({ altkey }, "0",
-        function ()
-            local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-            if beautiful.mpd.timer.started then
-                beautiful.mpd.timer:stop()
-                common.text = common.text .. lain.util.markup.bold("OFF")
-            else
-                beautiful.mpd.timer:start()
-                common.text = common.text .. lain.util.markup.bold("ON")
-            end
-            naughty.notify(common)
-        end,
-        {description = "mpc on/off", group = "widgets"}),
+    -- Audacious control
+    awful.key({  }, "XF86AudioPlay", function()
+        awful.spawn("audacious -t")
+    end,
+    {description = "Audacious Play/Pause", group = "Audacious Music Player"}),
+    awful.key({  }, "XF86AudioNext", function()
+        awful.spawn("audacious -f")
+    end,
+    {description = "Audacious play next track", group = "Audacious Music Player"}),
+    awful.key({  }, "XF86AudioPrev", function()
+        awful.spawn("audacious -r")
+    end,
+    {description = "Audacious play next track", group = "Audacious Music Player"}),
 
     -- Default
     --[[ Menubar
