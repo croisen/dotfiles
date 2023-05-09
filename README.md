@@ -1,11 +1,6 @@
 # Dotfiles
 My own config files
-
 Though these are just made from the modules that other people made:
-
-## Screenshots
-![Window Manager](/photos/WM.png)
-![Apps](/photos/Apps.png)
 
 ## AwesomeWM
 *   I used a prebuilt theme from [awesome-copycats](https://github.com/lcpz/awesome-copycats/)
@@ -29,12 +24,11 @@ Though these are just made from the modules that other people made:
     - Network Manager
     - xfce4 Power Manager
 
-    ```
-    audacious amixer blueman compton dmenu firefox gnome-calculator
-    mpc mpd network-manager simplescreenrecorder slock thunar 
-    xbacklight xfce4-power-manager xfce4-screenshooter xsel
-    ```
-
+```
+audacious amixer blueman compton dmenu firefox fonts-firacode gnome-calculator
+network-manager simplescreenrecorder slock thunar xbacklight
+xfce4-power-manager xfce4-screenshooter xsel
+```
 ## GTK
 *   The theme is [Mint-Y-Dark-Orange] from the themes that came in with linux mint
 *   Slapped the themes on with lxappearance
