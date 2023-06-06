@@ -47,7 +47,7 @@ fi
     #alias vdir='vdir --color=auto'
 
 # Python :)
-    alias py='python3'
+    #alias py='python3'
 
 # Steam Games
     if command -v steam &>/dev/null; then
@@ -66,6 +66,21 @@ fi
     fi
 
 ## Functions ##
+# albumart_mk - adds a specified picture as an album art for an mp3 file (requires ffmpeg)
+albumart_mk() {
+    if ! command -v ffmpeg &>/dev/null; then
+        echo "ffmpeg cannot be found, please install it"
+        return 1
+    fi
+
+    if [[ -z $1 ]]; then
+        echo "Usage: albumart_mk file.mp3 album_pic.png"
+        return 0
+    fi
+
+    ffmpeg -i $1 -i $2 -map 0:0 -map 1:0 -codec copy -id3v2_version 3 \
+        -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" modified_$1
+}
 # Gitall - git add, commit, and push
 gitall() {
 	git add .
@@ -93,6 +108,7 @@ up() {
 	fi
 }
 
+#ytmp* - Downloads music and videos from sites supported by yt-dlp (i.e. YouTube)
 ytmp3() {
 	if ! command -v yt-dlp &>/dev/null; then
 		echo "yt-dlp cannot be found, please get it"
