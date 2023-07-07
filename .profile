@@ -3,20 +3,34 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
-export ANDROID_HOME="$HOME"/le_hdd/android
+export ANDROID_HOME="$HOME/le_hdd/android/sdk"
+export ANDROID_AVD_HOME="$HOME/le_hdd/android/avds"
+export ANDROID_EMULATOR_HOME="$HOME/le_hdd/android"
+export ANDROID_USER_HOME="$HOME/le_hdd/android"
+
+export EDITOR="/home/linuxbrew/.linuxbrew/bin/nvim"
 export ERRFILE="$XDG_CACHE_HOME"/X11/xsession-errors
+
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+
+export KDEHOME="$XDG_CONFIG_HOME"/kde
+
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export WINEPREFIX="$XDG_DATA_HOME"/wine
+export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 
 export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
 export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
-export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
