@@ -3,25 +3,17 @@ pcall(require, "luarocks.loader")
 
 local awful = require("awful")
 local beautiful = require("beautiful")
-local debian = require("debian.menu")
 local gears = require("gears")
-local has_fdo, freedesktop = pcall(require, "freedesktop")
+local freedesktop = require("modules.freedesktop")
+local has_fdo, freedesktop = pcall(require, "modules.freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local menubar = require("menubar")
-local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
-local menu_terminal = { "open terminal", terminal }
 local naughty = require("naughty")
 local wibox = require("wibox")
 
 require("awful.autofocus")
 require("awful.hotkeys_popup.keys")
 -- }
-
--- Put the error handler in another file
--- TODO: Test if other parts of rc lua can be slapped into a seperate file
-require("modules/error_handler")
-local executer = require("modules.executer")
-local widgets = require("modules.init_widget")
 
 -- Variable definitions
 local config_path = gears.filesystem.get_configuration_dir()
@@ -30,6 +22,14 @@ local modkey = "Mod4"
 local terminal = "kitty"
 local editor = os.getenv("EDITOR") or "editor"
 local editor_cmd = terminal .. " -e " .. editor
+local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
+local menu_terminal = { "open terminal", terminal }
+
+-- Put the error handler in another file
+-- TODO: Test if other parts of rc lua can be slapped into a seperate file
+require("modules/error_handler")
+local executer = require("modules.executer")
+local widgets = require("modules.init_widget")
 
 -- Theme setup
 beautiful.init(config_path .. "themes/theme.lua")
@@ -65,20 +65,11 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 
-if has_fdo then
-	mymainmenu = freedesktop.menu.build({
-		before = { menu_awesome },
-		after =  { menu_terminal }
-	})
-else
-	mymainmenu = awful.menu({
-		items = {
-			menu_awesome,
-			{ "Debian", debian.menu.Debian_menu.Debian },
-			menu_terminal,
-		}
-	})
-end
+mymainmenu = freedesktop.menu.build({
+    before = { menu_awesome },
+    after =  { menu_terminal }
+})
+
 
 local taglist_buttons = gears.table.join(
 	awful.button({ }, 1, function(t) t:view_only() end),
@@ -182,7 +173,8 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         {
             layout = wibox.layout.fixed.horizontal,
-            widgets.net(),
+            widgets.net_turtle(),
+            widgets.cpu_turtle(),
         },
         nil,
         {
