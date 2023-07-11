@@ -141,4 +141,10 @@ ytmp4() {
 	source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 	[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+## ZSH keys ##
+    bindkey "^[[H"    beginning-of-line
+    bindkey "^[[F"    end-of-line
+    bindkey "^[[1;5C" forward-word
+    bindkey "^[[1;5D" backward-word
+
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"

@@ -7,8 +7,7 @@ Though these are just made from the modules that other people made:
 *   The dependencies on the theme I use in awesome-copycats are:
     - Amixer
     - Dmenu
-    - Slock
-    - Xbacklight
+    - Pulseaudio
     - Xsel
 *   The apps that have a shortcut key I assigned are:
     - Audacious
@@ -20,15 +19,10 @@ Though these are just made from the modules that other people made:
     - xfce4 Screenshooter
 *   The apps that are auto started are:
     - Blueman
-    - Compton or Picom
+    - Picom
     - Network Manager
     - xfce4 Power Manager
 
-```
-audacious amixer blueman compton dmenu firefox fonts-firacode gnome-calculator
-network-manager simplescreenrecorder slock thunar xbacklight
-xfce4-power-manager xfce4-screenshooter xsel
-```
 ## GTK
 *   The theme is [Mint-Y-Dark-Orange] from the themes that came in with linux mint
 *   Slapped the themes on with lxappearance
@@ -40,3 +34,11 @@ xfce4-power-manager xfce4-screenshooter xsel
 ## Neovim
 * It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package manager for neovim extensions
 * With an increasing amount of extensions because the Lord knows I need more extensions
+
+# Packages needed for Archlinux (caused I just moved)
+```
+audacious alsa-utils blueman compton dmenu firefox ttf-fira-code gnome-calculator
+network-manager noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pulseaudio
+pulseaudio-alsa slock thunar xfce4-power-manager xfce4-screenshooter xsel
+```
+*   I needed the [MesloLGS NF fonts](https://github.com/romkatv/powerlevel10k/blob/master/font.md) as well to make zsh work
