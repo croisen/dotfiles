@@ -137,9 +137,14 @@ ytmp4() {
 	return 0
 }
 
-## ZSH Theme ##
+## ZSH Theme + Arch Packagaes I just found ##
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+    source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
 	source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 	[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
 
 ## ZSH keys ##
     bindkey "^[[H"    beginning-of-line
