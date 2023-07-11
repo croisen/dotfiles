@@ -20,10 +20,18 @@ local config_path = gears.filesystem.get_configuration_dir()
 local alt_key = "Mod1"
 local modkey = "Mod4"
 local terminal = "kitty"
-local editor = os.getenv("EDITOR") or "editor"
+local editor = os.getenv("EDITOR") or "nvim"
 local editor_cmd = terminal .. " -e " .. editor
-local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
 local menu_terminal = { "open terminal", terminal }
+local myawesomemenu = {
+    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+    { "manual", terminal .. " -e man awesome" },
+    { "edit config", editor_cmd .. " " .. os.getenv("HOME") .. "/.config/awesome/rc.lua" },
+    { "restart", awesome.restart },
+    { "quit", function() awesome.quit() end },
+}
+
+local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
 
 -- Put the error handler in another file
 -- TODO: Test if other parts of rc lua can be slapped into a seperate file
@@ -57,13 +65,6 @@ awful.layout.layouts = {
 	-- awful.layout.suit.corner.se,
 }
 
-myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end },
-}
 
 mymainmenu = freedesktop.menu.build({
     before = { menu_awesome },
