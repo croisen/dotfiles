@@ -27,6 +27,15 @@ if command -v apt &>/dev/null; then
         alias aptrm='sudo apt remove'
         alias aptarm='sudo apt autoremove'
         alias aptppa='sudo add-apt-repository'
+    else
+        alias aptup='apt update && apt upgrade'
+        alias aptupd='apt update'
+        alias aptupg='apt upgrade'
+        alias aptfix='apt --fix-broken install'
+        alias aptin='apt install'
+        alias aptrm='apt remove'
+        alias aptarm='apt autoremove'
+        alias aptppa='add-apt-repository'
     fi
 fi
 
@@ -45,6 +54,25 @@ fi
     alias l='ls -CF'
     alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
+
+# Neofetch
+    alias neofetch='neofetch --ascii ~/.config/neofetch/logo --colors 0 0 1 4 7 7'
+
+# Pacman
+    if command -v pacman &>/dev/null; then
+        if command -v sudo &>/dev/null; then
+            alias pacinst='sudo pacman -S'
+            alias pacsear='sudo pacman -Ss'
+            alias pacupdt='sudo pacman -Syu'
+            alias pacremv='sudo pacman -Rsu'
+        else
+            alias pacinst='pacman -S'
+            alias pacsear='pacman -Ss'
+            alias pacupdt='pacman -Syu'
+            alias pacremv='pacman -Rsu'
+        fi
+        alias paclist='pacman -Q'
+    fi
 
 # Python :)
     #alias py='python3'
@@ -143,6 +171,7 @@ ytmp4() {
     source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
     source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
     [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
 
 ## ZSH keys ##
     bindkey "^[[H"    beginning-of-line
