@@ -58,11 +58,10 @@ fi
 # Neofetch
     alias neofetch='neofetch --ascii ~/.config/neofetch/logo --colors 0 0 1 4 7 7'
 
-# Pacman
+# Pacman and yay
     if command -v pacman &>/dev/null; then
         if command -v sudo &>/dev/null; then
-            alias pacinst='sudo pacman -S'
-            alias pacsear='sudo pacman -Ss'
+            alias pacinst='sudo pacman -Sy'
             alias pacupdt='sudo pacman -Syu'
             alias pacremv='sudo pacman -Rsu'
         else
@@ -71,7 +70,17 @@ fi
             alias pacupdt='pacman -Syu'
             alias pacremv='pacman -Rsu'
         fi
+        alias pacsear='pacman -Ss'
         alias paclist='pacman -Q'
+    fi
+
+    if command -v yay &>/dev/null; then
+        alias pacinst='yay -S'
+        alias pacsear='yay -Ss'
+        alias pacupdt='yay -Syu'
+        alias pacremv='yay -Rsu'
+        alias pacsear='yay -Ss'
+        alias paclist='yay -Q'
     fi
 
 # Python :)
