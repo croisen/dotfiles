@@ -56,7 +56,7 @@ fi
     #alias vdir='vdir --color=auto'
 
 # Neofetch
-    alias neofetch='neofetch --ascii ~/.config/neofetch/logo --colors 0 0 1 4 7 7'
+    alias neofetch='neofetch --ascii "$(echo "Say my name." | cowsay -f ~/.config/neofetch/walter.white -W 30)"'
 
 # Pacman and yay
     if command -v pacman &>/dev/null; then
@@ -71,7 +71,7 @@ fi
             alias pacremv='pacman -Rsu'
         fi
         alias pacsear='pacman -Ss'
-        alias paclist='pacman -Q'
+        alias paclist='pacman -Qs'
     fi
 
     if command -v yay &>/dev/null; then
@@ -80,7 +80,7 @@ fi
         alias pacupdt='yay -Syu'
         alias pacremv='yay -Rsu'
         alias pacsear='yay -Ss'
-        alias paclist='yay -Q'
+        alias paclist='yay -Qs'
     fi
 
 # Python :)
