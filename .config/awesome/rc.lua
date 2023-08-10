@@ -5,7 +5,6 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local gears = require("gears")
 local freedesktop = require("modules.freedesktop")
-local has_fdo, freedesktop = pcall(require, "modules.freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local menubar = require("menubar")
 local naughty = require("naughty")
@@ -597,11 +596,9 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }
 
 -- Autostarts
-executer.execute_commands({
+executer.run_once({
 	"blueman-applet",
 	"compton",
-	-- "indicator-keylock",
-	-- "nitrogen -- restore",
 	"nm-applet",
-	"xfce4-power-manager"
 })
+executer.execute("xset", "s off -b -dmps") -- I don't want the screen to sleep

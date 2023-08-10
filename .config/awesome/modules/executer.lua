@@ -5,17 +5,17 @@
 local awful = require("awful")
 local executer = {}
 
-local function execute_commands(cmds)
+local function run_once(cmds)
 	for _, cmd in ipairs(cmds) do
-		-- An ugly way to do this but I use indicator-keylock, welp I also don't know why
-		-- it has to be this way
-		if cmd == "indicator-keylock" then
-			awful.spawn.with_shell("pgrep -u $USER -x indicator-keylo > /dev/null || " .. cmd)
-		else
-			awful.spawn.with_shell("pgrep -u $USER -x " .. cmd .. " > /dev/null || " .. cmd)
-		end
+        awful.spawn.with_shell("pgrep -u $USER -x " .. cmd .. " > /dev/null || " .. cmd)
 	end
 end
 
-executer.execute_commands = execute_commands
+local function execute(cmd, args)
+    -- Welp this ain't good but eh it still fits the style of my config?
+    awful.spawn.with_shell("command -v " .. cmd .. " >>/dev/null && " .. cmd .. " " .. args)
+end
+
+executer.run_once = run_once
+executer.execute  = execute
 return executer
