@@ -43,7 +43,6 @@ Though these are just made from the modules that other people made:
 audacious alsa-utils blueman compton cowsay dmenu firefox fortune-mod gnome-calculator
 lolcat network-manager noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pulseaudio
 pulseaudio-alsa slock thunar ttf-fira-code ttf-meslo-nerd xfce4-power-manager xfce4-screenshooter
-xsel zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
-zsh-theme-powerlevel10k
+xorg-xset xsel zsh-autosuggestions zsh-completions zsh-history-substring-search
+zsh-syntax-highlighting zsh-theme-powerlevel10k
 ```
-*   I needed the [MesloLGS NF fonts](https://github.com/romkatv/powerlevel10k/blob/master/font.md) as well to make zsh work
