@@ -5,6 +5,8 @@ export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
 export ERRFILE="$XDG_CACHE_HOME"/X11/xsession-errors
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
