@@ -601,4 +601,4 @@ executer.run_once({
 	"compton",
 	"nm-applet",
 })
-executer.execute("xset", "s off -b -dmps") -- I don't want the screen to sleep
+executer.execute("xset", "s off -b -dpms") -- I don't want the screen to sleep
