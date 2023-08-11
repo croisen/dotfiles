@@ -43,6 +43,12 @@ stuff.mem = lain.widget.mem({
     end
 })
 
+stuff.temp = lain.widget.temp({
+    settings = function()
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, "🌡️ " .. coretemp_now .. "°C "))
+    end
+})
+
 stuff.net = net_widget
 stuff.volume = lain.widget.alsa({
     cmd = "amixer -D pulse",

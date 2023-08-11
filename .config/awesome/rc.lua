@@ -180,6 +180,7 @@ awful.screen.connect_for_each_screen(function(s)
         {
 			layout = wibox.layout.fixed.horizontal,
             widgets.cpu.widget,
+            widgets.temp,
             widgets.mem.widget,
             widgets.weather.widget,
         }

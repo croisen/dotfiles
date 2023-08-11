@@ -13,8 +13,8 @@ local watch = require("awful.widget.watch")
 local wibox = require("wibox")
 
 local config_dir = gears.filesystem.get_configuration_dir()
-local WIDGET_DIR = config_dir .. "modules/widgets/net_speed_widget"
-local ICONS_DIR = WIDGET_DIR .. "icons/"
+local WIDGET_DIR = config_dir .. "modules/widgets/net-speed-widget"
+local ICONS_DIR = WIDGET_DIR .. "/icons/"
 
 local net_speed_widget = {}
 
