@@ -5,6 +5,7 @@ local wibox = require("wibox")
 
 local theme = require("themes.theme")
 local lain = require("modules.lain")
+local helpers = require("modules.lain.helpers")
 local markup = lain.util.markup
 local net_widget = require("modules.widgets.net-speed-widget.net-speed")
 
@@ -50,15 +51,37 @@ stuff.temp = lain.widget.temp({
 })
 
 stuff.net = net_widget
-stuff.volume = lain.widget.alsa({
-    cmd = "amixer -D pulse",
-    settings = function()
-        if volume_now.status == "off" then
-            volume_now.level = volume_now.level .. "M"
+--stuff.alsa = lain.widget.alsa({
+    --cmd = "amixer -D pulse",
+    --settings = function()
+        --if volume_now.status == "off" then
+            --volume_now.level = volume_now.level .. "M"
+        --end
+        --widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, "🔊 " .. volume_now.level .. "% "))
+    --end
+--})
+
+stuff.pulse = lain.widget.pulse {
+    --Dunno why I have to do this for pipewire-pulse audio
+    devicetype = "sink",
+    cmd        = "pactl list sink" ..
+        [[s | grep -i -e $(pactl info | grep -e 'ink' | cut -d' ' -f3) -e 'volume: front']] ..
+        [[ -e 'muted\?' -e 'device.string'| tail -n6]],
+    settings   = function()
+        volume_now.device = helpers.async([[pactl info]],
+            function(s, e)
+                if e == 0 then
+                    return string.match(s, "Default Sink: (%S+)\n") or "N/A"
+                end
+            end)
+
+        vlevel = volume_now.left .. "-" .. volume_now.right .. "%"
+        if volume_now.muted == "yes" then
+            vlevel = vlevel .. " M"
         end
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, "🔊 " .. volume_now.level .. "% "))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, "🔊 " .. vlevel .. " "))
     end
-})
+}
 
 stuff.weather = lain.widget.weather({
     APPID = "no",

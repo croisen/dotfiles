@@ -38,11 +38,20 @@ Though these are just made from the modules that other people made:
 * It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package manager for neovim extensions
 * With an increasing amount of extensions because the Lord knows I need more extensions
 
-# Packages needed for Archlinux (caused I just moved)
+# Packages I needed
+Applications
 ```
-audacious alsa-utils blueman compton cowsay dmenu firefox fortune-mod gnome-calculator
-lolcat network-manager noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pulseaudio
-pulseaudio-alsa slock thunar ttf-fira-code ttf-meslo-nerd xfce4-power-manager xfce4-screenshooter
+audacious blueman compton cowsay dmenu firefox fortune-mod gnome-calculator
+lolcat network-manager noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+slock thunar ttf-fira-code ttf-meslo-nerd xfce4-power-manager xfce4-screenshooter
 xorg-xset xsel zsh-autosuggestions zsh-completions zsh-history-substring-search
 zsh-syntax-highlighting zsh-theme-powerlevel10k
+```
+Sound (ALSA)
+```
+alsa-utils pavucontrol pulseaudio pulseaudio-alsa
+```
+Sound (Pipewire) [Just switched at midnight, only keybinding left for awesome to modify sound lvl]
+```
+pavucontrol pipewire-alsa pipewire-audio pipewire-pulse wireplumber
 ```

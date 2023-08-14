@@ -161,7 +161,8 @@ awful.screen.connect_for_each_screen(function(s)
 			layout = wibox.layout.fixed.horizontal,
 			-- mykeyboardlayout,
 			wibox.widget.systray(),
-            widgets.volume.widget,
+            --widgets.alsa.widget,
+            widgets.pulse.widget,
             widgets.bat,
             widgets.mytextclock,
 			s.mylayoutbox,
@@ -294,26 +295,26 @@ globalkeys = gears.table.join(
 		end,
 		{description = "run dmenu", group = "App Launcher"}),
 
-	awful.key({ }, "XF86AudioRaiseVolume",
+    awful.key({ }, "XF86AudioRaiseVolume",
         function()
-            os.execute("amixer -D pulse -q sset Master 5%+")
-            widgets.volume.update()
+            os.execute(string.format("pactl set-sink-volume %s +1%%", widgets.pulse.device))
+            widgets.pulse.update()
         end,
-		{description = "raise volume", group = "Sound Control"}),
+        {description = "raise volume", group = "Sound Control"}),
 
-	awful.key({ }, "XF86AudioLowerVolume",
+    awful.key({ }, "XF86AudioLowerVolume",
         function()
-            os.execute("amixer -D pulse -q sset Master 5%-")
-            widgets.volume.update()
+            os.execute(string.format("pactl set-sink-volume %s -1%%", widgets.pulse.device))
+            widgets.pulse.update()
         end,
-		{description = "decrease volume", group = "Sound Control"}),
+        {description = "decrease volume", group = "Sound Control"}),
 
-	awful.key({ }, "XF86AudioMute",
+    awful.key({ }, "XF86AudioMute",
         function()
-            os.execute("amixer -D pulse -q sset Master toggle")
-            widgets.volume.update()
+            os.execute(string.format("pactl set-sink-mute %s toggle", widgets.pulse.device))
+            widgets.pulse.update()
         end,
-		{description = "mute volume", group = "Sound Control"}),
+        {description = "mute volume", group = "Sound Control"}),
 
 	awful.key({ modkey }, "b",
 		function ()
