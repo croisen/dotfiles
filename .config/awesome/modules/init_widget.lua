@@ -67,15 +67,9 @@ stuff.pulse = lain.widget.pulse {
     cmd        = "pactl list sink" ..
         [[s | grep -i -e $(pactl info | grep -e 'ink' | cut -d' ' -f3) -e 'volume: front']] ..
         [[ -e 'muted\?' -e 'device.string'| tail -n6]],
-    settings   = function()
-        volume_now.device = helpers.async([[pactl info]],
-            function(s, e)
-                if e == 0 then
-                    return string.match(s, "Default Sink: (%S+)\n") or "N/A"
-                end
-            end)
 
-        vlevel = volume_now.left .. "-" .. volume_now.right .. "%"
+    settings   = function()
+        vlevel = volume_now.left .. "-" .. volume_now.right .. "% | " .. volume_now.device
         if volume_now.muted == "yes" then
             vlevel = vlevel .. " M"
         end
