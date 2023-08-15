@@ -48,7 +48,7 @@ fi
     alias egrep='egrep --color=auto'
 
 # Ls
-    alias ls='ls --color=auto -A'
+    alias ls='ls --color=auto -A --group-directories-first'
     alias ll='ls -alF'
     alias la='ls -A'
     alias l='ls -CF'
