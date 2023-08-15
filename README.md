@@ -41,17 +41,24 @@ Though these are just made from the modules that other people made:
 # Packages I needed
 Applications
 ```
-audacious blueman compton cowsay dmenu firefox fortune-mod gnome-calculator
-lolcat network-manager noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-slock thunar ttf-fira-code ttf-meslo-nerd xfce4-power-manager xfce4-screenshooter
+audacious blueman cowsay firefox fortune-mod gnome-calculator
+lolcat network-manager noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra thunar ttf-fira-code ttf-meslo-nerd xfce4-power-manager xfce4-screenshooter
 xorg-xset xsel zsh-autosuggestions zsh-completions zsh-history-substring-search
 zsh-syntax-highlighting zsh-theme-powerlevel10k
+```
+Window Manager (Awesome)
+```
+awesome compton dmenu slock xorg-xset
+```
+Window Manager (Hyprland)
+```
+hyprland waybar wofi wpaperd
 ```
 Sound (ALSA)
 ```
 alsa-utils pavucontrol pulseaudio pulseaudio-alsa
 ```
-Sound (Pipewire) [Just switched at midnight, only keybinding left for awesome to modify sound lvl]
+Sound (Pipewire)
 ```
 pavucontrol pipewire-alsa pipewire-audio pipewire-pulse wireplumber
 ```
