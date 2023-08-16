@@ -53,7 +53,7 @@ pavucontrol pipewire-alsa pipewire-audio pipewire-pulse wireplumber
 ```
 ### Window Manager (Awesome)
 ```
-awesome dmenu picom slock xorg-xset xsel
+awesome dmenu picom scrot slock xorg-xset xsel
 ```
 ### Window Manager (Hyprland)
 ```

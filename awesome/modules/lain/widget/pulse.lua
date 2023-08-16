@@ -33,8 +33,7 @@ local function factory(args)
                 muted  = string.match(s, "muted: (%S+)") or "N/A"
             }
 
-            --pulse.device = volume_now.index
-            pulse.device = volume_now.device
+            pulse.device = volume_now.index
 
             local ch = 1
             volume_now.channel = {}

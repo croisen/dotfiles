@@ -66,7 +66,7 @@ stuff.pulse = lain.widget.pulse {
     devicetype = "sink",
     cmd        = "pactl list sink" ..
         [[s | grep -i -e $(pactl info | grep -e 'ink' | cut -d' ' -f3) -e 'volume: front']] ..
-        [[ -e 'muted\?' -e 'device.string'| tail -n6]],
+        [[ -e 'muted\?' -e 'device.string'| tail -n7 | sed "s/[Nn]ame/index/"]],
 
     settings   = function()
         vlevel = volume_now.left .. "-" .. volume_now.right .. "% | " .. volume_now.device
