@@ -59,7 +59,7 @@ pavucontrol pipewire-alsa pipewire-audio pipewire-pulse wireplumber
 ```
 awesome dmenu lxappearance picom scrot slock xorg-xset xsel
 ```
-### Window Manager (Hyprland) (Unused for now, as I do not know how to make some stuff work)
+### Window Manager (Hyprland)
 ```
 hyprland hyprpaper mako nwg-look-bin xdg-desktop-portal-hyprland waybar wofi
 ```
