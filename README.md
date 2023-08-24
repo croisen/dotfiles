@@ -45,7 +45,7 @@ that being [neofetch-themes](https://github.com/Chick2D/neofetch-themes)
 audacious blueman cowsay firefox fortune-mod lolcat network-manager
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5ct thunar
 ttf-fira-code ttf-meslo-nerd zsh-autosuggestions zsh-completions
-zsh-history-substring-search zsh-syntax-highlighting zsh-theme-powerlevel10k
+zsh-history-substring-search zsh-syntax-highlighting zsh-theme-powerlevel10k zsh-vi-mode
 ```
 ### Sound (ALSA)
 ```
