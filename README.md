@@ -61,5 +61,5 @@ awesome dmenu lxappearance picom scrot slock xorg-xset xsel
 ```
 ### Window Manager (Hyprland)
 ```
-grim hyprland hyprpaper mako nwg-look-bin xdg-desktop-portal-hyprland waybar wofi
+grim hyprland hyprpaper mako nwg-look-bin xdg-desktop-portal-hyprland waybar wl-clipboard wofi
 ```

@@ -33,7 +33,7 @@ local function factory(args)
                 muted  = string.match(s, "muted: (%S+)") or "N/A"
             }
 
-            pulse.device = volume_now.index
+	    pulse.device = volume_now.index
 
             local ch = 1
             volume_now.channel = {}
@@ -51,6 +51,9 @@ local function factory(args)
     end
 
     helpers.newtimer("pulse", timeout, pulse.update)
+    pulse.soundup =   function() os.execute( "pactl set-sink-volume " .. pulse.devicetype .. " 1%+" ) end
+    pulse.sounddown = function() os.execute( "pactl set-sink-volume " .. pulse.devicetype .. " 1%-" ) end
+    pulse.mute =      function() os.execute( "pactl set-sink-mute " .. pulse.devicetype .. " toggle" ) end
 
     return pulse
 end

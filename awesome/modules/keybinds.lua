@@ -112,22 +112,22 @@ keybinds.globalkeys = gears.table.join(
 
     awful.key({ }, "XF86AudioRaiseVolume",
         function()
-            os.execute(string.format("pactl set-sink-volume %s +1%%", widgets.pulse.device))
-            widgets.pulse.update()
+            widgets.sound("wireplumber").soundup()
+            widgets.sound("wireplumber").update()
         end,
         {description = "raise volume", group = "Sound Control"}),
 
     awful.key({ }, "XF86AudioLowerVolume",
         function()
-            os.execute(string.format("pactl set-sink-volume %s -1%%", widgets.pulse.device))
-            widgets.pulse.update()
+            widgets.sound("wireplumber").sounddown()
+            widgets.sound("wireplumber").update()
         end,
         {description = "decrease volume", group = "Sound Control"}),
 
     awful.key({ }, "XF86AudioMute",
         function()
-            os.execute(string.format("pactl set-sink-mute %s toggle", widgets.pulse.device))
-            widgets.pulse.update()
+            widgets.sound("wireplumber").mute()
+            widgets.sound("wireplumber").update()
         end,
         {description = "mute volume", group = "Sound Control"}),
 
@@ -181,11 +181,22 @@ keybinds.globalkeys = gears.table.join(
     awful.key({  }, "XF86AudioNext", function()
         awful.spawn("audacious -f")
     end,
-    {description = "Audacious play previous track", group = "Audacious Music Player"}),
+    {description = "Audacious play next track", group = "Audacious Music Player"}),
     awful.key({  }, "XF86AudioPrev", function()
         awful.spawn("audacious -r")
     end,
-    {description = "Audacious play next track", group = "Audacious Music Player"})
+    {description = "Audacious play previous track", group = "Audacious Music Player"}),
+
+    -- Brightness Control
+    awful.key({  }, "XF86MonBrightnessUp", function()
+        os.execute("xbacklight + 5%")
+    end,
+    {description = "Raise brightness", group = "Brightness Control"}),
+
+    awful.key({  }, "XF86MonBrightnessDown", function()
+        os.execute("xbacklight - 5%")
+    end,
+    {description = "Lower brightness", group = "Brightness Control"})
 )
 
 keybinds.clientkeys = gears.table.join(

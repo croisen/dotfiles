@@ -1,11 +1,13 @@
+neofetch --source ~/.config/neofetch/logo
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Lines configured by zsh-newuser-install
 HISTFILE=$HOME/.config/zsh/zsh_hist
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=5000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename /home/andrew/.config/zsh/.zshrc
@@ -56,7 +58,8 @@ fi
     #alias vdir='vdir --color=auto'
 
 # Neofetch
-    alias neofetch='neofetch --ascii "$(echo "Say my name." | cowsay -f ~/.config/neofetch/walter.white -W 30)"'
+    #alias neofetch='neofetch --ascii "$(echo "Say my name." | cowsay -f ~/.config/neofetch/walter.white -W 30)"'
+    alias neofetch='neofetch --source ~/.config/neofetch/logo'
 
 # Pacman and yay
     if command -v pacman &>/dev/null; then

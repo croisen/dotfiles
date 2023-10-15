@@ -3,14 +3,26 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
-export ANDROID_HOME="$XDG_DATA_HOME"/android
+append_path() {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
 
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
+#export ANDROID_HOME="$XDG_DATA_HOME"/android
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+export EDITOR=nvim
 
 export ERRFILE="$XDG_CACHE_HOME"/X11/xsession-errors
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 
@@ -22,7 +34,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 
-export XCURSOR_PATH="$XDG_DATA_HOME/icons"
+export XCURSOR_PATH="$XDG_DATA_HOME"/icons
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 
@@ -32,4 +44,13 @@ export WINEPREFIX="$XDG_DATA_HOME"/wine
 #export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
 #export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
-export PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+append_path '/usr/local/sbin'
+append_path '/usr/local/bin'
+append_path '/usr/local/games'
+append_path '/usr/bin'
+append_path '/bin'
+append_path '/opt/flutter/bin'
+append_path '/opt/android-sdk/cmdline-tools/latest/bin'
+append_path $HOME'/.local/bin'
+
+export PATH

@@ -7,7 +7,6 @@ local theme = require("themes.theme")
 local lain = require("modules.lain")
 local helpers = require("modules.lain.helpers")
 local markup = lain.util.markup
-local net_widget = require("modules.widgets.net-speed-widget.net-speed")
 
 local stuff = {}
 
@@ -50,24 +49,16 @@ stuff.temp = lain.widget.temp({
     end
 })
 
-stuff.net = net_widget
---stuff.alsa = lain.widget.alsa({
-    --cmd = "amixer -D pulse",
-    --settings = function()
-        --if volume_now.status == "off" then
-            --volume_now.level = volume_now.level .. "M"
-        --end
-        --widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, "🔊 " .. volume_now.level .. "% "))
-    --end
---})
+stuff.alsa = lain.widget.alsa({
+    settings = function()
+        if volume_now.status == "off" then
+            volume_now.level = volume_now.level .. "M"
+        end
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, "🔊 " .. volume_now.level .. "% "))
+    end
+})
 
 stuff.pulse = lain.widget.pulse {
-    --Dunno why I have to do this for pipewire-pulse audio
-    devicetype = "sink",
-    cmd        = "pactl list sink" ..
-        [[s | grep -i -e $(pactl info | grep -e 'ink' | cut -d' ' -f3) -e 'volume: front']] ..
-        [[ -e 'muted\?' -e 'device.string'| tail -n7 | sed "s/[Nn]ame/index/"]],
-
     settings   = function()
         vlevel = volume_now.left .. "-" .. volume_now.right .. "% | " .. volume_now.device
         if volume_now.muted == "yes" then
@@ -77,8 +68,18 @@ stuff.pulse = lain.widget.pulse {
     end
 }
 
+local wireplumber = require("modules.widgets.wireplumber-sound")
+stuff.wireplumber = wireplumber({
+    settings   = function()
+        if muted ~= "N/A" then
+            volume_now = volume_now .. "M"
+        end
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, "🔊 " .. volume_now .. " "))
+    end
+})
+
 stuff.weather = lain.widget.weather({
-    APPID = "no",
+    APPID = "nononooo",
     city_id = 1709007, -- placeholder
     notification_preset = { font = theme.font, fg = theme.fg_normal },
     weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
@@ -89,5 +90,18 @@ stuff.weather = lain.widget.weather({
         widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, "🌤️ " .. descr .. " @ " .. units .. "°C "))
     end
 })
+
+stuff.cpu_turtle = require("modules.widgets.cpu-widget.cpu-widget")
+stuff.net_turtle = require("modules.widgets.net-speed-widget.net-speed")
+
+stuff.sound = function(sound_backend)
+    if sound_backend == "alsa" then
+        return stuff.alsa
+    elseif sound_backend == "pulseaudio" then
+        return stuff.pulse
+    elseif sound_backend == "wireplumber" then
+        return stuff.wireplumber
+    end
+end
 
 return stuff
