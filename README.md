@@ -5,38 +5,38 @@ Though these are just made from the modules that other people made:
 
 ## Awesome
 
-*The widgets used are from [lain](https://github.com/lcpz/lain) and
+* The widgets used are from [lain](https://github.com/lcpz/lain) and
 [streetturtle](https://github.com/streetturtle/awesome-wm-widgets)
 with a few modifications to support how I structure my config folders
 (Currently it is a mess)
 
 ## Hyprland
 
-*Currently just the default config with keybinds similar to my awesomewm keybinds
+* Currently just the default config with keybinds similar to my awesomewm keybinds
 
 ## GTK
 
-*The theme is [gruvbox-material-dark](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
+* The theme is [gruvbox-material-dark](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
 by TheGreatMcPain
 *Slapped the themes on with lxappearance or nwg-look-bin
 (depending if I currently use awesomewm or hyprland)
 
 ## Kitty
 
-*The config is the default one though what I thought I didn't need, I just
+* The config is the default one though what I thought I didn't need, I just
 removed them from the config file
-*The colorscheme I use is [gruvbox-palette](https://github.com/morhetz/gruvbox-contrib)
+* The colorscheme I use is [gruvbox-palette](https://github.com/morhetz/gruvbox-contrib)
 
 ## Neofetch
 
-*The config uses an alias to a logo and a config collected and modified by
+* The config uses an alias to a logo and a config collected and modified by
 Chick2D,  that being [neofetch-themes](https://github.com/Chick2D/neofetch-themes)
 
 ## Neovim
 
-*It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package
+* It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package
 manager for neovim extensions
-*With an increasing amount of extensions because the Lord knows I need more extensions
+* With an increasing amount of extensions because the Lord knows I need more extensions
 
 ## Packages I needed
 
