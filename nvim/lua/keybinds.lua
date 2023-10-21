@@ -34,8 +34,13 @@ key_set('n', '<Leader>n', ":noh<cr>")
 key_set('n', '<Leader>f', ":NvimTreeToggle<cr>")
 
 -- Telescope
-local tele_builtin = require('telescope.builtin')
-key_set('n', '<leader>ff', tele_builtin.find_files, {})
-key_set('n', '<leader>fg', tele_builtin.live_grep, {})
-key_set('n', '<leader>fb', tele_builtin.buffers, {})
-key_set('n', '<leader>fh', tele_builtin.help_tags, {})
+local status_ok, tele_key = pcall(require, 'telescope.builtin')
+
+if not status_ok then
+    return
+else
+    key_set('n', '<leader>ff', tele_key.find_files, {})
+    key_set('n', '<leader>fg', tele_key.live_grep, {})
+    key_set('n', '<leader>fb', tele_key.buffers, {})
+    key_set('n', '<leader>fh', tele_key.help_tags, {})
+end
