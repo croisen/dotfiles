@@ -2,7 +2,11 @@
     "coc.preferences.extensionUpdateCheck": "weekly",
     "coc.preferences.silentAutoupdate": true,
     "coc.preferences.formatOnSave": true,
+    "coc.source.ultisnips.enable": true,
 
+    "prettier.formatterPriority": 2,
+    "prettier.bracketSpacing": true,
+    "prettier.printWidth": 80,
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
     "prettier.trailingComma": "es5",
