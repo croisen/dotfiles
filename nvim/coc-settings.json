@@ -1,5 +1,18 @@
 {
-    "prettier.enable": true,
+    "coc.preferences.extensionUpdateCheck": "weekly",
+    "coc.preferences.silentAutoupdate": true,
+    "coc.preferences.formatOnSave": true,
+
+    "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
-    "prettier.useTabs": true,
+    "prettier.trailingComma": "es5",
+    "prettier.useTabs": false,
+
+    "Lua.workspace.library": [
+        "/usr/share/awesome/lib",
+        "/usr/share/nvim/runtime/lua",
+        "/usr/share/nvim/runtime/lua/vim",
+        "/usr/share/nvim/runtime/lua/vim/lsp"
+    ],
+    "Lua.diagnostics.globals": ["vim"]
 }
