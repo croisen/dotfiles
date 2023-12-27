@@ -4,7 +4,7 @@
     "coc.preferences.formatOnSave": true,
     "coc.source.ultisnips.enable": true,
 
-    "prettier.formatterPriority": 2,
+    "prettier.formatterPriority": 1,
     "prettier.bracketSpacing": true,
     "prettier.printWidth": 80,
     "prettier.singleQuote": true,

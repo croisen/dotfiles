@@ -14,6 +14,7 @@ vim.g.coc_global_extensions = {
     'coc-rust-analyzer',
     'coc-sh',
     'coc-ultisnips',
+    'coc-ultisnips-select',
     'coc-yank',
     'coc-zig',
 }

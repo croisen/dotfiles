@@ -20,11 +20,11 @@ configs.setup {
         disable = { "yaml" },
     },
 
-    rainbow = {
-        enable = true,
-        disable = { "" },
-        extended_mode = true,
-        query = 'rainbow-parens',
-        strategy = require("ts-rainbow.strategy.global"),
-    },
+    --rainbow = {
+    --enable = true,
+    --disable = { "" },
+    --extended_mode = true,
+    --query = 'rainbow-parens',
+    --strategy = require("ts-rainbow.strategy.global"),
+    --},
 }
