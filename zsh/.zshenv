@@ -12,7 +12,7 @@ append_path() {
     esac
 }
 
-#export ANDROID_HOME="$XDG_DATA_HOME"/android
+export ANDROID_HOME="$XDG_DATA_HOME"/android
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
@@ -53,7 +53,7 @@ append_path '/usr/local/games'
 append_path '/usr/bin'
 append_path '/bin'
 append_path '/opt/flutter/bin'
-append_path '/opt/android-sdk/cmdline-tools/latest/bin'
+append_path $ANDROID_HOME'/cmdline-tools/latest/bin'
 append_path $HOME'/.local/bin'
 
 export PATH

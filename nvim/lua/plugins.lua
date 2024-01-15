@@ -6,6 +6,7 @@ end
 
 lazy.setup({
     --'andweeb/presence.nvim',
+    'edluffy/hologram.nvim',
     'HiPhish/nvim-ts-rainbow2',
     'honza/vim-snippets',
     'kylechui/nvim-surround',
@@ -22,14 +23,3 @@ lazy.setup({
     'preservim/nerdcommenter',
     { 'neoclide/coc.nvim', branch = "release", },
 })
-
-require("user.editor_opts")
-require("user.keybinds")
-require("user.colorscheme")
-
-require("user.coc")
-require("user.lualine")
-require("user.nvim_surround")
-require("user.nvim_tree")
-require("user.ultisnips")
-require("user.treesitter")

@@ -2,7 +2,9 @@
     "coc.preferences.extensionUpdateCheck": "weekly",
     "coc.preferences.silentAutoupdate": true,
     "coc.preferences.formatOnSave": true,
-    "coc.source.ultisnips.enable": true,
+
+    "rpc.idleText": "Having deep thoughts on why no compile",
+    "rpc.useCWDAsFallback": true,
 
     "prettier.formatterPriority": 1,
     "prettier.bracketSpacing": true,
