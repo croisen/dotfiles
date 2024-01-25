@@ -5,6 +5,7 @@ require("config.editor_opts")
 require("config.keybinds")
 require("config.colorscheme")
 
+require("config.bufferline")
 require("config.coc")
 require("config.hologram")
 require("config.lualine")

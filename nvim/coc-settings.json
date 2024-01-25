@@ -1,4 +1,6 @@
 {
+    "clangd.path": "/opt/clangd/bin/clangd",
+
     "coc.preferences.extensionUpdateCheck": "weekly",
     "coc.preferences.silentAutoupdate": true,
     "coc.preferences.formatOnSave": true,

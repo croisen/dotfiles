@@ -5,6 +5,7 @@ if not ok then
 end
 
 lazy.setup({
+    'akinsho/bufferline.nvim',
     --'andweeb/presence.nvim',
     'edluffy/hologram.nvim',
     'HiPhish/nvim-ts-rainbow2',
@@ -14,12 +15,13 @@ lazy.setup({
     'morhetz/gruvbox',
     'nvim-lua/plenary.nvim',
     'nvim-lualine/lualine.nvim',
-    'nvim-telescope/telescope.nvim',
     'nvim-telescope/telescope-fzf-native.nvim',
+    'nvim-telescope/telescope-media-files.nvim',
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
     'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/nvim-treesitter-textobjects',
     'preservim/nerdcommenter',
-    { 'neoclide/coc.nvim', branch = "release", },
+    { 'nvim-telescope/telescope.nvim', branch = "0.1.x" },
+    { 'neoclide/coc.nvim',             branch = "release", },
 })

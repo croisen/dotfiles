@@ -44,3 +44,6 @@ else
     key_set('n', '<leader>fb', tele_key.buffers, {})
     key_set('n', '<leader>fh', tele_key.help_tags, {})
 end
+
+-- Bufferline
+key_set('n', 'gb', ":BufferLinePick<cr>", {})

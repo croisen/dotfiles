@@ -1,10 +1,11 @@
-local ok, configs = pcall(require, 'nvim-treesitter.configs')
+local ok, config = pcall(require, 'nvim-treesitter.configs')
 
 if not ok then
+    vim.print("Treesitter failed to load")
     return
 end
 
-configs.setup {
+config.setup {
     ensure_maintained = "all",
     sync_install = false,
     ignore_installs = { "" },

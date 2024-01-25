@@ -1,6 +1,7 @@
 local ok, config = pcall(require, 'nvim-tree')
 
 if not ok then
+    vim.print("Nvim tree failed to load")
     return
 end
 
