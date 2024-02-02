@@ -14,6 +14,14 @@ albumart_mk() {
     ffmpeg -i $1 -i $2 -map 0:0 -map 1:0 -codec copy -id3v2_version 3 \
         -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" modified_$1
 }
+
+# link_config_stow - Uses GNU stow to make symlinks from this git directory
+# to ones config directory
+link_config_stow() {
+    mkdir -p /home/$USER/.config/
+    stow --dir=./ --target=/home/$USER/.config ./
+}
+
 # Gitall - git add, commit, and push
 gitall() {
 	git add .

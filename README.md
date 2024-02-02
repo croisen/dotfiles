@@ -3,6 +3,14 @@
 My own config files
 Though these are just made from the modules that other people made:
 
+## Installation
+
+```sh
+git clone "https://github.com/croisen/dotfiles.git"
+cd dotfiles
+stow --dir=./ --target=/home/$USER/.config ./
+```
+
 ## GTK
 
 -   The theme is [gruvbox-material-dark](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
@@ -21,13 +29,12 @@ Though these are just made from the modules that other people made:
 -   The config uses an alias to a logo and a config collected and modified by
     Chick2D, that being [neofetch-themes](https://github.com/Chick2D/neofetch-themes)
 
-## Neovim
-
--   It uses [vim-plug](https://github.com/junegunn/vim-plug) as a package
-    manager for neovim extensions
--   With an increasing amount of extensions because the Lord knows I need more extensions
-
 ## Packages I needed
+
+### External Apps
+
+My config of [dwm](https://github.com/croisen/dwm)
+My config of [dwmblocks](https://github.com/croisen/dwmblocks)
 
 ### Applications
 
@@ -50,8 +57,6 @@ pavucontrol pipewire-alsa pipewire-audio pipewire-pulse wireplumber
 ```
 
 ### Window Manager (dwm)
-
-My config of dwm : [dwm](https://github.com/croisen/dwm)
 
 ```
 dmenu lxappearance picom scrot slock xorg-xbacklight xorg-xset xsel
