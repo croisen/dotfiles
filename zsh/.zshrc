@@ -24,7 +24,6 @@ compinit
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
     source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-    source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
     source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
     [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 

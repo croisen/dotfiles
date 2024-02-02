@@ -35,14 +35,16 @@ key_set('n', '<Leader>f', ":NvimTreeToggle<cr>")
 
 -- Telescope
 local ok, tele_key = pcall(require, 'telescope.builtin')
-
-if not ok then
-    return
-else
+if ok then
     key_set('n', '<leader>ff', tele_key.find_files, {})
     key_set('n', '<leader>fg', tele_key.live_grep, {})
     key_set('n', '<leader>fb', tele_key.buffers, {})
     key_set('n', '<leader>fh', tele_key.help_tags, {})
+end
+
+local ok, hex_view = pcall(require, 'hex')
+if ok then
+    key_set('n', '<leader>hh', hex_view.toggle, {})
 end
 
 -- Bufferline

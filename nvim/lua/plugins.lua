@@ -22,6 +22,7 @@ lazy.setup({
     'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/nvim-treesitter-textobjects',
     'preservim/nerdcommenter',
+    'RaafatTurki/hex.nvim',
     { 'nvim-telescope/telescope.nvim', branch = "0.1.x" },
     { 'neoclide/coc.nvim',             branch = "release", },
 })
