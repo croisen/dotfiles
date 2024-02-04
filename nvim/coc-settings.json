@@ -22,5 +22,8 @@
         "/usr/share/nvim/runtime/lua/vim",
         "/usr/share/nvim/runtime/lua/vim/lsp"
     ],
-    "Lua.diagnostics.globals": ["vim"]
+    "Lua.diagnostics.globals": [
+      "vim"
+    ],
+    "snippets.ultisnips.pythonPrompt": false
 }

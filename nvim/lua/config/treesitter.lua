@@ -8,6 +8,7 @@ end
 config.setup {
     ensure_maintained = "all",
     sync_install = false,
+    auto_install = true,
     ignore_installs = { "" },
 
     highlight = {

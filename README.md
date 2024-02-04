@@ -8,39 +8,29 @@ Though these are just made from the modules that other people made:
 ```sh
 git clone "https://github.com/croisen/dotfiles.git"
 cd dotfiles
-stow --dir=./ --target=/home/$USER/.config ./
+stow --dir=./ --target=$HOME/.config ./
 ```
 
-## GTK
-
--   The theme is [gruvbox-material-dark](https://github.com/TheGreatMcPain/gruvbox-material-gtk)
-    by TheGreatMcPain
--   Slapped the themes on with lxappearance or nwg-look-bin
-    (depending if I currently use awesomewm or hyprland)
-
-## Kitty
-
--   The config is the default one though what I thought I didn't need, I just
-    removed them from the config file
--   The colorscheme I use is [gruvbox-palette](https://github.com/morhetz/gruvbox-contrib)
-
-## Neofetch
-
--   The config uses an alias to a logo and a config collected and modified by
-    Chick2D, that being [neofetch-themes](https://github.com/Chick2D/neofetch-themes)
-
-## Packages I needed
+## Packages I needed (Some are in the AUR)
 
 ### External Apps
 
-My config of [dwm](https://github.com/croisen/dwm)
-My config of [dwmblocks](https://github.com/croisen/dwmblocks)
+-   [dwm](https://github.com/croisen/dwm)
+-   [dwmblocks](https://github.com/croisen/dwmblocks)
+-   [gruvbox-dark-gtk](https://github.com/jmattheis/gruvbox-dark-gtk)
+-   [gruvbox-dark-icons-gtk](https://github.com/jmattheis/gruvbox-dark-icons-gtk)
+
+-   [Grub Themes](https://github.com/xenlism/Grub-themes)
+-   [Grub2 Themes](https://github.com/Generator/Grub2-themes)
+-   [gruvbox-palette](https://github.com/morhetz/gruvbox-contrib)
+-   [neofetch-themes](https://github.com/Chick2D/neofetch-themes)
 
 ### Applications
 
 ```
-audacious blueman cowsay firefox fortune-mod lolcat network-manager
-qt5ct thunar
+audacious blueman cowsay firefox fortune-mod kitty lolcat networkmanager
+network-manager-applet neofetch neovim npm picom python3 qt5ct ranger thunar
+yarn
 ```
 
 ### Fonts
