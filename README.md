@@ -5,6 +5,8 @@ Though these are just made from the modules that other people made:
 
 ## Installation
 
+Why stow? I wanted symlinks
+
 ```sh
 git clone "https://github.com/croisen/dotfiles.git"
 cd dotfiles
@@ -30,7 +32,7 @@ stow --dir=./ --target=$HOME/.config ./
 ```
 audacious blueman cowsay firefox fortune-mod kitty lolcat networkmanager
 network-manager-applet neofetch neovim npm picom python3 qt5ct ranger thunar
-yarn
+tree-sitter-cli xxd yarn
 ```
 
 ### Fonts
@@ -49,7 +51,13 @@ pavucontrol pipewire-alsa pipewire-audio pipewire-pulse wireplumber
 ### Window Manager (dwm)
 
 ```
-dmenu lxappearance picom scrot slock xorg-xbacklight xorg-xset xsel
+dmenu lxappearance picom scrot xorg-xbacklight xorg-xset xsel
+```
+
+### Window Manager (hyprland)
+
+```
+hyprland hyprpaper nwg-look waybar wofi
 ```
 
 ### Shell (zsh)
