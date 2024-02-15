@@ -21,10 +21,10 @@ compinit
     source ~/.config/zsh/other_stuff/functions.sh
 
 ## ZSH Theme + Arch Packagaes for ZSH I just found ##
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-    source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+    source $PREFIX/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+    source $PREFIX/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+    source $PREFIX/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source $PREFIX/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
     [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 

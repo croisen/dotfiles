@@ -42,6 +42,14 @@ export XCURSOR_PATH="$XDG_DATA_HOME"/icons
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    export MOZ_ENABLE_WAYLAND=1
+fi
+
+if [ -z $PREFIX ]; then
+    export PREFIX=/usr
+fi
+
 #export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 #export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
 #export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
