@@ -30,9 +30,9 @@ stow --dir=./ --target=$HOME/.config ./
 ### Applications
 
 ```
-audacious blueman cowsay firefox fortune-mod kitty lolcat networkmanager
+audacious blueman cowsay firefox fortune-mod fzf kitty lolcat networkmanager
 network-manager-applet neofetch neovim npm picom python3 qt5ct ranger thunar
-tree-sitter-cli xxd yarn
+tree-sitter-cli xxd yarn zoxide
 ```
 
 ### Fonts
@@ -57,7 +57,7 @@ dmenu lxappearance picom scrot xorg-xbacklight xorg-xset xsel
 ### Window Manager (hyprland)
 
 ```
-hyprland hyprpaper nwg-look waybar wofi
+hyprland hyprpaper mako nwg-look waybar wofi
 ```
 
 ### Shell (zsh)
