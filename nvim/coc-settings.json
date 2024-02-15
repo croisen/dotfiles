@@ -1,5 +1,5 @@
 {
-    "clangd.path": "/opt/clangd/bin/clangd",
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/17.0.3/clangd_17.0.3/bin/clangd",
 
     "coc.preferences.extensionUpdateCheck": "weekly",
     "coc.preferences.silentAutoupdate": true,
@@ -22,8 +22,7 @@
         "/usr/share/nvim/runtime/lua/vim",
         "/usr/share/nvim/runtime/lua/vim/lsp"
     ],
-    "Lua.diagnostics.globals": [
-      "vim"
-    ],
+    "Lua.diagnostics.globals": ["vim"],
+
     "snippets.ultisnips.pythonPrompt": false
 }
