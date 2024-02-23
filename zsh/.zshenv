@@ -12,7 +12,7 @@ append_path() {
     esac
 }
 
-export ANDROID_HOME="$XDG_DATA_HOME"/android
+export ANDROID_HOME=/opt/android-sdk
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
@@ -44,6 +44,7 @@ export WINEPREFIX="$XDG_DATA_HOME"/wine
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
+    export QT_QPA_PLATFORM=wayland
 fi
 
 if [ -z $PREFIX ]; then

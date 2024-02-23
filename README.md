@@ -32,7 +32,7 @@ stow --dir=./ --target=$HOME/.config ./
 ```
 audacious blueman cowsay firefox fortune-mod fzf kitty lolcat networkmanager
 network-manager-applet neofetch neovim npm picom python3 qt5ct ranger thunar
-tree-sitter-cli xxd yarn zoxide
+tree-sitter-cli xdg-desktop-portal xdg-desktop-portal-gtk xxd yarn zoxide
 ```
 
 ### Fonts
@@ -57,7 +57,8 @@ dmenu lxappearance picom scrot xorg-xbacklight xorg-xset xsel
 ### Window Manager (hyprland)
 
 ```
-hyprland hyprpaper mako nwg-look waybar wofi
+grim hyprland hyprpaper mako nwg-look slurp waybar wofi
+xdg-desktop-portal-hyprland
 ```
 
 ### Shell (zsh)

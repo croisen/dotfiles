@@ -1,7 +1,7 @@
 {
-    "height": 10,
+    "height": 8,
     // "width": 1280,
-    "spacing": 4,
+    "spacing": 2,
     "modules-left": ["hyprland/workspaces"],
 
     "modules-center": ["hyprland/window"],
@@ -9,12 +9,8 @@
     "modules-right": [
         "tray",
         "pulseaudio",
-        "network",
-        "temperature",
         "memory",
         "temperature",
-        "backlight",
-        "keyboard-state",
         "battery",
         "clock"
     ],
