@@ -46,7 +46,7 @@ fi
     #alias neofetch='neofetch --ascii "$(echo "Say my name." | cowsay -f ~/.config/neofetch/walter.white -W 30)"'
     alias neofetch='neofetch --source ~/.config/neofetch/logo'
 
-# Pacman and yay
+# Pacman and AUR helpers
     if command -v pacman &>/dev/null; then
         if command -v sudo &>/dev/null; then
             alias pacinst='sudo pacman -Sy'
@@ -60,15 +60,24 @@ fi
         fi
         alias pacsear='pacman -Ss'
         alias paclist='pacman -Qs'
-    fi
 
-    if command -v yay &>/dev/null; then
-        alias pacinst='yay -S'
-        alias pacsear='yay -Ss'
-        alias pacupdt='yay -Syu'
-        alias pacremv='yay -Rsu'
-        alias pacsear='yay -Ss'
-        alias paclist='yay -Qs'
+        if command -v yay &>/dev/null; then
+            alias pacinst='yay -S'
+            alias pacsear='yay -Ss'
+            alias pacupdt='yay -Syu'
+            alias pacremv='yay -Rsu'
+            alias pacsear='yay -Ss'
+            alias paclist='yay -Qs'
+        fi
+
+        if command -v paru &>/dev/null; then
+            alias pacinst='paru -S'
+            alias pacsear='paru -Ss'
+            alias pacupdt='paru -Syu'
+            alias pacremv='paru -Rsu'
+            alias pacsear='paru -Ss'
+            alias paclist='paru -Qs'
+        fi
     fi
 
 # Python :)
