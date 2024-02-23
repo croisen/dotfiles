@@ -1,0 +1,8 @@
+on-button-left=invoke-default-action
+on-button-middle=none
+on-button-right=dismiss
+on-touch=dismiss
+on-notify=none
+
+max-history=10
+sort=-time
