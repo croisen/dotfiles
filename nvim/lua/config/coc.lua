@@ -4,6 +4,7 @@ vim.g.coc_global_extensions = {
     'coc-copilot',
     'coc-diagnostic',
     'coc-discord-rpc',
+    'coc-flutter-tools',
     'coc-git',
     'coc-highlight',
     'coc-lua',
