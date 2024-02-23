@@ -57,8 +57,8 @@ dmenu lxappearance picom scrot xorg-xbacklight xorg-xset xsel
 ### Window Manager (hyprland)
 
 ```
-grim hyprland hyprpaper mako nwg-look slurp waybar wofi
-xdg-desktop-portal-hyprland
+cliphist grim hyprland hyprpaper mako nwg-look slurp
+waybar wofi xdg-desktop-portal-hyprland
 ```
 
 ### Shell (zsh)
