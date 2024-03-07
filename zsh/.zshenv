@@ -12,13 +12,16 @@ append_path() {
     esac
 }
 
-export ANDROID_HOME=/opt/android-sdk
+export ANDROID_HOME="$HOME"/.local/share/android
+export ANDROID_AVD_HOME="$ANDROID_HOME"/avd
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
 export EDITOR=nvim
 
 export ERRFILE="$XDG_CACHE_HOME"/X11/xsession-errors
+
+export FLUTTER_HOME=/opt/flutter
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
@@ -38,6 +41,8 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 export XCURSOR_PATH="$XDG_DATA_HOME"/icons
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
@@ -51,19 +56,20 @@ if [ -z $PREFIX ]; then
     export PREFIX=/usr
 fi
 
-#export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-#export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
-#export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
-#export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
-#export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
-
 append_path '/usr/local/sbin'
 append_path '/usr/local/bin'
 append_path '/usr/local/games'
 append_path '/usr/bin'
 append_path '/bin'
-append_path '/opt/flutter/bin'
-append_path $ANDROID_HOME'/cmdline-tools/latest/bin'
 append_path $HOME'/.local/bin'
+
+append_path $ANDROID_HOME'/build-tools/34.0.0'
+append_path $ANDROID_HOME'/cmdline-tools/latest/bin'
+append_path $ANDROID_HOME'/emulator'
+append_path $ANDROID_HOME'/platform-tools'
+append_path /opt/android-studio/bin
+
+append_path $FLUTTER_HOME'/bin'
+append_path $HOME'/.pub-cache/bin'
 
 export PATH

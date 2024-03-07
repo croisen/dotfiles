@@ -30,16 +30,17 @@ stow --dir=./ --target=$HOME/.config ./
 ### Applications
 
 ```
-audacious blueman cowsay firefox fortune-mod fzf kitty lolcat networkmanager
-network-manager-applet neofetch neovim npm picom python3 qt5ct ranger thunar
-tree-sitter-cli xdg-desktop-portal xdg-desktop-portal-gtk xxd yarn zoxide
+audacious blueman cowsay ffmpeg firefox fortune-mod fzf imagemagick kitty lolcat
+networkmanager network-manager-applet neofetch neovim npm picom python3 qt5ct
+ranger thunar tree-sitter-cli xdg-desktop-portal xdg-desktop-portal-gtk
+xxd yarn yt-dlp zoxide
 ```
 
 ### Fonts
 
 ```
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-ttf-fira-code ttf-meslo-nerd
+ttf-fira-code ttf-font-awesome ttf-meslo-nerd
 ```
 
 ### Sound (Pipewire)
@@ -51,14 +52,14 @@ pavucontrol pipewire-alsa pipewire-audio pipewire-pulse wireplumber
 ### Window Manager (dwm)
 
 ```
-dmenu lxappearance picom scrot xorg-xbacklight xorg-xset xsel
+dmenu lxappearance picom scrot xorg-xbacklight xorg-xset xorg-xwininfo xsel
 ```
 
 ### Window Manager (hyprland)
 
 ```
 cliphist grim hyprland hyprpaper mako nwg-look slurp
-waybar wofi xdg-desktop-portal-hyprland
+waybar wf-recorder wofi xdg-desktop-portal-hyprland
 ```
 
 ### Shell (zsh)

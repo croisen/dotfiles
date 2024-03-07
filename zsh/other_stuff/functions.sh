@@ -29,7 +29,7 @@ gitall() {
 	if [[ -n $1 ]]; then
 		git commit -m "$1"
 	else
-		git commit -m "Updated"
+		git commit
 	fi
 
 	git push origin HEAD
