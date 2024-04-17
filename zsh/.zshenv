@@ -16,6 +16,7 @@ export ANDROID_HOME="$HOME"/.local/share/android
 export ANDROID_AVD_HOME="$ANDROID_HOME"/avd
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-beta
 
 export EDITOR=nvim
 
@@ -67,9 +68,10 @@ append_path $ANDROID_HOME'/build-tools/34.0.0'
 append_path $ANDROID_HOME'/cmdline-tools/latest/bin'
 append_path $ANDROID_HOME'/emulator'
 append_path $ANDROID_HOME'/platform-tools'
-append_path /opt/android-studio/bin
 
 append_path $FLUTTER_HOME'/bin'
 append_path $HOME'/.pub-cache/bin'
+
+append_path /opt/firebase/bin
 
 export PATH

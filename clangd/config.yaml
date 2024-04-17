@@ -1,0 +1,4 @@
+CompileFlags:
+    # Please work to make coc-clangd treat my c header files as c files
+    # not cpp files
+    Add: [-xc-header]

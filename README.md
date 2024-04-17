@@ -31,16 +31,16 @@ stow --dir=./ --target=$HOME/.config ./
 
 ```
 audacious blueman cowsay ffmpeg firefox fortune-mod fzf imagemagick kitty lolcat
-networkmanager network-manager-applet neofetch neovim npm picom python3 qt5ct
-ranger thunar tree-sitter-cli xdg-desktop-portal xdg-desktop-portal-gtk
-xxd yarn yt-dlp zoxide
+networkmanager network-manager-applet neofetch neovim npm polkit-dumb-agent-git
+picom python3 qt5ct ranger thunar tree-sitter-cli xdg-desktop-portal
+xdg-desktop-portal-gtk xxd yarn yt-dlp zoxide
 ```
 
 ### Fonts
 
 ```
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-ttf-fira-code ttf-font-awesome ttf-meslo-nerd
+ttf-fira-code ttf-font-awesome ttf-meslo-nerd ttf-meslo-nerd-font-powerlevel10k
 ```
 
 ### Sound (Pipewire)
