@@ -5,9 +5,9 @@ if not ok then
 end
 
 lazy.setup({
-    'akinsho/bufferline.nvim',
+    --'akinsho/bufferline.nvim',
     --'andweeb/presence.nvim',
-    'edluffy/hologram.nvim',
+    --'edluffy/hologram.nvim',
     'HiPhish/nvim-ts-rainbow2',
     'honza/vim-snippets',
     'kylechui/nvim-surround',

@@ -9,11 +9,11 @@ config.setup {
     ensure_maintained = "all",
     sync_install = false,
     auto_install = true,
-    ignore_installs = { "" },
+    ignore_installs = { "markdown" },
 
     highlight = {
         enable = true,
-        disable = { "" },
+        disable = { "markdown" },
         additional_vim_regex_highlghting = true,
     },
 
@@ -24,11 +24,11 @@ config.setup {
 
     -- Causes E13: File Exists (add ! to override), error to appear
     -- when saving c header files.
-    --rainbow = {
-    --enable = true,
-    --disable = { "" },
-    --extended_mode = true,
-    --query = 'rainbow-parens',
-    --strategy = require("ts-rainbow.strategy.global"),
-    --},
+    rainbow = {
+        enable = true,
+        disable = { "" },
+        extended_mode = true,
+        query = 'rainbow-parens',
+        strategy = require("ts-rainbow.strategy.global"),
+    },
 }
