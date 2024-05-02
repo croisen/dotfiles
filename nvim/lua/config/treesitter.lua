@@ -24,11 +24,11 @@ config.setup {
 
     -- Causes E13: File Exists (add ! to override), error to appear
     -- when saving c header files.
-    rainbow = {
-        enable = true,
-        disable = { "" },
-        extended_mode = true,
-        query = 'rainbow-parens',
-        strategy = require("ts-rainbow.strategy.global"),
-    },
+    --rainbow = {
+    --enable = true,
+    --disable = { "c", "cpp", "h", "hpp" },
+    --extended_mode = true,
+    --query = 'rainbow-parens',
+    --strategy = require("ts-rainbow.strategy.global"),
+    --},
 }

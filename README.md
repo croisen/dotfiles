@@ -19,8 +19,7 @@ stow --dir=./ --target=$HOME/.config ./
 
 -   [dwm](https://github.com/croisen/dwm)
 -   [dwmblocks](https://github.com/croisen/dwmblocks)
--   [gruvbox-dark-gtk](https://github.com/jmattheis/gruvbox-dark-gtk)
--   [gruvbox-dark-icons-gtk](https://github.com/jmattheis/gruvbox-dark-icons-gtk)
+-   [Gruvbox-GTK-Theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
 
 -   [Grub Themes](https://github.com/xenlism/Grub-themes)
 -   [Grub2 Themes](https://github.com/Generator/Grub2-themes)
@@ -30,10 +29,10 @@ stow --dir=./ --target=$HOME/.config ./
 ### Applications
 
 ```
-audacious blueman cowsay ffmpeg firefox fortune-mod fzf imagemagick kitty lolcat
-networkmanager network-manager-applet neofetch neovim npm polkit-dumb-agent-git
-picom python3 qt5ct ranger thunar tree-sitter-cli xdg-desktop-portal
-xdg-desktop-portal-gtk xxd yarn yt-dlp zoxide
+audacious blueman cowsay fastfetch ffmpeg firefox fortune-mod fzf imagemagick
+kitty lolcat networkmanager network-manager-applet neofetch neovim npm
+polkit-dumb-agent-git picom python3 qt5ct ranger thunar tree-sitter-cli
+xdg-desktop-portal xdg-desktop-portal-gtk xxd yarn yt-dlp zoxide
 ```
 
 ### Fonts
