@@ -13,7 +13,7 @@ config.setup {
 
     highlight = {
         enable = true,
-        disable = { "markdown" },
+        disable = {},
         additional_vim_regex_highlghting = true,
     },
 
@@ -26,7 +26,7 @@ config.setup {
     -- when saving c header files.
     --rainbow = {
     --enable = true,
-    --disable = { "c", "cpp", "h", "hpp" },
+    --disable = { "c", "cpp" },
     --extended_mode = true,
     --query = 'rainbow-parens',
     --strategy = require("ts-rainbow.strategy.global"),

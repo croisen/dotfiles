@@ -15,6 +15,12 @@ albumart_mk() {
         -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" modified_$1
 }
 
+# Clears the screen and scrollback buffer for the kitty term
+# (dunno if the other terms support this tho)
+clear2() {
+    printf '\033[2J\033[3J\033[1;1H'
+}
+
 # link_config_stow - Uses GNU stow to make symlinks from this git directory
 # to ones config directory
 link_config_stow() {

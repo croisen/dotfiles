@@ -8,6 +8,7 @@ vim.g.coc_global_extensions = {
     'coc-git',
     'coc-go',
     'coc-highlight',
+    'coc-json',
     'coc-lua',
     'coc-marketplace',
     'coc-prettier',

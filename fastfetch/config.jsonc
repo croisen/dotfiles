@@ -11,7 +11,6 @@
         }
     },
     "modules": [
-        "break",
         {
             "type": "custom",
             "format": "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
@@ -46,6 +45,13 @@
             "type": "shell",
             "key": "  ",
             "keyColor": "yellow"
+        },
+        {
+            "type": "localip",
+            "key": "  󰩠",
+            "keyColor": "white",
+            "showIpv4": true,
+            "showMac": true
         },
         "break",
         {

@@ -7,6 +7,8 @@ function exec_once()
     fi
 }
 
+exec_once /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_once dwmblocks
 exec_once picom
 exec_once xset -dpms s off
+exec_once discord
