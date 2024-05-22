@@ -68,9 +68,25 @@ awful.rules.rules = {
             },
         },
         properties = {
+            maximized = true,
             opacity = 0.90,
             screen = 1,
             tag = "1",
+        },
+    },
+    {
+        rule_any = {
+            class = {
+                "discord",
+                "Electron", -- Why does the discord app not show up as discord in xwininfo?
+                "Thunderbird",
+            },
+        },
+        properties = {
+            maximized = true,
+            opacity = 1,
+            screen = 1,
+            tag = "2",
         },
     },
 
@@ -78,10 +94,10 @@ awful.rules.rules = {
         rule_any = {
             class = {
                 "Firefox",
-                "Thunderbird",
             },
         },
         properties = {
+            maximized = true,
             opacity = 1,
             screen = 1,
             tag = "9",

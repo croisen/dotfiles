@@ -17,8 +17,12 @@ stow --dir=./ --target=$HOME/.config ./
 
 ### External Apps
 
+#### Modified suckless apps
+
 -   [dwm](https://github.com/croisen/dwm)
 -   [dwmblocks](https://github.com/croisen/dwmblocks)
+
+#### 3rd party config and bits for awesomewm
 
 -   [arc-icon-theme](https://github.com/horst3180/arc-icon-theme)
 -   [awesome-copycats](https://github.com/lcpz/awesome-copycats)
@@ -27,13 +31,22 @@ stow --dir=./ --target=$HOME/.config ./
 -   [sp](https://gist.github.com/mohit-rathee/bf22522caa6fbfc88d1cf3891a1a243e)
 -   [streetturtle-widgets](https://github.com/streetturtle/awesome-wm-widgets)
 
+#### Themes (helps to make me remember for a new Installation)
+
 -   [Gruvbox-GTK-Theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
 -   [Grub Themes](https://github.com/xenlism/Grub-themes)
 -   [Grub2 Themes](https://github.com/Generator/Grub2-themes)
 -   [gruvbox-palette](https://github.com/morhetz/gruvbox-contrib)
 -   [neofetch-themes](https://github.com/Chick2D/neofetch-themes)
 
-### Applications
+#### zsh stuff
+
+-   [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+-   [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+-   [zsh-completions](https://github.com/zsh-users/zsh-completions)
+-   [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+### Applications (helps to make me remember for a new Installation [again])
 
 ```
 audacious blueman cowsay fastfetch ffmpeg firefox fortune-mod fzf imagemagick
@@ -72,11 +85,4 @@ dmenu lxappearance picom scrot xorg-xbacklight xorg-xset xorg-xwininfo xsel
 ```
 cliphist grim hyprland hyprpaper mako nwg-look slurp
 waybar wf-recorder wofi xdg-desktop-portal-hyprland
-```
-
-### Shell (zsh)
-
-```
-zsh zsh-autosuggestions zsh-completions
-zsh-history-substring-search zsh-syntax-highlighting zsh-theme-powerlevel10k
 ```
