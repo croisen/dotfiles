@@ -19,8 +19,15 @@ stow --dir=./ --target=$HOME/.config ./
 
 -   [dwm](https://github.com/croisen/dwm)
 -   [dwmblocks](https://github.com/croisen/dwmblocks)
--   [Gruvbox-GTK-Theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
 
+-   [arc-icon-theme](https://github.com/horst3180/arc-icon-theme)
+-   [awesome-copycats](https://github.com/lcpz/awesome-copycats)
+-   [freedesktop](https://github.com/lcpz/awesome-freedesktop)
+-   [lain](https://github.com/lcpz/lain)
+-   [sp](https://gist.github.com/mohit-rathee/bf22522caa6fbfc88d1cf3891a1a243e)
+-   [streetturtle-widgets](https://github.com/streetturtle/awesome-wm-widgets)
+
+-   [Gruvbox-GTK-Theme](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
 -   [Grub Themes](https://github.com/xenlism/Grub-themes)
 -   [Grub2 Themes](https://github.com/Generator/Grub2-themes)
 -   [gruvbox-palette](https://github.com/morhetz/gruvbox-contrib)
@@ -46,6 +53,12 @@ ttf-fira-code ttf-font-awesome ttf-meslo-nerd ttf-meslo-nerd-font-powerlevel10k
 
 ```
 pavucontrol pipewire-alsa pipewire-audio pipewire-pulse wireplumber
+```
+
+### Window Manager (awesomewm)
+
+```
+lxappearance picom rofi scrot xorg-xbacklight xorg-xset xorg-xwininfo xsel
 ```
 
 ### Window Manager (dwm)
