@@ -1,6 +1,8 @@
 ## Aliases ##
 # adb
-    alias adb='HOME="$XDG_DATA_HOME"/android adb'
+    if command -v adb &>/dev/null; then
+        alias adb='HOME="$XDG_DATA_HOME"/android adb'
+    fi
 
 # APT
 if command -v apt &>/dev/null; then
@@ -42,9 +44,16 @@ fi
     alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
+# mysql
+    if command -v mysql-workbench; then
+        alias mysql-workbench=mysql-workbench --configdir="$XDG_DATA_HOME/mysql/workbench"
+    fi
+
 # Neofetch
     #alias neofetch='neofetch --ascii "$(echo "Say my name." | cowsay -f ~/.config/neofetch/walter.white -W 30)"'
-    alias neofetch='neofetch --source ~/.config/neofetch/logo'
+    if command -v neofetch &>/dev/null; then
+        alias neofetch='neofetch --source ~/.config/neofetch/logo'
+    fi
 
 # Pacman and AUR helpers
     if command -v pacman &>/dev/null; then

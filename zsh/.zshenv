@@ -12,11 +12,14 @@ append_path() {
     esac
 }
 
-export ANDROID_HOME="$HOME"/.local/share/android
+export ANDROID_HOME="$XDG_DATA_HOME"/android
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 export ANDROID_AVD_HOME="$ANDROID_HOME"/avd
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-beta
+
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
 export EDITOR=nvim
 
@@ -43,6 +46,8 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 export XCURSOR_PATH="$XDG_DATA_HOME"/icons
 

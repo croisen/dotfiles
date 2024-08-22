@@ -26,15 +26,21 @@ fpath=(~/.config/zsh/modules/zsh-completions/src $fpath)
 ## ZSH Theme + Arch Packagaes for ZSH I just found ##
     source ~/.config/zsh/modules/powerlevel10k/powerlevel10k.zsh-theme
     [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+    source ~/.config/zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
     source ~/.config/zsh/modules/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
     source ~/.config/zsh/modules/zsh-history-substring-search/zsh-history-substring-search.zsh
-    source ~/.config/zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 ## ZSH keys ##
+    ## Home and End
     bindkey "^[[H"    beginning-of-line
     bindkey "^[[F"    end-of-line
+    # Ctrl Left and Right
     bindkey "^[[1;5C" forward-word
     bindkey "^[[1;5D" backward-word
+
+    ## Page up and down
+    bindkey "^[[5~"   history-substring-search-up
+    bindkey "^[[6~"   history-substring-search-down
 
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
