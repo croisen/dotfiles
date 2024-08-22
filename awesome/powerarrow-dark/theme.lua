@@ -14,11 +14,12 @@ local dpi                                       = require("beautiful.xresources"
 local os                                        = os
 local my_table                                  = awful.util.table or gears.table -- 4.{0,1} compatibility
 
+local w                                         = require("moreconf.wallpaper_cycle")
 local wp                                        = require("widget.wireplumber")
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/powerarrow-dark"
-theme.wallpaper                                 = theme.dir .. "/wall.png"
+theme.wallpaper                                 = theme.dir .. "/wall.png" -- not as relevant anymore?
 theme.font                                      = "Terminus 9"
 theme.fg_normal                                 = "#DDDDFF"
 theme.fg_focus                                  = "#EA6F81"
@@ -98,7 +99,7 @@ local keyboardlayout                            = awful.widget.keyboardlayout:ne
 -- Textclock
 --local clockicon                                 = wibox.widget.imagebox(theme.widget_clock)
 local clock                                     = awful.widget.watch(
-    "date +'%a %d %b %R'", 60,
+    "date +'%a %d %b %H:%M:%S'", 1,
     function(widget, stdout)
         widget:set_markup(" " .. markup.font(theme.font, stdout))
     end
@@ -207,11 +208,14 @@ function theme.at_screen_connect(s)
     s.quake = lain.util.quake({ app = awful.util.terminal })
 
     -- If wallpaper is a function, call it with the screen
-    local wallpaper = theme.wallpaper
-    if type(wallpaper) == "function" then
-        wallpaper = wallpaper(s)
-    end
-    gears.wallpaper.maximized(wallpaper, s, true)
+    --local wallpaper = theme.wallpaper
+    --if type(wallpaper) == "function" then
+    --wallpaper = wallpaper(s)
+    --end
+    --gears.wallpaper.maximized(wallpaper, s, true)
+
+    -- Initial Wallpaper
+    w.set_wallpaper()
 
     -- Tags
     awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])

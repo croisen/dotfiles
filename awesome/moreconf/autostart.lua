@@ -13,6 +13,8 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "picom" }) -- comma-separated entries
+run_once({ "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" })
+run_once({ "picom" })
+run_once({ "xset -b -dpms s off" })
 
 -- }}}

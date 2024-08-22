@@ -5,6 +5,8 @@ local gears         = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 local lain          = require("lain")
+local w             = require("moreconf.wallpaper_cycle")
+
 require("moreconf.mainbinds")
 
 local mytable = awful.util.table or gears.table
@@ -15,10 +17,6 @@ globalkeys = mytable.join(
 -- Destroy all notifications
     awful.key({ "Control", }, "space", function() naughty.destroy_all_notifications() end,
         { description = "destroy all notifications", group = "hotkeys" }),
-    -- Take a screenshot
-    -- https://github.com/lcpz/dots/blob/master/bin/screenshot
-    awful.key({ altkey }, "p", function() os.execute("screenshot") end,
-        { description = "take a screenshot", group = "hotkeys" }),
 
     -- Show help
     awful.key({ modkey, }, "s", hotkeys_popup.show_help,
@@ -104,8 +102,8 @@ globalkeys = mytable.join(
     awful.key({ modkey }, "b", function()
             for s in screen do
                 s.mywibox.visible = not s.mywibox.visible
-                if s.mybottomwibox then
-                    s.mybottomwibox.visible = not s.mybottomwibox.visible
+                if s.mybotwibox then
+                    s.mybotwibox.visible = not s.mybotwibox.visible
                 end
             end
         end,
@@ -161,33 +159,27 @@ globalkeys = mytable.join(
         end
     end, { description = "restore minimized", group = "client" }),
 
-    -- Dropdown application
-    awful.key({ modkey, }, "z", function() awful.screen.focused().quake:toggle() end,
-        { description = "dropdown application", group = "launcher" }),
+    -- Dropdown application awful.key({ modkey, }, "z", function() awful.screen.focused().quake:toggle() end, { description = "dropdown application", group = "launcher" }),
 
     -- Widgets popups
     awful.key({ altkey, }, "c", function() if beautiful.cal then beautiful.cal.show(7) end end,
         { description = "show calendar", group = "widgets" }),
-    awful.key({ altkey, }, "h", function() if beautiful.fs then beautiful.fs.show(7) end end,
-        { description = "show filesystem", group = "widgets" }),
-    awful.key({ altkey, }, "w", function() if beautiful.weather then beautiful.weather.show(7) end end,
-        { description = "show weather", group = "widgets" }),
 
     -- Screen brightness
-    awful.key({}, "XF86MonBrightnessUp", function() os.execute("xbacklight -inc 10") end,
-        { description = "+10%", group = "hotkeys" }),
-    awful.key({}, "XF86MonBrightnessDown", function() os.execute("xbacklight -dec 10") end,
-        { description = "-10%", group = "hotkeys" }),
+    awful.key({}, "XF86MonBrightnessUp", function() os.execute("xbacklight -inc 5") end,
+        { description = "Brightness +5%", group = "hotkeys" }),
+    awful.key({}, "XF86MonBrightnessDown", function() os.execute("xbacklight -dec 5") end,
+        { description = "Brightness -5%", group = "hotkeys" }),
 
     -- Wireplumber volume control
     awful.key({}, "XF86AudioRaiseVolume",
         function()
-            beautiful.volume.incvol(1, nil)
+            beautiful.volume.incvol(1)
         end,
         { description = "volume up", group = "hotkeys" }),
     awful.key({}, "XF86AudioLowerVolume",
         function()
-            beautiful.volume.decvol(1, nil)
+            beautiful.volume.decvol(1)
         end,
         { description = "volume down", group = "hotkeys" }),
     awful.key({}, "XF86AudioMute",
@@ -195,18 +187,23 @@ globalkeys = mytable.join(
             beautiful.volume.togglemute()
         end,
         { description = "toggle mute", group = "hotkeys" }),
-    awful.key({ altkey, "Control" }, "m",
+    awful.key({ "Shift" }, "XF86AudioRaiseVolume",
         function()
-            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-            beautiful.volume.update()
+            beautiful.volume.setvol(100)
         end,
         { description = "volume 100%", group = "hotkeys" }),
-    awful.key({ altkey, "Control" }, "0",
+    awful.key({ "Shift" }, "XF86AudioLowerVolume",
         function()
-            os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-            beautiful.volume.update()
+            beautiful.volume.setvol(0)
         end,
         { description = "volume 0%", group = "hotkeys" }),
+
+    -- screenshot
+    awful.key({}, "Print",
+        function()
+            os.execute("scrot ~/Pictures/'Screenshot_%Y-%m-%d_%H_%M_%S.png'")
+        end,
+        { description = "volume up", group = "hotkeys" }),
 
     -- Copy primary to clipboard (terminals to gtk)
     awful.key({ modkey }, "c", function() awful.spawn.with_shell("xsel | xsel -i -b") end,
@@ -218,6 +215,12 @@ globalkeys = mytable.join(
     -- User programs
     awful.key({ modkey }, "q", function() awful.spawn(browser) end,
         { description = "run browser", group = "launcher" }),
+
+    -- Wallpapers
+    awful.key({ altkey, }, "w", function() w.cycle_wallpaper_forward() end,
+        { description = "Cycle wallpapers defined at ~/.local/share/wallpapers.txt", group = "croisen" }),
+    awful.key({ altkey, "Shift", }, "w", function() w.cycle_wallpaper_backward() end,
+        { description = "Cycle wallpapers defined at ~/.local/share/wallpapers.txt", group = "croisen" }),
 
     -- Default
     --[[ Menubar
@@ -301,7 +304,18 @@ clientkeys = mytable.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end,
-        { description = "(un)maximize horizontally", group = "client" })
+        { description = "(un)maximize horizontally", group = "client" }),
+
+    awful.key({ modkey, "Control" }, "o",
+        function(c)
+            c.opacity = c.opacity + 0.10
+        end,
+        { description = "increase client opacity", group = "client" }),
+    awful.key({ modkey, "Shift" }, "o",
+        function(c)
+            c.opacity = c.opacity - 0.10
+        end,
+        { description = "decrease client opacity", group = "client" })
 )
 
 -- Bind all key numbers to tags.

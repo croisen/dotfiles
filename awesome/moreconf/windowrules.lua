@@ -16,7 +16,8 @@ awful.rules.rules = {
             buttons = clientbuttons,
             screen = awful.screen.preferred,
             placement = awful.placement.no_overlap + awful.placement.no_offscreen,
-            size_hints_honor = false
+            size_hints_honor = false,
+            opacity = 1
         }
     },
 
@@ -74,12 +75,18 @@ awful.rules.rules = {
             tag = "1",
         },
     },
+
     {
         rule_any = {
             class = {
                 "discord",
+
                 "Electron", -- Why does the discord app not show up as discord in xwininfo?
+                "thunderbird",
                 "Thunderbird",
+
+                "thunar",
+                "Thunar",
             },
         },
         properties = {
@@ -93,6 +100,67 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
+                "virt-manager", -- What are you, xwininfo is not giving any info about you
+            },
+        },
+        properties = {
+            maximized = true,
+            opacity = 1,
+            screen = 1,
+            tag = "5",
+        },
+    },
+
+    {
+        rule_any = {
+            class = {
+                "ru-turikhay-tlauncher-bootstrap-Bootstrap", -- I can't afford
+            },
+        },
+        properties = {
+            maximized = true,
+            opacity = 1,
+            screen = 1,
+            tag = "6",
+        },
+    },
+
+    {
+        rule_any = {
+            class = {
+                "steam",
+                -- I'll save you some time looking up the ids
+                "steam_app_1739530", -- EXCALIBURIAN!!
+                "steam_app_1827180", -- Toram Online
+            },
+        },
+        properties = {
+            maximized = true,
+            opacity = 1,
+            screen = 1,
+            tag = "7",
+        },
+    },
+
+    {
+        rule_any = {
+            class = {
+                "Audacious",
+                "Spotify",
+            },
+        },
+        properties = {
+            maximized = true,
+            opacity = 1,
+            screen = 1,
+            tag = "8",
+        },
+    },
+
+    {
+        rule_any = {
+            class = {
+                "firefox",
                 "Firefox",
             },
         },
