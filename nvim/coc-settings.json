@@ -3,6 +3,7 @@
     "coc.preferences.extensionUpdateCheck": "weekly",
     "coc.preferences.silentAutoupdate": true,
     "coc.preferences.formatOnSave": true,
+    "inlayHint.enable": false,
     "rpc.idleText": "Having deep thoughts on why no compile",
     "rpc.useCWDAsFallback": true,
     "prettier.formatterPriority": -1,
@@ -12,6 +13,11 @@
     "prettier.tabWidth": 4,
     "prettier.trailingComma": "es5",
     "prettier.useTabs": false,
+    "rust-analyzer.diagnostics.disabled": [
+        "unlinked-file"
+    ],
+    "snippets.ultisnips.pythonPrompt": false,
+    "zig.path": "~/git/others/zls/zig-out/bin/zls",
     "Lua.workspace.library": [
         "/usr/share/awesome/lib",
         "/usr/share/nvim/runtime/lua",
@@ -20,6 +26,5 @@
     ],
     "Lua.diagnostics.globals": [
         "vim"
-    ],
-    "snippets.ultisnips.pythonPrompt": false
+    ]
 }

@@ -48,4 +48,4 @@ if ok then
 end
 
 -- Bufferline
-key_set('n', 'gb', ":BufferLinePick<cr>", {})
+--key_set('n', 'gb', ":BufferLinePick<cr>", {})
