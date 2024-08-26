@@ -10,6 +10,21 @@ lazy.setup({
     --'andweeb/presence.nvim',
     --'edluffy/hologram.nvim',
 
+    -- LSP
+    --{ 'neoclide/coc.nvim',             branch = "release", },
+    'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-path',
+    'hrsh7th/nvim-cmp',
+    'petertriho/cmp-git',
+    'saadparwaiz1/cmp_luasnip',
+
+    -- Snippets
+    'honza/vim-snippets',
+    'L3MON4D3/LuaSnip',
+
     -- Colors
     'folke/tokyonight.nvim',
     'morhetz/gruvbox',
@@ -19,12 +34,12 @@ lazy.setup({
     'nvim-lua/plenary.nvim',
 
     -- Side kick plugins (sorry for the term)
-    'honza/vim-snippets',
     'kylechui/nvim-surround',
     'mhinz/vim-startify',
     'nvim-lualine/lualine.nvim',
     'preservim/nerdcommenter',
     'RaafatTurki/hex.nvim',
+    'windwp/nvim-autopairs',
 
     -- I'm way to used having a file tree open on the left but still used to
     -- find what I forgot
@@ -40,6 +55,4 @@ lazy.setup({
     'HiPhish/nvim-ts-rainbow2',
     'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/nvim-treesitter-textobjects',
-
-    { 'neoclide/coc.nvim',             branch = "release", },
 })
