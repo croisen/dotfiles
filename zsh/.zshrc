@@ -23,12 +23,16 @@ fpath=(~/.config/zsh/modules/zsh-completions/src $fpath)
     source ~/.config/zsh/other_stuff/aliases.sh
     source ~/.config/zsh/other_stuff/functions.sh
 
-## ZSH Theme + Arch Packagaes for ZSH I just found ##
+## ZSH Theme + Plugins ##
     source ~/.config/zsh/modules/powerlevel10k/powerlevel10k.zsh-theme
     [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
     source ~/.config/zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
     source ~/.config/zsh/modules/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
     source ~/.config/zsh/modules/zsh-history-substring-search/zsh-history-substring-search.zsh
+    setopt HIST_IGNORE_ALL_DUPS
 
 ## ZSH keys ##
     ## Home and End
