@@ -2,10 +2,12 @@
     "height": 21,
     // "width": 1280,
     "spacing": 2,
-    "modules-left": ["hyprland/workspaces"],
-
-    "modules-center": ["hyprland/window"],
-
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
         "tray",
         "pulseaudio",
@@ -14,17 +16,14 @@
         "battery",
         "clock"
     ],
-
     "hyprland/workspaces": {
         "all-outputs": true,
         "disable-scroll": true,
         "warp-on-scroll": false,
         "format": "{icon}",
-
         "persistent-workspaces": {
             "*": 10
         },
-
         "format-icons": {
             "1": "",
             "2": "󰙯",
@@ -41,7 +40,6 @@
             "default": ""
         }
     },
-
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -51,41 +49,50 @@
             "unlocked": ""
         }
     },
-
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
-
     "clock": {
         // "timezone": "America/New_York",
+        "format": "{:%b %d %Y %H:%M:%S}",
+        //"format-alt": "{:%Y-%m-%d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "interval": 1
     },
-
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
-
     "memory": {
         "format": "{}% "
     },
-
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
     },
-
     "backlight": {
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
     "battery": {
         "states": {
             // "good": 95,
@@ -99,9 +106,14 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -110,7 +122,6 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -125,7 +136,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     }
