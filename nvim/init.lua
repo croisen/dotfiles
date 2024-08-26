@@ -8,10 +8,10 @@ require("config.colorscheme")
 --require("config.bufferline")
 --require("config.hologram")
 
---require("config.coc")
-require("config.cmp")
-
 require("config.lualine")
 require("config.nvim_surround")
 require("config.nvim_tree")
 require("config.treesitter")
+
+--require("config.coc")
+require("config.cmp")

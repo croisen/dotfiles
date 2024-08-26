@@ -92,10 +92,10 @@ cmp.setup.filetype('gitcommit', {
 
 git.setup()
 
-require("lua.config.lsp.clangd")
-require("lua.config.lsp.cmake")
-require("lua.config.lsp.gopls")
-require("lua.config.lsp.lua_ls")
-require("lua.config.lsp.rust_analyzer")
-require("lua.config.lsp.tsserver")
-require("lua.config.lsp.zls")
+require("config.lsp.clangd")
+require("config.lsp.cmake")
+require("config.lsp.gopls")
+require("config.lsp.lua_ls")
+require("config.lsp.rust_analyzer")
+require("config.lsp.tsserver")
+require("config.lsp.zls")
