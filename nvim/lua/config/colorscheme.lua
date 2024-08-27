@@ -1,2 +1,2 @@
---vim.cmd.colorscheme("gruvbox")
-vim.cmd.colorscheme("molokai")
+vim.cmd.colorscheme("gruvbox")
+--vim.cmd.colorscheme("molokai")

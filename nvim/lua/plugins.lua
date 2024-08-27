@@ -21,6 +21,13 @@ lazy.setup({
     'petertriho/cmp-git',
     'saadparwaiz1/cmp_luasnip',
 
+    -- LSP Downloader
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+
+    -- Auto Format on Save
+    'lukas-reineke/lsp-format.nvim',
+
     -- Snippets
     'honza/vim-snippets',
     'L3MON4D3/LuaSnip',

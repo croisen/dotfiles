@@ -8,11 +8,6 @@ if not ok then
     return
 end
 
-local ok, autopairs = pcall(require, 'nvim-autopairs')
-if not ok then
-    return
-end
-
 local ok, git = pcall(require, 'cmp_git')
 if not ok then
     return
@@ -20,8 +15,8 @@ end
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
-        ["<C-n>"] = cmp.mapping.select_prev_item(),
-        ["<C-p>"] = cmp.mapping.select_next_item(),
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
@@ -78,7 +73,7 @@ cmp.setup.cmdline(':', {
 
 -- For nvim-autopairs
 --cmp.event:on(
-    --'confirm_done',
+--'confirm_done',
 --)
 
 -- For cmp-git
@@ -92,10 +87,5 @@ cmp.setup.filetype('gitcommit', {
 
 git.setup()
 
-require("config.lsp.clangd")
-require("config.lsp.cmake")
-require("config.lsp.gopls")
-require("config.lsp.lua_ls")
-require("config.lsp.rust_analyzer")
-require("config.lsp.tsserver")
-require("config.lsp.zls")
+require("config.lsp-format")
+require("config.mason_lspconfig")

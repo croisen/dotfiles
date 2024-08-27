@@ -5,10 +5,10 @@ if not ok then
     return
 end
 
-config.setup {
+config.setup({
     options = {
         icons_enabled = true,
-        theme = 'molokai',
+        theme = 'gruvbox_dark',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -36,12 +36,12 @@ config.setup {
         lualine_a = {},
         lualine_b = {},
         lualine_c = { 'filename' },
-        lualine_x = { 'location' },
+        lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = { 'location' }
     },
     tabline = {},
     winbar = {},
     inactive_winbar = {},
     extensions = {}
-}
+})
