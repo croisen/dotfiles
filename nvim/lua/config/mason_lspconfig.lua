@@ -1,7 +1,7 @@
 --local ok, path = pcall(require, 'path')
 --if not ok then
-    --vim.print("path failed to load")
-    --return
+--vim.print("path failed to load")
+--return
 --end
 
 local ok, mason = pcall(require, 'mason')
@@ -59,21 +59,34 @@ mason_lspconfig.setup({
     ensure_installed = {
         "clangd",
         "cmake",
+        "rust_analyzer",
+        "zls",
+
         "gopls",
         "lua_ls",
-        "rust_analyzer",
+
+        "pyright",
+
+        "html",
+        "markdown_oxide",
+
         "tsserver",
-        "zls",
     },
 })
 
 lspconfig.clangd.setup({})
 lspconfig.cmake.setup({})
-lspconfig.gopls.setup({})
-lspconfig.pyright.setup({})
 lspconfig.rust_analyzer.setup({})
-lspconfig.tsserver.setup({})
 lspconfig.zls.setup({})
+
+lspconfig.gopls.setup({})
+
+lspconfig.pyright.setup({})
+
+lspconfig.html.setup({})
+lspconfig.markdown_oxide.setup({})
+
+lspconfig.tsserver.setup({})
 
 lspconfig.lua_ls.setup({
     settings = {

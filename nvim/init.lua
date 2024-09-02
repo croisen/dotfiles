@@ -15,3 +15,5 @@ require("config.treesitter")
 
 --require("config.coc")
 require("config.cmp")
+
+require("config.bigfile")

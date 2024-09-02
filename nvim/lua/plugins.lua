@@ -62,4 +62,8 @@ lazy.setup({
     'HiPhish/nvim-ts-rainbow2',
     'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/nvim-treesitter-textobjects',
+
+    -- The enemy of all vim/nvim users... Big Files
+    -- Maybe this can help
+    "LunarVim/bigfile.nvim",
 })
