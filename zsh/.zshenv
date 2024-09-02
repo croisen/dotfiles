@@ -45,7 +45,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=gtk2
 
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
