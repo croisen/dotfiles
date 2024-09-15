@@ -25,7 +25,7 @@ export EDITOR=nvim
 
 export ERRFILE="$XDG_CACHE_HOME"/X11/xsession-errors
 
-export FLUTTER_HOME=/opt/flutter
+export FLUTTER_HOME="$HOME"/git/others/flutter
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
@@ -47,6 +47,7 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 
 export QT_QPA_PLATFORMTHEME=gtk2
 
+export RENPY_PATH_TO_SAVES="$XDG_DATA_HOME"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 export XCURSOR_PATH="$XDG_DATA_HOME"/icons
@@ -62,21 +63,19 @@ if [ -z $PREFIX ]; then
     export PREFIX=/usr
 fi
 
-append_path '/usr/local/sbin'
-append_path '/usr/local/bin'
-append_path '/usr/local/games'
-append_path '/usr/bin'
-append_path '/bin'
-append_path $HOME'/.local/bin'
+append_path "/usr/local/sbin"
+append_path "/usr/local/bin"
+append_path "/usr/local/games"
+append_path "/usr/bin"
+append_path "/bin"
+append_path "$HOME"/.local/bin
 
-append_path $ANDROID_HOME'/build-tools/34.0.0'
-append_path $ANDROID_HOME'/cmdline-tools/latest/bin'
-append_path $ANDROID_HOME'/emulator'
-append_path $ANDROID_HOME'/platform-tools'
+append_path "$ANDROID_HOME"/build-tools/34.0.0
+append_path "$ANDROID_HOME"/cmdline-tools/latest/bin
+append_path "$ANDROID_HOME"/emulator
+append_path "$ANDROID_HOME"/platform-tools
 
-append_path $FLUTTER_HOME'/bin'
-append_path $HOME'/.pub-cache/bin'
-
-append_path /opt/firebase/bin
+append_path "$FLUTTER_HOME"/bin
+append_path "$HOME"/.pub-cache/bin
 
 export PATH

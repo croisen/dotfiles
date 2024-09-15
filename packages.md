@@ -35,13 +35,13 @@
 
 ```
 audacious blueman cowsay fastfetch ffmpeg firefox fortune-mod fzf imagemagick
-kitty lolcat networkmanager network-manager-applet neofetch neovim npm
-python3 qt5ct ranger thunar tree-sitter-cli xdg-desktop-portal
-xdg-desktop-portal-gtk xxd yarn yt-dlp zoxide
+kitty lolcat networkmanager network-manager-applet neofetch neovim
+noise-suppression-for-voice npm python3 qt5-declarative qt5ct ranger sddm thunar
+tree-sitter-cli xdg-desktop-portal xdg-desktop-portal-gtk xxd yarn yt-dlp zoxide
 ```
 
 ```
-qt5-styleplugins qt6gtk2
+archlinux-themes-sddm qt5-styleplugins qt6gtk2
 ```
 
 ### Fonts
