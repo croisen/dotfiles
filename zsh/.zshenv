@@ -63,6 +63,10 @@ if [ -z $PREFIX ]; then
     export PREFIX=/usr
 fi
 
+if command -v nvim &>/dev/null; then
+    export MANPAGER='nvim +Man!'
+fi
+
 append_path "/usr/local/sbin"
 append_path "/usr/local/bin"
 append_path "/usr/local/games"

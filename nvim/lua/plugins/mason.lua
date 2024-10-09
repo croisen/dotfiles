@@ -11,7 +11,7 @@ return {
                     package_pending = "➜",
                     package_uninstalled = "✗"
                 }
-            }
+            },
         },
     },
 
@@ -23,6 +23,7 @@ return {
 
         opts = {
             ensure_installed = {
+                "arduino_language_server",
                 "clangd",
                 "cmake",
                 "rust_analyzer",
@@ -31,12 +32,14 @@ return {
                 "gopls",
                 "lua_ls",
 
-                "pyright",
 
                 "html",
                 "marksman",
 
-                "ts_ls"
+                "jdtls",
+                "jedi_language_server",
+                "r_language_server",
+                "ts_ls",
             },
         },
     },

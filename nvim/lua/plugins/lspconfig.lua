@@ -5,7 +5,7 @@ return {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/nvim-cmp',
 
-            -- 'lukas-reineke/lsp-format.nvim',
+            'lukas-reineke/lsp-format.nvim',
 
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
@@ -22,6 +22,7 @@ return {
 
             lsp_default.on_attach = require("lsp-format").on_attach
 
+            lspconfig.arduino_language_server.setup({})
             lspconfig.clangd.setup({})
             lspconfig.cmake.setup({})
             lspconfig.rust_analyzer.setup({})
@@ -29,10 +30,12 @@ return {
 
             lspconfig.gopls.setup({})
 
-            lspconfig.pyright.setup({})
-
             lspconfig.html.setup({})
             lspconfig.marksman.setup({})
+
+            lspconfig.jdtls.setup({})
+            lspconfig.jedi_language_server.setup({})
+            lspconfig.r_language_server.setup({})
 
             lspconfig.ts_ls.setup({})
 
