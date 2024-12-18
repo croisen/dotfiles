@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function exec_once()
+exec_once()
 {
     if command -v $1; then
         pgrep $1 || $@ &

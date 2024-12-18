@@ -35,6 +35,8 @@ return {
         end,
     },
 
+    'rafaqz/ranger.vim',
+
     -- The enemy of all vim/nvim users... Big Files
     -- Maybe this can help
     "LunarVim/bigfile.nvim",
