@@ -1,0 +1,19 @@
+[scan]
+excludes = [
+    "/home/Andrew/git/croisen",
+    "/home/Andrew/git/offline-projects",
+]
+## by default libredefender spawns one thread per cpu core
+## set to 1 to use a single thread
+#concurrency = 1
+skip_hidden = true
+skip_larger_than = "700MiB"
+
+[update]
+## use data fetched by clamav-freshclam.service (default)
+path = "/var/lib/clamav"
+
+[schedule]
+preferred_hours = "09:00:00-19:00:00"
+## Do not run scans when on battery
+skip_on_battery = true

@@ -1,0 +1,8 @@
+If:
+    CompileFlags:
+        PathMatch: [.*\.h, .*\.c]
+        Add: [-xc-header]
+Else If:
+    CompileFlags:
+        PathMatch: [.*\.hpp, .*\.cpp, .*\.cc]
+        Add: [-xc++-header]
