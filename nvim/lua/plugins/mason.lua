@@ -23,22 +23,21 @@ return {
 
         opts = {
             ensure_installed = {
-                "arduino_language_server",
+                -- "arduino_language_server",
                 "clangd",
-                "cmake",
+                -- "cmake",
                 "rust_analyzer",
                 "zls",
 
                 "gopls",
                 "lua_ls",
 
-
                 "html",
                 "marksman",
 
                 "jdtls",
                 "jedi_language_server",
-                "r_language_server",
+                -- "r_language_server",
                 "ts_ls",
             },
         },

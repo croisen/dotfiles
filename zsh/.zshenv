@@ -45,7 +45,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 
-export QT_QPA_PLATFORMTHEME=gtk2
+export QT_QPA_PLATFORMTHEME=qt5gtk2
 
 export RENPY_PATH_TO_SAVES="$XDG_DATA_HOME"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
@@ -72,6 +72,7 @@ append_path "/usr/local/bin"
 append_path "/usr/local/games"
 append_path "/usr/bin"
 append_path "/bin"
+append_path "/opt/msvc/bin/x64"
 append_path "$HOME"/.local/bin
 
 append_path "$ANDROID_HOME"/build-tools/34.0.0
@@ -81,5 +82,7 @@ append_path "$ANDROID_HOME"/platform-tools
 
 append_path "$FLUTTER_HOME"/bin
 append_path "$HOME"/.pub-cache/bin
+
+unset -f append_path
 
 export PATH

@@ -51,6 +51,6 @@ if command -v zoxide &>/dev/null; then
     # as that causes a recursion(?) error in their older versions
     # only noticed this in LMDE
     eval "$(zoxide init zsh)"
-    alias cd="__zoxide_z"
-    alias cdi="__zoxide_zi"
+    alias cd="z"
+    alias cdi="zi"
 fi
