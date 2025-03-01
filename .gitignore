@@ -1,9 +1,14 @@
-awesome/scripts/sp
+/awesome/scripts/sp
 
-hypr/hyprpaper/idx
+/hypr/hyprpaper/idx
 
-nvim/lazy-lock.json
+/nvim/lazy-lock.json
 
-zsh/.p10k.zsh
-zsh/.zcompdump
-zsh/zsh_hist
+/vim/plugged
+/vim/.netrwhist
+
+/zsh/.p10k.zsh
+/zsh/.zcompdump
+/zsh/zsh_hist
+
+/tags
