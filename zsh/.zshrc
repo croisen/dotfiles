@@ -1,5 +1,10 @@
-fastfetch
 . ~/.config/zsh/.zshenv
+
+if command -v fastfetch >/dev/null; then
+    fastfetch
+elif command -v neofetch >/dev/null; then
+    neofetch
+fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -46,7 +51,13 @@ fpath=(~/.config/zsh/modules/zsh-completions/src $fpath)
 
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
-if command -v zoxide &>/dev/null; then
+if command -v ssh-agent >/dev/null && command -v pgrep >/dev/null; then
+    if ! pgrep ssh-agent >/dev/null; then
+        eval $(ssh-agent -s) >/dev/null
+    fi
+fi
+
+if command -v zoxide >/dev/null; then
     # Welp we're not gonna be using the direct alias from zoxide
     # as that causes a recursion(?) error in their older versions
     # only noticed this in LMDE

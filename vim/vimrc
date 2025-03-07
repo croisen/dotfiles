@@ -3,5 +3,3 @@ runtime editor_opts.vim
 
 runtime plugins/_plugins.vim
 runtime plugins/colors.vim
-runtime plugins/trees.vim
-runtime plugins/vim_airline.vim
