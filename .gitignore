@@ -4,6 +4,8 @@
 
 /nvim/lazy-lock.json
 
+/systemd/user/default.target.wants/
+
 /vim/plugged
 /vim/.netrwhist
 

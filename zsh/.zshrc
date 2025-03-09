@@ -51,12 +51,6 @@ fpath=(~/.config/zsh/modules/zsh-completions/src $fpath)
 
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
-if command -v ssh-agent >/dev/null && command -v pgrep >/dev/null; then
-    if ! pgrep ssh-agent >/dev/null; then
-        eval $(ssh-agent -s) >/dev/null
-    fi
-fi
-
 if command -v zoxide >/dev/null; then
     # Welp we're not gonna be using the direct alias from zoxide
     # as that causes a recursion(?) error in their older versions

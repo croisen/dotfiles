@@ -50,6 +50,8 @@ export QT_QPA_PLATFORMTHEME=qt5gtk2
 export RENPY_PATH_TO_SAVES="$XDG_DATA_HOME"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
+
 export XCURSOR_PATH="$XDG_DATA_HOME"/icons
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
@@ -61,10 +63,6 @@ fi
 
 if [ -z $PREFIX ]; then
     export PREFIX=/usr
-fi
-
-if command -v nvim &>/dev/null; then
-    export MANPAGER='nvim +Man!'
 fi
 
 append_path "/usr/local/sbin"
