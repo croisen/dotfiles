@@ -1,5 +1,2 @@
-runtime plug.vim
 runtime editor_opts.vim
-
-runtime plugins/_plugins.vim
-runtime plugins/colors.vim
+runtime gruvbox.vim

@@ -100,6 +100,9 @@ fi
 # Suckless compile
     alias suck='sudo make clean install'
 
+# SVN
+    alias svn='svn --config-dir $XDG_CONFIG_HOME/subversion'
+
 # Weather cURL
     alias weather='curl wttr.in/cavite'
 

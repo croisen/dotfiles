@@ -21,8 +21,6 @@ export CHROME_EXECUTABLE=/usr/bin/google-chrome-beta
 
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
-export EDITOR=nvim
-
 export ERRFILE="$XDG_CACHE_HOME"/X11/xsession-errors
 
 export FLUTTER_HOME="$HOME"/git/others/flutter
@@ -55,6 +53,12 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
 export XCURSOR_PATH="$XDG_DATA_HOME"/icons
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
+
+if command -v vim >/dev/null; then
+    export EDITOR=vim
+elif command -v nvim >/dev/null; then
+    export EDITOR=nvim
+fi
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
