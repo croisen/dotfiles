@@ -3,7 +3,7 @@
 exec_once()
 {
     if command -v $1 >/dev/null; then
-        pgrep $1 || $@ &
+        pgrep -u $USER $1 || $@ &
     fi
 }
 

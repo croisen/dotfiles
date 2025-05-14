@@ -3,7 +3,6 @@ vim.opt.listchars     = "space:·,tab:-> "
 
 vim.opt.autoindent    = true
 vim.opt.backup        = false
---vim.opt.backupdir       = cache_dir
 vim.opt.cc            = "80"
 vim.opt.clipboard     = "unnamedplus"
 vim.opt.cursorline    = true
@@ -15,6 +14,7 @@ vim.opt.rnu           = true
 vim.opt.hlsearch      = true
 vim.opt.incsearch     = true
 vim.opt.mouse         = "a"
+vim.opt.path          = "**"
 vim.opt.shiftwidth    = 4
 vim.opt.showmatch     = true
 vim.opt.showmode      = false
@@ -28,3 +28,6 @@ vim.opt.ttyfast       = true
 vim.opt.updatetime    = 300
 vim.opt.wildmode      = { 'longest', 'list' }
 vim.opt.writebackup   = false
+
+vim.opt.completeopt   = "menu,menuone,popup,fuzzy"
+vim.g.netrw_banner    = 0
