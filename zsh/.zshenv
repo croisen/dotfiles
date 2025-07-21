@@ -76,6 +76,7 @@ append_path "/usr/bin"
 append_path "/bin"
 append_path "/opt/msvc/bin/x64"
 append_path "$HOME"/.local/bin
+append_path "$CARGO_HOME"/bin
 
 append_path "$ANDROID_HOME"/build-tools/34.0.0
 append_path "$ANDROID_HOME"/cmdline-tools/latest/bin
