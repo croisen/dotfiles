@@ -51,6 +51,7 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
 
 export XCURSOR_PATH="$XDG_DATA_HOME"/icons
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 
@@ -67,6 +68,10 @@ fi
 
 if [ -z $PREFIX ]; then
     export PREFIX=/usr
+fi
+
+if [ -z $XAUTHORITY ]; then
+    export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 fi
 
 append_path "/usr/local/sbin"

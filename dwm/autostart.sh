@@ -8,4 +8,5 @@ exec_once()
 }
 
 exec_once /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_once dunst
 exec_once slstatus
