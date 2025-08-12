@@ -1,4 +1,7 @@
-. ~/.config/zsh/.zshenv
+# Includes
+    source ~/.config/zsh/.zshenv
+    source ~/.config/zsh/other_stuff/aliases.sh
+    source ~/.config/zsh/other_stuff/functions.sh
 
 if command -v fastfetch >/dev/null; then
     fastfetch
@@ -23,10 +26,6 @@ compinit
 # End of lines added by compinstall
 
 fpath=(~/.config/zsh/modules/zsh-completions/src $fpath)
-
-# Includes
-    source ~/.config/zsh/other_stuff/aliases.sh
-    source ~/.config/zsh/other_stuff/functions.sh
 
 ## ZSH Theme + Plugins ##
     source ~/.config/zsh/modules/powerlevel10k/powerlevel10k.zsh-theme

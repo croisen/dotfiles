@@ -31,6 +31,11 @@ fi
 # Clear
     alias cls='clear'
 
+# Fastfetch in the raw tty or not?
+    if [ $SHLVL -eq 1 ]; then
+        alias fastfetch="fastfetch --logo Arch"
+    fi
+
 # Grep
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -42,7 +47,7 @@ fi
     alias la='ls -A'
     alias l='ls -CF'
     alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias vdir='vdir --color=auto -h'
 
 # mysql
     if command -v mysql-workbench; then
