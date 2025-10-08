@@ -14,7 +14,9 @@ key_set('t', '<esc>', "<c-\\><c-n>", opts)
 -- Nvim lsp
 key_set('n', '<leader>dd', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
-function M.on_attach(client, buffer)
+--- @param _client vim.lsp.Client
+--- @param buffer integer
+function M.on_attach(_client, buffer)
     opts.buffer = buffer
     key_set('n', 'gd', vim.lsp.buf.definition, opts)
     key_set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -30,6 +32,10 @@ function M.on_attach(client, buffer)
     key_set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
     key_set('n', '<Leader>ca', vim.lsp.buf.code_action, opts)
     key_set('n', 'gr', vim.lsp.buf.references, opts)
+
+    key_set('n', '<Leader>dq', vim.diagnostic.setloclist, opts)
+    key_set('n', '<Leader>dn', vim.diagnostic.goto_next, opts)
+    key_set('n', '<Leader>dp', vim.diagnostic.goto_prev, opts)
 end
 
 return M

@@ -31,11 +31,6 @@ fi
 # Clear
     alias cls='clear'
 
-# Fastfetch in the raw tty or not?
-    if [ $SHLVL -eq 1 ]; then
-        alias fastfetch="fastfetch --logo Arch"
-    fi
-
 # Grep
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'

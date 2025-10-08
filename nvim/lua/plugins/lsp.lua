@@ -14,12 +14,17 @@ local servers = {
 }
 
 local formatters = {
-    c = { "clang-format" },
-    ["c++"] = { "clang-format" },
     css = { "prettier" },
     html = { "prettier" },
-    python = { "black" },
-    rust = { "rustfmt" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescriptreact = { "prettier" },
+
+    json = { "prettier" },
+    yaml = { "prettier" },
+
+    python = { "isort", "black" },
 }
 
 -- Stack overflow moment
@@ -90,6 +95,7 @@ return {
         "hrsh7th/nvim-cmp",
         dependencies = {
             "L3MON4D3/LuaSnip",
+            'saadparwaiz1/cmp_luasnip',
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-emoji",
@@ -118,7 +124,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp",   priority = 7 },
-                    { name = "luasnip",    priority = 6 },
+                    { name = 'luasnip',    option = { use_show_condition = false } },
                     { name = "async_path", priority = 4 },
                 }),
             })
@@ -133,6 +139,17 @@ return {
                     { name = "async_path",      priority = 6 },
                 },
             })
+        end,
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+            "honza/vim-snippets",
+        },
+        config = function()
+            require('luasnip.loaders.from_vscode').lazy_load()
+            require('luasnip.loaders.from_snipmate').lazy_load()
         end,
     },
     {
@@ -203,8 +220,10 @@ return {
         "stevearc/conform.nvim",
         opts = {
             format_on_save = {
-                timeout_ms = 500,
-                lsp_format = "first",
+                async = false,
+                quiet = false,
+                timeout_ms = 5000,
+                lsp_format = "fallback",
             },
             formatters_by_ft = formatters,
         },

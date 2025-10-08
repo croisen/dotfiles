@@ -3,6 +3,16 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
+XDG_DATA_DIRS="$XDG_DATA_DIRS"
+append_data_dirs() {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            XDG_DATA_DIRS="${XDG_DATA_DIRS:+$XDG_DATA_DIRS:}$1"
+    esac
+}
+
 append_path() {
     case ":$PATH:" in
         *:"$1":*)
@@ -55,10 +65,10 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 
-if command -v vim >/dev/null; then
-    export EDITOR=vim
-elif command -v nvim >/dev/null; then
+if command -v nvim >/dev/null; then
     export EDITOR=nvim
+elif command -v vim >/dev/null; then
+    export EDITOR=vim
 fi
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
@@ -91,6 +101,12 @@ append_path "$ANDROID_HOME"/platform-tools
 append_path "$FLUTTER_HOME"/bin
 append_path "$HOME"/.pub-cache/bin
 
+append_data_dirs "/usr/share"
+append_data_dirs "/usr/local/share"
+append_data_dirs "$HOME/.local/share/flatpak/exports/share"
+
 unset -f append_path
+unset -f append_data_dirs
 
 export PATH
+export XDG_DATA_DIRS
