@@ -1,5 +1,5 @@
 [Default Applications]
-application/pdf=vivaldi-stable.desktop;
+application/pdf=zen.desktop;
 application/x-extension-htm=zen.desktop
 application/x-extension-html=zen.desktop
 application/x-extension-shtml=zen.desktop
@@ -13,9 +13,9 @@ image/jpeg=org.gnome.eog.desktop;
 inode/directory=thunar.desktop
 text/html=zen.desktop
 vnd.microsoft.portable-executable=UMU.desktop
+x-scheme-handler/chrome=zen.desktop
 x-scheme-handler/discord=vesktop.desktop
-x-scheme-handler/terminal=kitty.desktop
-x-scheme-handler/vivaldi=vivaldi-stable.desktop
 x-scheme-handler/http=zen.desktop
 x-scheme-handler/https=zen.desktop
-x-scheme-handler/chrome=zen.desktop
+x-scheme-handler/terminal=kitty.desktop
+x-scheme-handler/vivaldi=vivaldi-stable.desktop
